@@ -274,6 +274,8 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
+    <Compile Include="Assets\Scripts\ChangeScene.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -543,12 +545,6 @@
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
