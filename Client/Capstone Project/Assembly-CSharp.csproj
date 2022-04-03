@@ -59,6 +59,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_Wait.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_And.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerProfile.cs" />
+    <Compile Include="Assets\Scripts\MainUI.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\BE2_UI_BlocksSelectionViewer.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotProgEnvViewport.cs" />
     <Compile Include="Assets\GooglePlayGames\OurUtils\PlatformUtils.cs" />
@@ -184,6 +185,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Serialization\BE2_SerializableBlock.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Block\I_BE2_BlockLayout.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Not.cs" />
+    <Compile Include="Assets\Scripts\Managers\TargetObjectManager.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\SignInInteractivity.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotProgrammingEnv.cs" />
     <Compile Include="Assets\Scripts\Stage\Block.cs" />
@@ -228,6 +230,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\I_BE2_Raycaster.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_WhenJoystickKeyPressed.cs" />
     <Compile Include="Assets\Scripts\Managers\BlockManager.cs" />
+    <Compile Include="Assets\Scripts\GamePlayManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_KeyPressed.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\NearbyConnectionClientFactory.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\I_BE2_Spot.cs" />
@@ -271,7 +274,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
-    <Compile Include="Assets\Scripts\Managers\TargetObjectManager.cs" />
+    <Compile Include="Assets\Scripts\ChangeScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -541,12 +544,6 @@
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
