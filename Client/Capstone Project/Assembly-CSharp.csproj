@@ -275,6 +275,7 @@
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
