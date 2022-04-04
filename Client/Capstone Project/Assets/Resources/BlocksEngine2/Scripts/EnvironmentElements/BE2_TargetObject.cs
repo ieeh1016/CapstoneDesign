@@ -55,6 +55,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
                 return;
 
             this.gameObject.transform.position = newBlock.transform.position + new Vector3(0, 0.1f, 0);
+            currentBlock = newBlock;
         }
 
     }

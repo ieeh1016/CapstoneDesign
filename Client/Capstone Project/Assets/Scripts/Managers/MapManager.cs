@@ -143,8 +143,15 @@ public class MapManager
         {
 
             GameObject block = null;
-            if (currentPositionInMap + direction >= 0 && currentPositionInMap + direction < Map.Count && (currentPositionInMap + direction) % _mapWidth != 0)
+            if (currentPositionInMap + direction >= 0 && currentPositionInMap + direction < Map.Count)
             {
+                if (direction < _mapWidth)
+                {
+                    if ((currentPositionInMap % _mapWidth) + direction >= _mapWidth)
+                        continue;
+
+                }
+                
                 if (Map.TryGetValue(currentPositionInMap + direction, out block) && block != null)
                 {
                     currentPositionInMap += direction;
