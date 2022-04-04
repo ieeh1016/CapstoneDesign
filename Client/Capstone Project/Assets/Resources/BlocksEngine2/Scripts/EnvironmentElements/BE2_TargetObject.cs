@@ -32,6 +32,12 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
     int _velocity = 1;
     bool interactable = true;
     GameObject currentBlock = null;
+
+    public GameObject CurrentBlock
+    {
+        get { return currentBlock; }
+        set { currentBlock = value; }
+    }
     
 
     int currentDirection = (int)Direction.up;
@@ -39,21 +45,22 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
     public Transform Transform => transform;
     public I_BE2_ProgrammingEnv ProgrammingEnv { get; set; }
 
-    public void Move()
+    void I_BE2_TargetObject.Move()
     {
         GameObject newBlock = null;
         int blockId = Managers.Map.Move(currentDirection, _velocity);
-        if(blockId != currentBlock.GetComponent<Block>().BlockId && Managers.Map.GetMap().TryGetValue(blockId, out newBlock))
+        if (blockId != currentBlock.GetComponent<Block>().BlockId && Managers.Map.GetMap().TryGetValue(blockId, out newBlock))
         {
             if (newBlock == null)
                 return;
 
             this.gameObject.transform.position = newBlock.transform.position + new Vector3(0, 0.1f, 0);
+            currentBlock = newBlock;
         }
 
     }
 
-    public void Turn(bool clockWise)
+    void I_BE2_TargetObject.Turn(bool clockWise)
     {
         if (clockWise)
         {
@@ -66,4 +73,5 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
             this.gameObject.transform.forward = -this.gameObject.transform.right;
         }
     }
+
 }

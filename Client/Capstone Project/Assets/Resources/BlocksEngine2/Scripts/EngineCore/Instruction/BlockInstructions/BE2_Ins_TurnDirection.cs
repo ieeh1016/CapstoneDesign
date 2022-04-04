@@ -22,6 +22,7 @@ public class BE2_Ins_TurnDirection : BE2_InstructionBase, I_BE2_Instruction
     I_BE2_BlockSectionHeaderInput _input0;
     string _value;
     Vector3 _axis = Vector3.up;
+    bool clockWise = true;
 
     //protected override void OnStop()
     //{
@@ -34,11 +35,11 @@ public class BE2_Ins_TurnDirection : BE2_InstructionBase, I_BE2_Instruction
         _value = _input0.StringValue;
         if (_value == "Left")
         {
-            TargetObject.Transform.Rotate(_axis, -90);
+            TargetObject.Turn(!clockWise);
         }
         else if (_value == "Right")
         {
-            TargetObject.Transform.Rotate(_axis, 90);
+            TargetObject.Turn(clockWise);
         }
 
         ExecuteNextInstruction();

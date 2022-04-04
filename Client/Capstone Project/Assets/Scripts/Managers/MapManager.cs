@@ -7,7 +7,7 @@ public class MapManager
 {
     //List<string> Map = new List<string>();
     Dictionary<int, GameObject> Map = new Dictionary<int, GameObject>();
-    static int blockId = 0;
+    //static int blockId = 0;
 
     const int _mapWidth = 20;
 
@@ -43,6 +43,7 @@ public class MapManager
         }
 
         int rowCount = 0;
+        int blockId = 0;
         foreach (string line in System.IO.File.ReadLines(Application.dataPath + $"/Resources/MapGeneratingFiles/{sceneName}.txt"))
         {
             if (line.Length > 20) // 가로로 놓을 수 있는 블록의 최대 개수 20
@@ -96,8 +97,10 @@ public class MapManager
 
                     if (name.Equals("StartBlock"))
                     {
-                        Managers.TargetObject.GetTargetObject("Character").transform.position = block.transform.position;
-                        Managers.TargetObject.GetTargetObject("Character").GetComponent<Character>().CurrentPositionInMap = colCount;
+                        GameObject character = Managers.TargetObject.GetTargetObject("Character");
+                        character.transform.position = block.transform.position;
+                        character.GetComponent<Character>().CurrentPositionInMap = colCount;
+                        character.GetComponent<Character>().CurrentBlock = block;
                     }
                 }
             }
@@ -139,13 +142,17 @@ public class MapManager
         while (velocity > 0)
         {
 
-            int dy = direction / _mapWidth;
-            int dx = direction % _mapWidth;
-
             GameObject block = null;
-            if ((currentPositionInMap + dy + dx) >= 0 && (currentPositionInMap + dy) / _mapWidth < Map.Count && (currentPositionInMap % _mapWidth) + dx < _mapWidth)
+            if (currentPositionInMap + direction >= 0 && currentPositionInMap + direction < Map.Count)
             {
-                if (Map.TryGetValue(currentPositionInMap + dy + dx, out block) && block != null)
+                if (direction < _mapWidth)
+                {
+                    if ((currentPositionInMap % _mapWidth) + direction >= _mapWidth)
+                        continue;
+
+                }
+                
+                if (Map.TryGetValue(currentPositionInMap + direction, out block) && block != null)
                 {
                     currentPositionInMap += direction;
                     targetObject.CurrentPositionInMap = currentPositionInMap;
