@@ -74,6 +74,27 @@ public class MapManager
                     case '1':
                         name = "Block";
                         break;
+                    case 'T':
+                        name = "TreeBlock";
+                        break;
+                    case 'V':
+                        name = "CavinBlock";
+                        break;
+                    case 'N':
+                        name = "CanonBlock";
+                        break;
+                    case 'l':
+                        name = "CastleBlock";
+                        break;
+                    case 'H':
+                        name = "HouseBlock";
+                        break;
+                    case 'W':
+                        name = "TowerBlock";
+                        break;
+                    case '2':
+                        name = "TowerBlock2";
+                        break;
                     case 'E':
                         name = "EndBlock";
                         break;
