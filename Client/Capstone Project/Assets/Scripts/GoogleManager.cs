@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GooglePlayGames;
+using UnityEngine.UI;
 
-public class GamePlayManager : MonoBehaviour
+public class GoogleManager : MonoBehaviour
 {
+    public Text LoginLogText;
+
+
     // Start is called before the first frame update
-    public void OnClickExit()
-    {
-        Application.Quit();
-        Debug.Log("Button Click");
-    }
     void Start()
+    {
+        PlayGamesPlatform.DebugLogEnabled = true;
+        PlayGamesPlatform.Activate();
+    }
+
+    void LogIn()
     {
         
     }
