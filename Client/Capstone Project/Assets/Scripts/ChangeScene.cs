@@ -29,4 +29,9 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("BasicChoice");
     }
+    public void MoveToMain()
+    {
+        SceneManager.LoadScene("MainPage");
+    }
+
 }
