@@ -119,9 +119,17 @@ public class MapManager
                     if (name.Equals("StartBlock"))
                     {
                         GameObject character = Managers.TargetObject.GetTargetObject("Character");
-                        character.transform.position = block.transform.position;
+                        character.transform.position = block.transform.position + new Vector3(0, 0.9f, 0);
                         character.GetComponent<Character>().CurrentPositionInMap = colCount;
                         character.GetComponent<Character>().CurrentBlock = block;
+                    }
+                    else if (name.Equals("SeaBlock"))
+                    {
+                        block.transform.localPosition += new Vector3(0, -1.0f, 0);
+                    }
+                    else if (!(name.Equals("Block") || name.Equals("EndBlock")))
+                    {
+                        block.transform.localPosition += new Vector3(0, 1.6f, 0);
                     }
                 }
             }
