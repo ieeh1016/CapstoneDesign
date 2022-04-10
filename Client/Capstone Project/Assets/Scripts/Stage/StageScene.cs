@@ -9,7 +9,9 @@ public class StageScene : BaseScene
         base.Init();
         SceneType = Define.Scene.Game;
         bool success = Managers.Map.GenerateMap();
-        if (!success)
+        success = Managers.Coin.GenerateCoin();
+
+        if (!success) // 맵, 코인 둘 중 하나라도 생성 실패 시
             Managers.Scene.LoadScene(Define.Scene.Lobby);
         else
         {
