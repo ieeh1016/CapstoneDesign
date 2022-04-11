@@ -23,6 +23,8 @@ public class Managers : MonoBehaviour
     UIManager _ui = new UIManager();
     MapManager _map = new MapManager();
     TargetObjectManager _targetObject = new TargetObjectManager();
+    CoinManager _coin = new CoinManager();
+    CodeBlockManager _block = new CodeBlockManager();
 
     public static DataManager Data { get { return Instance._data; } }
     public static InputManager Input { get { return Instance._input; } }
@@ -33,6 +35,8 @@ public class Managers : MonoBehaviour
     public static UIManager UI { get { return Instance._ui; } }
     public static MapManager Map { get { return Instance._map; } }
     public static TargetObjectManager TargetObject { get { return Instance._targetObject; } }
+    public static CoinManager Coin { get { return Instance._coin; } }
+    public static CodeBlockManager CodeBlock { get { return Instance._block; } }
     // Start is called before the first frame update
     void Start()
     { 
@@ -71,5 +75,6 @@ public class Managers : MonoBehaviour
         UI.Clear();
         Pool.Clear();
         Map.Clear();
+        Coin.Clear();
     }
 }

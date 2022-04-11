@@ -95,6 +95,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BE2_CstColorDropdownItem.cs" />
     <Compile Include="Assets\Scripts\Stage\StageScene.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\BE2_BlockSectionBody.cs" />
+    <Compile Include="Assets\Scripts\Stage\Coin.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_RepeatForever.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotBlockBody.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_MoveForward.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\SignInStatus.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
+    <Compile Include="Assets\Scripts\Stage\I_CheckClear.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidJavaConverter.cs" />
     <Compile Include="Assets\Scripts\TestSound.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BlockSections\BE2_HorizontalBlockSectionHeader.cs" />
@@ -134,6 +136,7 @@
     <Compile Include="Assets\Scripts\Data\Data.Contents.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_DragTrigger.cs" />
     <Compile Include="Assets\Scripts\Managers\PoolManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\CoinManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EnvironmentElements\BE2_TargetObjectSpacecraft3D.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\BE2_BlocksStack.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\IPlayGamesClient.cs" />
@@ -265,6 +268,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\I_BE2_BlockSectionHeaderItem.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EditorScripts\BE2_Inspector.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\BE2_UI_VariableViewer.cs" />
+    <Compile Include="Assets\Scripts\Managers\StageManager.cs" />
     <Compile Include="Assets\Scripts\Managers\MapManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\I_BE2_UI_ContextMenu.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\I_BE2_BlockSectionBody.cs" />
@@ -281,14 +285,19 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
+    <Compile Include="Assets\Scripts\Managers\CodeBlockManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
     <None Include="Assets\Parse\Plugins\Unity.Compat.dll" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\CharaOutline.cginc" />
+<<<<<<< HEAD
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 4.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 2.txt" />
+=======
+    <None Include="Assets\Resources\MapGeneratingFiles\FirstStudyStageCoin.txt" />
+>>>>>>> f6f5899fde3a51b1f8bb8a49f3767618cff5a0c7
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
     <None Include="Assets\Resources\BlocksEngine2\Scripts\EditorScripts\InstructionScriptTemplate.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />

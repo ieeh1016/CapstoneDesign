@@ -3,32 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MapManager
+public class MapManager : I_CheckClear
 {
     //List<string> Map = new List<string>();
     Dictionary<int, GameObject> Map = new Dictionary<int, GameObject>();
-    //static int blockId = 0;
 
-    const int _mapWidth = 20;
+    public float _blockStartHeight = 0.1f;
+    public float _cameraRotationX = 81f;
 
-    enum Direction
+    public bool CheckCleared() // 현재 캐릭터의 위치가 EndBlock이라면 True 반환
     {
-        up = 0,
-        right = 1,
-        down = 2,
-        left = 3,
+        GameObject block = null;
+        if (Map.TryGetValue(Managers.TargetObject.GetTargetObject("Character").GetComponent<Character>().CurrentPositionInMap, out block))
+        {
+            return block.GetComponent<Block>().BlockType.Equals('E');
+        }
+
+        return false;
     }
-
-
-    enum Setting // 맵 생성 위한 배경 타일과 블록 크기, 배경 타일에 대한 카메라 상대위치
-    {
-        BlockStartPosition = -75,
-        BlockWidth = 4,
-        CameraPositionY = 80,
-    }
-
-    float _blockStartHeight = 0.1f;
-    float _cameraRotationX = 81f;
 
 
     public bool GenerateMap() // 씬 이름과 동일한 텍스트 파일 불러와서 맵 생성
@@ -46,13 +38,13 @@ public class MapManager
         int blockId = 0;
         foreach (string line in System.IO.File.ReadLines(Application.dataPath + $"/Resources/MapGeneratingFiles/{sceneName}.txt"))
         {
-            if (line.Length > 20) // 가로로 놓을 수 있는 블록의 최대 개수 20
+            if (line.Length > (int)Define.Map.MapWidth) // 가로로 놓을 수 있는 블록의 최대 개수 20
             {
                 Debug.Log("Too many Blocks on a row");
                 return false;
             }
 
-            float currentBlockZStartPosition = -(float)Setting.BlockStartPosition - (int)Setting.BlockWidth * rowCount;
+            float currentBlockZStartPosition = -(float)Define.Setting.BlockStartPosition - (int)Define.Setting.BlockWidth * rowCount;
 
             for (int colCount = 0; colCount < line.Length; colCount++)
             {
@@ -109,18 +101,19 @@ public class MapManager
                     continue;
                 }
                 else
-                {
+                {   //해당하는 블록을 로드하여 적절한 위치에 생성해준다.
                     block = Managers.Resource.Instantiate($"{name}", go.transform);
-                    block.transform.localPosition = new Vector3((float)Setting.BlockStartPosition + (int)Setting.BlockWidth * colCount, _blockStartHeight, currentBlockZStartPosition);
+                    block.transform.localPosition = new Vector3((float)Define.Setting.BlockStartPosition + (int)Define.Setting.BlockWidth * colCount, _blockStartHeight, currentBlockZStartPosition);
                     block.AddComponent<Block>();
                     block.GetComponent<Block>().BlockId = blockId;
-                    Map.Add(blockId++, block);
+                    block.GetComponent<Block>().BlockType = line[colCount];
+                    Map.Add(blockId, block);
 
                     if (name.Equals("StartBlock"))
                     {
                         GameObject character = Managers.TargetObject.GetTargetObject("Character");
                         character.transform.position = block.transform.position + new Vector3(0, 0.9f, 0);
-                        character.GetComponent<Character>().CurrentPositionInMap = colCount;
+                        character.GetComponent<Character>().CurrentPositionInMap = blockId;
                         character.GetComponent<Character>().CurrentBlock = block;
                     }
                     else if (name.Equals("SeaBlock"))
@@ -131,6 +124,7 @@ public class MapManager
                     {
                         block.transform.localPosition += new Vector3(0, 1.6f, 0);
                     }
+                    blockId++;
                 }
             }
             rowCount++;
@@ -150,16 +144,16 @@ public class MapManager
         int currentPositionInMap = targetObject.CurrentPositionInMap;
         switch(direction)
         {
-            case (int)Direction.up:
-                direction = -_mapWidth;
+            case (int)Define.Direction.up:
+                direction = -(int)Define.Map.MapWidth;
                 break;
-            case (int)Direction.right:
+            case (int)Define.Direction.right:
                 direction = 1;
                 break;
-            case (int)Direction.down:
-                direction = _mapWidth;
+            case (int)Define.Direction.down:
+                direction = (int)Define.Map.MapWidth;
                 break;
-            case (int)Direction.left:
+            case (int)Define.Direction.left:
                 direction = -1;
                 break;
             default:
@@ -174,9 +168,9 @@ public class MapManager
             GameObject block = null;
             if (currentPositionInMap + direction >= 0 && currentPositionInMap + direction < Map.Count)
             {
-                if (direction < _mapWidth)
+                if (direction < (int)Define.Map.MapWidth)
                 {
-                    if ((currentPositionInMap % _mapWidth) + direction >= _mapWidth)
+                    if ((currentPositionInMap % (int)Define.Map.MapWidth) + direction >= (int)Define.Map.MapWidth)
                         continue;
 
                 }
@@ -185,14 +179,14 @@ public class MapManager
                 {
                     currentPositionInMap += direction;
                     targetObject.CurrentPositionInMap = currentPositionInMap;
+                    Managers.Coin.AcquireCoin(currentPositionInMap);
+
                 }
 
             }
 
             velocity--;
         }
-
-        
 
         return currentPositionInMap;
     }
