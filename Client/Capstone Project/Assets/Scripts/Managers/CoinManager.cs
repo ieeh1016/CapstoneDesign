@@ -7,8 +7,9 @@ public class CoinManager : I_CheckClear
 {
     Dictionary<int, GameObject> CoinMap = new Dictionary<int, GameObject>();
 
+    float coinHeight = 1.5f;
 
-    bool I_CheckClear.CheckCleared()
+    public bool CheckCleared()
     {
         return CoinMap.Count == 0;
     }
@@ -41,7 +42,7 @@ public class CoinManager : I_CheckClear
                             Debug.Log($"There is no block under the coin{coinId}");
                             return false;
                         }
-                        coin.transform.localPosition = parentBlock.transform.localPosition + new Vector3(0, 1, 0);
+                        coin.transform.localPosition = parentBlock.transform.localPosition + new Vector3(0, coinHeight, 0);
                         CoinMap.Add(coinId, coin);
                     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StageScene : BaseScene
 {
+    GameObject be2ProgEnv = null;
     protected override void Init()
     {
         base.Init();
@@ -23,7 +24,8 @@ public class StageScene : BaseScene
                 Managers.Scene.LoadScene(Define.Scene.Lobby);
             }
 
-            GameObject be2ProgEnv = Managers.Resource.Instantiate("Blocks Engine 2");
+            be2ProgEnv = Managers.Resource.Instantiate("Blocks Engine 2");
+            Managers.CodeBlock.BE2ProgEnv = be2ProgEnv;
             if (be2ProgEnv == null)
             {
                 Debug.Log("Wrong engine name");
