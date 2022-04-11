@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    private int blockId;
-    private int blockType;
-    // Start is called before the first frame update
+    private int _blockId;
+    private char _blockType;
+
     public int BlockId
     {
-        get { return blockId; }
-        set { blockId = value; }
+        get { return _blockId; }
+        set { _blockId = value; }
     }
 
-    public int BlockType
+    public char BlockType
     {
-        get { return blockType; }
-        set { BlockType = value; }
+        get { return _blockType; }
+        set { _blockType = value; }
     }
+
 }
