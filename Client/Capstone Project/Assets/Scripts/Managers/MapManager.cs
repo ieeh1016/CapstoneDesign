@@ -11,7 +11,7 @@ public class MapManager : I_CheckClear
     public float _blockStartHeight = 0.1f;
     public float _cameraRotationX = 81f;
 
-    bool I_CheckClear.CheckCleared() // 현재 캐릭터의 위치가 EndBlock이라면 True 반환
+    public bool CheckCleared() // 현재 캐릭터의 위치가 EndBlock이라면 True 반환
     {
         GameObject block = null;
         if (Map.TryGetValue(Managers.TargetObject.GetTargetObject("Character").GetComponent<Character>().CurrentPositionInMap, out block))
