@@ -234,11 +234,28 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114740158668377122, guid: a17d40dd898a885448e51ce9b7febec4,
+        type: 3}
+      propertyPath: m_Text
+      value: "\uCF54\uB529 \uC544\uC77C\uB79C\uB4DC"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114740158668377122, guid: a17d40dd898a885448e51ce9b7febec4,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 247ab051d9170674b95810106ecbc61e,
+        type: 3}
     - target: {fileID: 114802358370795880, guid: a17d40dd898a885448e51ce9b7febec4,
         type: 3}
       propertyPath: m_Text
-      value: CHALLENGE
+      value: "\uCC4C \uB9B0 \uC9C0"
       objectReference: {fileID: 0}
+    - target: {fileID: 114802358370795880, guid: a17d40dd898a885448e51ce9b7febec4,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 247ab051d9170674b95810106ecbc61e,
+        type: 3}
     - target: {fileID: 224054882957136196, guid: a17d40dd898a885448e51ce9b7febec4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -343,6 +360,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224911175369027200, guid: a17d40dd898a885448e51ce9b7febec4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224911175369027200, guid: a17d40dd898a885448e51ce9b7febec4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -199.5
       objectReference: {fileID: 0}
     - target: {fileID: 1719491455102354543, guid: a17d40dd898a885448e51ce9b7febec4,
         type: 3}
