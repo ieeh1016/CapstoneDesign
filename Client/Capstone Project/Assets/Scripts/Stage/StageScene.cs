@@ -5,6 +5,7 @@ using UnityEngine;
 public class StageScene : BaseScene
 {
     GameObject be2ProgEnv = null;
+    public bool IncludeFuntionBlock = false;
     protected override void Init()
     {
         base.Init();
@@ -24,7 +25,11 @@ public class StageScene : BaseScene
                 Managers.Scene.LoadScene(Define.Scene.Lobby);
             }
 
-            be2ProgEnv = Managers.Resource.Instantiate("Blocks Engine 2");
+            if (IncludeFuntionBlock)
+                be2ProgEnv = Managers.Resource.Instantiate("Blocks Engine 2 with function");
+            else
+                be2ProgEnv = Managers.Resource.Instantiate("Blocks Engine 2");
+
             Managers.CodeBlock.BE2ProgEnv = be2ProgEnv;
             if (be2ProgEnv == null)
             {
