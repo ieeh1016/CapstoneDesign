@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -110,11 +111,13 @@ public class BE2_Block : MonoBehaviour, I_BE2_Block
                 {
                     if (section.Header != null)
                     {
-                        section.Header.Shadow.enabled = true;
+                        // 이유는 모르겠지만 이게 있음 작동을 안함
+                        //section.Header.Shadow.enabled = true;
                     }
                     if (section.Body != null)
                     {
-                        section.Body.Shadow.enabled = true;
+                        // 이유는 모르겠지만 이게 있음 작동을 안함
+                        //section.Body.Shadow.enabled = true;
                     }
                 }
             }
