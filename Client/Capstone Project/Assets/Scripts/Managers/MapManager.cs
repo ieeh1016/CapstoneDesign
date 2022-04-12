@@ -177,9 +177,13 @@ public class MapManager : I_CheckClear
                 
                 if (Map.TryGetValue(currentPositionInMap + direction, out block) && block != null)
                 {
-                    currentPositionInMap += direction;
-                    targetObject.CurrentPositionInMap = currentPositionInMap;
-                    Managers.Coin.AcquireCoin(currentPositionInMap);
+                    char blockType = block.GetComponent<Block>().BlockType;
+                    if (blockType.Equals('S') || blockType.Equals('1') || blockType.Equals('E'))
+                    {
+                        currentPositionInMap += direction;
+                        targetObject.CurrentPositionInMap = currentPositionInMap;
+                        Managers.Coin.AcquireCoin(currentPositionInMap);
+                    }
 
                 }
 

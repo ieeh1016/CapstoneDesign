@@ -78,6 +78,7 @@
     <Compile Include="Assets\GooglePlayGames\OurUtils\NearbyHelperObject.cs" />
     <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_WhenPlayClicked.cs" />
+    <Compile Include="Assets\Scripts\Managers\CodeBlockManager.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Video\VideoCapabilities.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesPlatform.cs" />
@@ -285,19 +286,15 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
-    <Compile Include="Assets\Scripts\Managers\CodeBlockManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
     <None Include="Assets\Parse\Plugins\Unity.Compat.dll" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\CharaOutline.cginc" />
-<<<<<<< HEAD
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 4.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 2.txt" />
-=======
     <None Include="Assets\Resources\MapGeneratingFiles\FirstStudyStageCoin.txt" />
->>>>>>> f6f5899fde3a51b1f8bb8a49f3767618cff5a0c7
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
     <None Include="Assets\Resources\BlocksEngine2\Scripts\EditorScripts\InstructionScriptTemplate.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
@@ -314,6 +311,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 5.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\FirstStudyStage.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 1.txt" />
+    <None Include="Assets\Resources\MapGeneratingFiles\Loop 1Coin.txt" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 1.txt" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\CharaMain.cginc" />
@@ -568,6 +566,12 @@
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
