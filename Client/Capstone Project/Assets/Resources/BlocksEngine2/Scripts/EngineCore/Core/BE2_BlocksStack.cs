@@ -107,6 +107,59 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
 
     public void PopulateStack()
     {
+
+        //ProgrammingEnv안의 if_function들을 찾음
+        GameObject[] function_blocks = GameObject.FindGameObjectsWithTag("FunctionBlock");
+
+        //못 찾으면 패스
+        //있으면 모든 if_function의 body에다가 functionarea의 body를 복사해서 넣
+        if (function_blocks.Length != 0)
+        {
+            GameObject function_area = GameObject.Find("FunctionArea");
+            //Debug.Log($"function_area, {function_area.name}");
+
+
+            //functionArea의 body를 불러옴
+            GameObject function_area_body = function_area.transform.Find("Section0").gameObject;
+            function_area_body = function_area_body.transform.Find("Body").gameObject;
+
+
+            //functionArea에 function블록이 재귀적으로 들어가지 못하도록 제거
+            foreach (Transform ins in function_area_body.transform)
+            {
+                if (ins.name.Equals("HorizontalBlock Ins Function"))
+                    Destroy(ins.gameObject);
+            }
+
+
+            //모든 function 블록에 불러온 functionArea의 body를 넣어줌
+            GameObject function_area_body_copy;
+
+            for (int i = 0; i < function_blocks.Length; i++)
+            {
+                function_area_body_copy = Instantiate(function_area_body);
+
+                foreach (Transform child in function_blocks[i].transform)
+                {
+                    Destroy(child.gameObject);
+                }
+
+                while (function_area_body_copy.transform.childCount != 0)
+                {
+                    Transform child = function_area_body_copy.transform.GetChild(0);
+                    child.SetParent(function_blocks[i].transform, false);
+
+                    //body에 들어간 블록 제거
+                    child.transform.localScale = new Vector3(0, 0, 0);
+
+                }
+                Destroy(function_area_body_copy);
+            }
+        }
+
+
+
+
         InstructionsArray = new I_BE2_Instruction[0];
         PopulateStackRecursive(TriggerInstruction.InstructionBase.Block);
         _arrayLength = InstructionsArray.Length;
@@ -150,6 +203,14 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
                 I_BE2_Block[] childBlocks = section.Body.ChildBlocksArray;
 
                 int childBlocksCount = childBlocks.Length;
+
+
+                //함수블록 스택에 2번씩들어가서 임시책으로 넣은 코드임
+                if (parentBlock.ToString().Equals("HorizontalBlock Ins Function (BE2_Block)"))
+                {
+                    childBlocksCount /= 2;
+                }
+
                 for (int j = 0; j < childBlocksCount; j++)
                 {
                     PopulateStackRecursive(childBlocks[j]);
