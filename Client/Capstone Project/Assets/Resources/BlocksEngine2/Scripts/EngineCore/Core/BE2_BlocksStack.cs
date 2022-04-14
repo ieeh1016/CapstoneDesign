@@ -110,7 +110,6 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
 
         //ProgrammingEnv안의 ins functiond들의 body를 찾음
         GameObject[] function_blocks = GameObject.FindGameObjectsWithTag("FunctionBlock");
-        Debug.Log($"{function_blocks.Length}");
 
         //못 찾으면 패스
         //있으면 모든 if_function의 body에다가 functionarea의 body를 복사해서 넣
