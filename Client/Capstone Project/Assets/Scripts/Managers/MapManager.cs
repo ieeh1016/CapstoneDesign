@@ -9,7 +9,7 @@ public class MapManager : I_CheckClear
     Dictionary<int, GameObject> Map = new Dictionary<int, GameObject>();
 
     public float _blockStartHeight = 0.1f;
-    public float _cameraRotationX = 81f;
+    public float _cameraRotationX = 85f;
 
     public bool CheckCleared() // 현재 캐릭터의 위치가 EndBlock이라면 True 반환
     {
@@ -33,6 +33,15 @@ public class MapManager : I_CheckClear
             Debug.Log("Generating tile failed");
             return false;
         }
+        
+        GameObject camera = GameObject.Find("Main Camera");
+        if (camera == null)
+        {
+            Debug.Log("Camera missed");
+            return false;
+        }
+        camera.transform.position = new Vector3((int)Define.Setting.CameraPositionX, (int)Define.Setting.CameraPositionY, (int)Define.Setting.CameraPositionZ);
+        camera.transform.rotation = Quaternion.Euler(_cameraRotationX, 0, 0);
 
         int rowCount = 0;
         int blockId = 0;

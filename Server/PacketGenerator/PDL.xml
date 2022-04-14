@@ -31,4 +31,20 @@
 	<float name="posY"/>
 	<float name="posZ"/>
   </packet>
+	<packet name="S_ChallengeTotalStars">
+		<int name="UId"/>
+		<ushort name="TotalStars"/>	
+	</packet>
+	<packet name="S_ChallengeCheckRanking">
+		<int name="ranking"/>
+	</packet>
+	<packet name="S_GetStudyMaxStage">
+		<ushort name="maxStage"/>
+	</packet>
+	<packet name="S_LoadChallengeStar">
+		<list name="StageStar">
+			<ushort name="stageId"/>
+			<ushort name="numberOfStars"/>
+		</list>
+	</packet>
 </PDL>
