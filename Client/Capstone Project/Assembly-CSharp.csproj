@@ -300,7 +300,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\Parse\Plugins\Unity.Compat.dll" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_akarami_blend.shader" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\CharaOutline.cginc" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 4.txt" />
@@ -309,7 +308,6 @@
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
     <None Include="Assets\Resources\BlocksEngine2\Scripts\EditorScripts\InstructionScriptTemplate.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
-    <None Include="Assets\Parse\Plugins\Unity.Tasks.dll" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 3.txt" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAuth.dll" />

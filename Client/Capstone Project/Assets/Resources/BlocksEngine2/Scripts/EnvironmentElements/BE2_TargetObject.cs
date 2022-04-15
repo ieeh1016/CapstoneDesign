@@ -78,7 +78,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
     bool I_BE2_TargetObject.AbleRight()
     {
         GameObject newBlock = null;
-        int blockId = Managers.Map.Move((currentDirection + 1) % (int)Direction.size, _velocity);
+        int blockId = Managers.Map.MoveCheck((currentDirection + 1) % (int)Direction.size, _velocity);
         if (blockId != currentBlock.GetComponent<Block>().BlockId && Managers.Map.GetMap().TryGetValue(blockId, out newBlock))
         {
             if (newBlock == null)
