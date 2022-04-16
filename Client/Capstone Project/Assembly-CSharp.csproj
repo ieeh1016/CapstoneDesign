@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.14</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.15</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2020.3.30f1</UnityVersion>
@@ -297,7 +297,14 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
+
     <Compile Include="Assets\Scripts\button.cs" />
+
+    <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfLeftCheck.cs" />
+    <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfRightCheck.cs" />
+    <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfForwardCheck.cs" />
+    <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfBothCheck.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -576,12 +583,6 @@
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -970,6 +971,11 @@
     <Reference Include="Unity.Notifications.iOS">
       <HintPath>Library\ScriptAssemblies\Unity.Notifications.iOS.dll</HintPath>
     </Reference>
+
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
