@@ -32,34 +32,33 @@
 	<float name="posZ"/>
   </packet>
 	<packet name="S_ChallengeTotalStars">
-		<int name="UId"/>
-		<ushort name="TotalStars"/>	
+		<byte name="TotalStars"/>	
 	</packet>
 	<packet name="S_ChallengeCheckRanking">
 		<int name="ranking"/>
 	</packet>
 	<packet name="S_GetStudyMaxStage">
-		<ushort name="maxStage"/>
+		<byte name="maxStage"/>
 	</packet>
 	<packet name="S_LoadChallengeStar">
 		<list name="StageStar">
 			<byte name="stageId"/>
-			<ushort name="numberOfStars"/>
+			<byte name="numberOfStars"/>
 		</list>
 	</packet>
 	<packet name="C_ChallengeUpdateStars">
-		<int name="UId"/>
+		<string name="UId"/>
 		<byte name="stageId"/>
-		<ushort name="numberOfStars"/>
+		<byte name="numberOfStars"/>
 	</packet>
 	<packet name="C_OpenNextStudyStage">
-		<int name="UId"/>
+		<string name="UId"/>
 		<byte name="stageId"/>
 	</packet>
-	<packet name="C_TotalStars">
-		<int name="UId"/>
+	<packet name="C_RequestTotalStars">
+		<string name="UId"/>
 	</packet>
 	<packet name="C_RequestStudyProgress">
-		<int name="UId"/>
+		<string name="UId"/>
 	</packet>
 </PDL>

@@ -27,8 +27,8 @@ public class PacketManager
 		_handler.Add((ushort)PacketID.C_ChallengeUpdateStars, PacketHandler.C_ChallengeUpdateStarsHandler);
 		_makeFunc.Add((ushort)PacketID.C_OpenNextStudyStage, MakePacket<C_OpenNextStudyStage>);
 		_handler.Add((ushort)PacketID.C_OpenNextStudyStage, PacketHandler.C_OpenNextStudyStageHandler);
-		_makeFunc.Add((ushort)PacketID.C_TotalStars, MakePacket<C_TotalStars>);
-		_handler.Add((ushort)PacketID.C_TotalStars, PacketHandler.C_TotalStarsHandler);
+		_makeFunc.Add((ushort)PacketID.C_RequestTotalStars, MakePacket<C_RequestTotalStars>);
+		_handler.Add((ushort)PacketID.C_RequestTotalStars, PacketHandler.C_RequestTotalStarsHandler);
 		_makeFunc.Add((ushort)PacketID.C_RequestStudyProgress, MakePacket<C_RequestStudyProgress>);
 		_handler.Add((ushort)PacketID.C_RequestStudyProgress, PacketHandler.C_RequestStudyProgressHandler);
 
