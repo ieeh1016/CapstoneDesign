@@ -29,6 +29,4 @@ class PacketHandler
 		S_BroadcastMove pkt = packet as S_BroadcastMove;
 		ServerSession serverSession = session as ServerSession;
 	}
-
-
 }
