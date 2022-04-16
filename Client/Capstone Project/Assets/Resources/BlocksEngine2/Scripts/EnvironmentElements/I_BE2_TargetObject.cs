@@ -14,7 +14,9 @@ public interface I_BE2_TargetObject
 
     public bool AbleRight();
 
+
     public bool AbleLeft();
 
     public bool AbleForward();
+
 }
