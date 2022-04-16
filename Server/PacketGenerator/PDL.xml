@@ -43,8 +43,23 @@
 	</packet>
 	<packet name="S_LoadChallengeStar">
 		<list name="StageStar">
-			<ushort name="stageId"/>
+			<byte name="stageId"/>
 			<ushort name="numberOfStars"/>
 		</list>
+	</packet>
+	<packet name="C_ChallengeUpdateStars">
+		<int name="UId"/>
+		<byte name="stageId"/>
+		<ushort name="numberOfStars"/>
+	</packet>
+	<packet name="C_OpenNextStudyStage">
+		<int name="UId"/>
+		<byte name="stageId"/>
+	</packet>
+	<packet name="C_TotalStars">
+		<int name="UId"/>
+	</packet>
+	<packet name="C_RequestStudyProgress">
+		<int name="UId"/>
 	</packet>
 </PDL>
