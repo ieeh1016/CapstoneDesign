@@ -96,4 +96,46 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
         return false;
     }
 
+    bool I_BE2_TargetObject.AbleLeft()
+    {
+        GameObject newBlock = null;
+        int blockId = Managers.Map.MoveCheck((currentDirection - 1) % (int)Direction.size, _velocity);
+        if (blockId != currentBlock.GetComponent<Block>().BlockId && Managers.Map.GetMap().TryGetValue(blockId, out newBlock))
+        {
+            if (newBlock == null)
+            {
+                Debug.Log("왼쪽 불가능1");
+                return false;
+
+            }
+
+            Debug.Log("왼쪽 가능");
+            return true;
+        }
+
+        Debug.Log("왼쪽 불가능2");
+        return false;
+    }
+
+    bool I_BE2_TargetObject.AbleForward()
+    {
+        GameObject newBlock = null;
+        int blockId = Managers.Map.MoveCheck(currentDirection, _velocity);
+        if (blockId != currentBlock.GetComponent<Block>().BlockId && Managers.Map.GetMap().TryGetValue(blockId, out newBlock))
+        {
+            if (newBlock == null)
+            {
+                Debug.Log("전진 불가능1");
+                return false;
+
+            }
+
+            Debug.Log("전진 가능");
+            return true;
+        }
+
+        Debug.Log("전진 불가능2");
+        return false;
+    }
+
 }
