@@ -34,7 +34,7 @@
 	<packet name="S_ChallengeTotalStars">
 		<byte name="TotalStars"/>	
 	</packet>
-	<packet name="S_ChallengeCheckRanking">
+	<packet name="S_ChallengeCheckMyRanking">
 		<int name="ranking"/>
 	</packet>
 	<packet name="S_GetStudyMaxStage">
@@ -46,10 +46,23 @@
 			<byte name="numberOfStars"/>
 		</list>
 	</packet>
+	<packet name="S_ChallengeTop30">
+		<list name="Rank">
+			<string name="UId"/>
+			<byte name="ranking"/>
+			<byte name="totalStars"/>
+		</list>
+	</packet>
 	<packet name="C_ChallengeUpdateStars">
 		<string name="UId"/>
 		<byte name="stageId"/>
 		<byte name="numberOfStars"/>
+	</packet>
+	<packet name="C_RequestMyChallengeProgress">
+		<string name="UId"/>
+	</packet>
+	<packet name="C_RequestMyChallengeRanking">
+		<string name="UId"/>
 	</packet>
 	<packet name="C_OpenNextStudyStage">
 		<string name="UId"/>
@@ -59,6 +72,9 @@
 		<string name="UId"/>
 	</packet>
 	<packet name="C_RequestStudyProgress">
+		<string name="UId"/>
+	</packet>
+	<packet name="C_RequestChallengeTop30">
 		<string name="UId"/>
 	</packet>
 </PDL>

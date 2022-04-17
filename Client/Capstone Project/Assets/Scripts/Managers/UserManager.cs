@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Firebase.Auth;
+using System;
 
 public class UserManager
 {
@@ -10,6 +11,7 @@ public class UserManager
     ushort totalStars;
     int ranking;
     Dictionary<ushort, ushort> _challengeStageInfo = new Dictionary<ushort, ushort>();
+    Dictionary<string, int> _challengeTop30 = new Dictionary<string, int>();
 
     public string UID
     {
@@ -49,5 +51,11 @@ public class UserManager
         }
     }
 
-
+    public void SetChallengeTop30(S_ChallengeTop30 packet)
+    {
+        foreach (S_ChallengeTop30.Rank s in packet.ranks)
+        {
+            _challengeTop30.Add(s.UId, s.ranking);
+        }
+    }
 }
