@@ -29,12 +29,14 @@ public class PacketManager
 		_handler.Add((ushort)PacketID.S_BroadcastMove, PacketHandler.S_BroadcastMoveHandler);
 		_makeFunc.Add((ushort)PacketID.S_ChallengeTotalStars, MakePacket<S_ChallengeTotalStars>);
 		_handler.Add((ushort)PacketID.S_ChallengeTotalStars, PacketHandler.S_ChallengeTotalStarsHandler);
-		_makeFunc.Add((ushort)PacketID.S_ChallengeCheckRanking, MakePacket<S_ChallengeCheckRanking>);
-		_handler.Add((ushort)PacketID.S_ChallengeCheckRanking, PacketHandler.S_ChallengeCheckRankingHandler);
+		_makeFunc.Add((ushort)PacketID.S_ChallengeCheckMyRanking, MakePacket<S_ChallengeCheckMyRanking>);
+		_handler.Add((ushort)PacketID.S_ChallengeCheckMyRanking, PacketHandler.S_ChallengeCheckMyRankingHandler);
 		_makeFunc.Add((ushort)PacketID.S_GetStudyMaxStage, MakePacket<S_GetStudyMaxStage>);
 		_handler.Add((ushort)PacketID.S_GetStudyMaxStage, PacketHandler.S_GetStudyMaxStageHandler);
 		_makeFunc.Add((ushort)PacketID.S_LoadChallengeStar, MakePacket<S_LoadChallengeStar>);
 		_handler.Add((ushort)PacketID.S_LoadChallengeStar, PacketHandler.S_LoadChallengeStarHandler);
+		_makeFunc.Add((ushort)PacketID.S_ChallengeTop30, MakePacket<S_ChallengeTop30>);
+		_handler.Add((ushort)PacketID.S_ChallengeTop30, PacketHandler.S_ChallengeTop30Handler);
 
 	}
 
