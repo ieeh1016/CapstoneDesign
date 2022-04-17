@@ -104,8 +104,7 @@ public class MapManager : I_CheckClear
                 {   //해당하는 블록을 로드하여 적절한 위치에 생성해준다.
                     block = Managers.Resource.Instantiate($"{name}", go.transform);
                     block.transform.localPosition = new Vector3((float)Define.Setting.BlockStartPosition + (int)Define.Setting.BlockWidth * colCount, _blockStartHeight, currentBlockZStartPosition);
-                    block.AddComponent<Block>();
-                    block.GetComponent<Block>().BlockId = blockId;
+                    block.AddComponent<Block>().BlockId = blockId;
                     block.GetComponent<Block>().BlockType = line[colCount];
                     Map.Add(blockId, block);
 
