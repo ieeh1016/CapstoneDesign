@@ -35,7 +35,7 @@ public class BE2_Ins_Function : BE2_InstructionBase, I_BE2_Instruction
         //EndLoop = false;
     }
 
-    public void Function()
+    public new void Function()
     {
         _value = 1;
 

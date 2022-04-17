@@ -30,7 +30,7 @@ public class BE2_Ins_WhenPlayClicked : BE2_InstructionBase, I_BE2_Instruction
     //
     //}
 
-    public void Function()
+    public new void Function()
     {
         ExecuteSection(0);
     }

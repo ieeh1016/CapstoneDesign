@@ -27,7 +27,7 @@ public class BE2_Ins_RepeatUntil : BE2_InstructionBase, I_BE2_Instruction
     //
     //}
 
-    public void Function()
+    public new void Function()
     {
         _input0 = Section0Inputs[0];
         _value = _input0.StringValue;
