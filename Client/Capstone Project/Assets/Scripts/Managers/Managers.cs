@@ -28,7 +28,7 @@ public class Managers : MonoBehaviour
     MusicManager _music = new MusicManager();
 
     UserManager _user = new UserManager();
-    //NetworkManager _netWork = new NetworkManager();
+    NetworkManager _netWork = new NetworkManager();
 
 
     public static DataManager Data { get { return Instance._data; } }
@@ -45,7 +45,7 @@ public class Managers : MonoBehaviour
     public static MusicManager Music { get { return Instance._music; } }
 
     public static UserManager User { get { return Instance._user; } }
-    //public static NetworkManager Network { get { return Instance._netWork; } }
+    public static NetworkManager Network { get { return Instance._netWork; } }
 
     // Start is called before the first frame update
     void Start()

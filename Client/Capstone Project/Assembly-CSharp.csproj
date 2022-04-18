@@ -98,6 +98,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_BlockSectionHeader_InputField.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfBothCheck.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BE2_CstColorDropdownItem.cs" />
+    <Compile Include="Assets\Scripts\PacketQueue.cs" />
     <Compile Include="Assets\Scripts\Stage\StageScene.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\BE2_BlockSectionBody.cs" />
     <Compile Include="Assets\Scripts\Stage\Coin.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Equal.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidSavedGameClient.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Player.cs" />
+    <Compile Include="Assets\Scripts\Managers\UserManager.cs" />
     <Compile Include="Assets\Scripts\Data\Data.Contents.cs" />
     <Compile Include="Assets\Scripts\Network\SendBuffer.cs" />
     <Compile Include="Assets\Scripts\ButtonSound\Button_1.cs" />
@@ -313,6 +315,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
+    <Compile Include="Assets\Scripts\Packet\PacketEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
