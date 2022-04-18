@@ -27,7 +27,7 @@ public class Managers : MonoBehaviour
     CodeBlockManager _block = new CodeBlockManager();
     MusicManager _music = new MusicManager();
     UserManager _user = new UserManager();
-    NetworkManager _netWork = new NetworkManager();
+    //NetworkManager _netWork = new NetworkManager();
 
     public static DataManager Data { get { return Instance._data; } }
     public static InputManager Input { get { return Instance._input; } }
@@ -42,7 +42,7 @@ public class Managers : MonoBehaviour
     public static CodeBlockManager CodeBlock { get { return Instance._block; } }
     public static MusicManager Music { get { return Instance._music; } }
     public static UserManager User { get { return Instance._user; } }
-    public static NetworkManager Network { get { return Instance._netWork; } }
+    //public static NetworkManager Network { get { return Instance._netWork; } }
     // Start is called before the first frame update
     void Start()
     { 
@@ -72,7 +72,7 @@ public class Managers : MonoBehaviour
             s_instance._pool.Init();
             s_instance._sound.Init();
             s_instance._music.Init();
-            s_instance._netWork.Init();
+            //s_instance._netWork.Init();
         }
     }
 
