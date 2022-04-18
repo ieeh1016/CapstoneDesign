@@ -36,7 +36,7 @@ public class BE2_Ins_Wait : BE2_InstructionBase, I_BE2_Instruction
         _counter = 0;
     }
 
-    public void Function()
+    public new void Function()
     {
         if (_firstPlay)
         {

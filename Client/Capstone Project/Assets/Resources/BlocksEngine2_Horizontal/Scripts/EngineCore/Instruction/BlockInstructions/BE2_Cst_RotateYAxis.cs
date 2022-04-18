@@ -26,7 +26,7 @@ public class BE2_Cst_RotateYAxis : BE2_InstructionBase, I_BE2_Instruction
     //    
     //}
 
-    public void Function()
+    public new void Function()
     {
         _input0 = Section0Inputs[0];
         TargetObject.Transform.Rotate(Vector3.up, _input0.FloatValue);

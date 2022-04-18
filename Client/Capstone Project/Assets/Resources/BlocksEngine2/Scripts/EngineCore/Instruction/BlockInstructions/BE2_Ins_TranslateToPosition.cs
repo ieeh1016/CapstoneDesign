@@ -28,7 +28,7 @@ public class BE2_Ins_TranslateToPosition : BE2_InstructionBase, I_BE2_Instructio
     //    
     //}
 
-    public void Function()
+    public new void Function()
     {
         _input0 = Section0Inputs[0];
         _input1 = Section0Inputs[1];

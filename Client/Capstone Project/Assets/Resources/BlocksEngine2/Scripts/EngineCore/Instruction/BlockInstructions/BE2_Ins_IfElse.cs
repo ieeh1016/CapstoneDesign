@@ -33,7 +33,7 @@ public class BE2_Ins_IfElse : BE2_InstructionBase, I_BE2_Instruction
         _isFirstPlay = true;
     }
 
-    public void Function()
+    public new void Function()
     {
         if (_isFirstPlay)
         {
