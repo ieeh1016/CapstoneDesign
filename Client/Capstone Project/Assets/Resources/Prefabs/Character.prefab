@@ -1149,6 +1149,7 @@ GameObject:
   - component: {fileID: 3142751959591984144}
   - component: {fileID: 5302292949838102454}
   - component: {fileID: 4530477519127570141}
+  - component: {fileID: 3761382209383143894}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -1305,6 +1306,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: fdfc6adeab4f96b4197e27b841e4cbb8, type: 3}
+--- !u!135 &3761382209383143894
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6091837964482033098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1182101
+  m_Center: {x: 0, y: 0.6182101, z: 0}
 --- !u!1 &6425155794340196200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,6 +1481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201129209498667969}
   - component: {fileID: 2979335348969113014}
+  - component: {fileID: 2271294276280779731}
   m_Layer: 0
   m_Name: Dragon_body
   m_TagString: Untagged
@@ -1572,6 +1587,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.06580117, y: 0.2362042, z: 0}
     m_Extent: {x: 1.0575076, y: 0.86896294, z: 0.58934766}
   m_DirtyAABB: 0
+--- !u!135 &2271294276280779731
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7947829478900735476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.1196389
+  m_Center: {x: 0, y: 0.6957766, z: -0.097785324}
 --- !u!1 &8044854761049521558
 GameObject:
   m_ObjectHideFlags: 0

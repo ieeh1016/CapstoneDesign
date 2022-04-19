@@ -182,7 +182,7 @@ public class MapManager : I_CheckClear
                     {
                         currentPositionInMap += direction;
                         targetObject.CurrentPositionInMap = currentPositionInMap;
-                        Managers.Coin.AcquireCoin(currentPositionInMap);
+                        
                     }
 
                 }

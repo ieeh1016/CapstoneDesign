@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -69,6 +70,21 @@ public class CoinManager : I_CheckClear
             coin.SetActive(false);
             CoinMap.Remove(mapPosition);
         }  
+    }
+
+    public void AcquireCoin(GameObject coinObject) // value ±â¹ÝÀ¸·Î ÄÚÀÎ È¹µæ
+    {
+        int mapPosition = -1;
+
+        foreach (int keyVar in CoinMap.Keys)
+            if (CoinMap[keyVar] == coinObject)
+                mapPosition = keyVar;
+
+        if (mapPosition != -1)
+        {
+            coinObject.SetActive(false);
+            CoinMap.Remove(mapPosition);
+        }
     }
 
     public void Clear()
