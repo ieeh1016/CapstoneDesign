@@ -91,7 +91,8 @@ public class MusicManager
 
     public void PlaySE(string SEName)
     {
-        buttonPlayer.PlayOneShot(Resources.Load<AudioClip>($"Interface and Item Sounds/Interface/Pops/{SEName}"));
+        buttonPlayer.clip = Resources.Load<AudioClip>($"Interface and Item Sounds/Interface/Pops/{SEName}");
+        buttonPlayer.Play();
     }
 
 }

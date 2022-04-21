@@ -57,6 +57,15 @@ public class MapManager : I_CheckClear
                     case 'S':
                         name = "StartBlock";
                         break;
+                    case 'U':
+                        name = "StartBlock(Right)";
+                        break;
+                    case 'D':
+                        name = "StartBlock(Down)";
+                        break;
+                    case 'L':
+                        name = "StartBlock(Left)";
+                        break;
                     case 'B':
                         name = "SeaBlock";
                         break;
@@ -109,12 +118,25 @@ public class MapManager : I_CheckClear
                     block.GetComponent<Block>().BlockType = line[colCount];
                     Map.Add(blockId, block);
 
-                    if (name.Equals("StartBlock"))
+                    if (name.Equals("StartBlock") || name.Equals("StartBlock(Right)") || name.Equals("StartBlock(Down)") || name.Equals("StartBlock(Left)"))
                     {
                         GameObject character = Managers.TargetObject.GetTargetObject("Character");
                         character.transform.position = block.transform.position + new Vector3(0, 0.9f, 0);
                         character.GetComponent<Character>().CurrentPositionInMap = blockId;
                         character.GetComponent<Character>().CurrentBlock = block;
+
+                        if (name.Equals("StartBlock(Right)"))
+                        {
+                            character.transform.forward = character.transform.right;
+                        }
+                        else if (name.Equals("StartBlock(Down)"))
+                        {
+                            character.transform.forward = -character.transform.forward;
+                        }
+                        else if (name.Equals("StartBlock(Left)"))
+                        {
+                            character.transform.forward = -character.transform.right;
+                        }
                     }
                     else if (name.Equals("SeaBlock"))
                     {
