@@ -9,35 +9,28 @@ using ServerCore;
 
 namespace Server
 {
-	class Program
-	{
-		static Listener _listener = new Listener();
-		public static GameRoom Room = new GameRoom();
 
-		static void FlushRoom()
-		{
-			Room.Push(() => Room.Flush());
-			JobTimer.Instance.Push(FlushRoom, 250);
-		}
 
-		static void Main(string[] args)
-		{
-			// DNS (Domain Name System)
-			string host = Dns.GetHostName();
-			IPHostEntry ipHost = Dns.GetHostEntry(host);
-			IPAddress ipAddr = ipHost.AddressList[0];
-			IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
+    class Program
+    {
+        static Listener _listener = new Listener();
 
-			_listener.Init(endPoint, () => { return SessionManager.Instance.Generate(); });
-			Console.WriteLine("Listening...");
+        static void Main(string[] args)
+        {
 
-			//FlushRoom();
-			JobTimer.Instance.Push(FlushRoom);
+            // DNS (Domain Name System)
+            string host = Dns.GetHostName();
+            IPHostEntry ipHost = Dns.GetHostEntry(host);
+            IPAddress ipAddr = ipHost.AddressList[0];
+            IPEndPoint endPoint = new IPEndPoint(ipAddr, 3306);
 
-			while (true)
-			{
-				JobTimer.Instance.Flush();
-			}
-		}
-	}
+            _listener.Init(endPoint, () => { return new ClientSession(); });
+            Console.WriteLine("Listening...");
+
+            while (true)
+            {
+                ;
+            }
+        }
+    }
 }
