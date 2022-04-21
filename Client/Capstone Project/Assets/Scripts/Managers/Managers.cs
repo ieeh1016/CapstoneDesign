@@ -86,10 +86,11 @@ public class Managers : MonoBehaviour
     {
         Input.Clear();
         Sound.Clear();
-        Scene.Clear();
+        //Scene.Clear();
         UI.Clear();
         Pool.Clear();
         Map.Clear();
         Coin.Clear();
+        TargetObject.Clear();
     }
 }

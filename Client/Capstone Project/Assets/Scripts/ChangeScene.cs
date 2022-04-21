@@ -31,7 +31,9 @@ public class ChangeScene : MonoBehaviour
     }
     public void MoveToMain()
     {
+        Managers.Clear();
         SceneManager.LoadScene("MainPage");
+
     }
     public void MoveToBasic1()
     {
@@ -41,6 +43,11 @@ public class ChangeScene : MonoBehaviour
     public void MoveToTest()
     {
         LoadingSceneController.LoadScene("aaaa");
+    }
+
+    public void MoveToFirstStudy()
+    {
+        SceneManager.LoadScene("FirstStudyStage");
     }
 
 
