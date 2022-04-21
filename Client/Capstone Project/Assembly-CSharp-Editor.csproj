@@ -47,6 +47,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+
      <Compile Include="Assets\GooglePlayGames\Editor\GPGSUtil.cs" />
      <Compile Include="Assets\GooglePlayGames\Editor\GPGSProjectSettings.cs" />
      <Compile Include="Assets\GooglePlayGames\Editor\GPGSAndroidSetupUI.cs" />
@@ -750,6 +751,7 @@
  <Reference Include="Unity.Notifications.iOS">
  <HintPath>C:/Users/송준혁/Documents/GitHub/CapstoneDesign_2/CapstoneDesign/Client/Capstone Project/Library/ScriptAssemblies/Unity.Notifications.iOS.dll</HintPath>
  </Reference>
+
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
