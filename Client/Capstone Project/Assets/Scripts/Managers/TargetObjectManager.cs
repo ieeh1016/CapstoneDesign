@@ -6,7 +6,7 @@ public class TargetObjectManager
 {
     // Start is called before the first frame update
     GameObject _targetObject = null;
-    Vector3 _currentMapPosition = new Vector3();
+    Vector3 _currentMapPosition; // = new Vector3();
     Dictionary<string, GameObject> _targetDict = new Dictionary<string, GameObject>();
 
     public GameObject GetTargetObject(string objectName)
@@ -43,5 +43,12 @@ public class TargetObjectManager
     public BE2_TargetObject GetTargetObjectComponent()
     {
         return _targetObject.GetComponent<BE2_TargetObject>();
+    }
+
+    public void Clear()
+    {
+        _targetObject = null;
+        _targetDict.Remove("Character");
+
     }
 }
