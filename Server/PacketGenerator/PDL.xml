@@ -1,21 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <PDL>
-	<packet name="S_ChallengeTotalStars">
-		<byte name="TotalStars"/>
+	<packet name="C_Request_Name_input">
+		<String name="name"/>
+		<String name="Uid"/>
 	</packet>
-	<packet name="S_ChallengeCheckMyRanking">
-		<int name="ranking"/>
+	<packet name="S_Reply_Name_input">
+		<byte name ="reply"/>
 	</packet>
-	<packet name="S_GetStudyMaxStage">
-		<byte name="maxStage"/>
+	<packet name="C_Request_Load_Star">
+		<String name ="UId"/>
 	</packet>
-	<packet name="S_LoadChallengeStar">
+	<packet name="S_Challenge_Load_Star">
 		<list name="StageStar">
 			<byte name="stageId"/>
 			<byte name="numberOfStars"/>
 		</list>
 	</packet>
-	<packet name="S_ChallengeTop30">
+	<packet name="C_Request_Challenge_MyPage">
+		<byte name ="reply"/>
+	</packet>
+	<packet name="S_Challenge_MyPage">
+		<string name="UId"/>
+	</packet>
+	<packet name="C_Request_Challenge_Top30Rank">
+	</packet>
+	<packet name="S_Challenge_Top30Rank">
 		<list name="Rank">
 			<string name="UId"/>
 			<byte name="ranking"/>
@@ -27,24 +36,4 @@
 		<byte name="stageId"/>
 		<byte name="numberOfStars"/>
 	</packet>
-	<packet name="C_RequestMyChallengeProgress">
-		<string name="UId"/>
-	</packet>
-	<packet name="C_RequestMyChallengeRanking">
-		<string name="UId"/>
-	</packet>
-	<packet name="C_OpenNextStudyStage">
-		<string name="UId"/>
-		<byte name="stageId"/>
-	</packet>
-	<packet name="C_RequestTotalStars">
-		<string name="UId"/>
-	</packet>
-	<packet name="C_RequestStudyProgress">
-		<string name="UId"/>
-	</packet>
-	<packet name="C_RequestChallengeTop30">
-		<string name="UId"/>
-	</packet>
-	
 </PDL>
