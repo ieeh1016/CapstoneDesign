@@ -94,17 +94,21 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
 
         if (dir.magnitude < 0.001f)
         {
-            _state = CharacterState.Idle;
-            startAnimation(_state);
 
-            if(TargetQueue.Count > 0)
+            if (TargetQueue.Count > 0)
                 _target = TargetQueue.Dequeue();
+
+            else
+            {
+                _state = CharacterState.Idle;
+                startAnimation(_state);
+            }
         }
         else
         {
             _state = CharacterState.Moving;
             startAnimation(_state);
-            this.gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, _target, 0.1f);
+            this.gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, _target, _speed * Time.deltaTime);
             this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
         }
 
@@ -112,7 +116,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
     }
 
     [SerializeField]
-    float _speed = 10.0f;
+    float _speed = 10f;
     float _counter = 1.0f;
 
 
