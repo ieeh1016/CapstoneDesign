@@ -5397,7 +5397,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 415374180733474506, guid: 1370685827829de40b673379982016d1, type: 3}
+  m_Sprite: {fileID: -3660999260942943879, guid: 96ad729f09808bc41b94693a3e7da940,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6512,7 +6513,8 @@ MonoBehaviour:
   selectionPanelsList:
   - {fileID: 4313568910280238497}
   - {fileID: 2936219887812807865}
-  - {fileID: 0}
+  - {fileID: 8642107894891214246}
+  - {fileID: 5716965353590454408}
   - {fileID: 4313568909235740835}
   blockToAddTransform: {fileID: 0}
   panelIndex: 8
@@ -11578,8 +11580,44 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4313568910298028942}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
+        m_TargetAssemblyTypeName: BE2_ExecutionManager, Assembly-CSharp
+        m_MethodName: PlayAfterDelay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3132530124345353486}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: ChangeToQuarterView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8395396671562845622}
+        m_TargetAssemblyTypeName: ComponentToggle, Assembly-CSharp
+        m_MethodName: setInactive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1185724757197795625}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14241,6 +14279,7 @@ GameObject:
   - component: {fileID: 4313568910307687028}
   - component: {fileID: 4313568910307687027}
   - component: {fileID: 4313568910307687026}
+  - component: {fileID: 1185724757197795625}
   m_Layer: 5
   m_Name: Canvas Control Buttons
   m_TagString: Untagged
@@ -14331,6 +14370,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1185724757197795625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4313568910307687024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4313568910309131313
 GameObject:
   m_ObjectHideFlags: 0
@@ -14478,6 +14529,7 @@ Transform:
   - {fileID: 4313568908939001888}
   - {fileID: 4313568910672930477}
   - {fileID: 8441110817924214606}
+  - {fileID: 8516591875941574518}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15717,6 +15769,7 @@ GameObject:
   - component: {fileID: 4313568910564614601}
   - component: {fileID: 4313568910564614600}
   - component: {fileID: 4313568910564614599}
+  - component: {fileID: 8395396671562845622}
   m_Layer: 5
   m_Name: Canvas Blocks Selection
   m_TagString: Untagged
@@ -15805,6 +15858,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8395396671562845622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4313568910564614597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a5a2125fca7f54fa3becb0b918db90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4313568910566856857
 GameObject:
   m_ObjectHideFlags: 0
@@ -24119,5 +24184,102 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 60e36eef06ca6814cbad5f10b11d1c0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &506737536415110403
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4313568910336368629}
+    m_Modifications:
+    - target: {fileID: 3202253501299273741, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: _delta.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202253501299273741, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: _delta.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895242, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_Name
+      value: QuaterView Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 541a5aca6384b1148a638d85ea8c52bf, type: 3}
+--- !u!4 &8516591875941574518 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 506737536415110403}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3132530124345353486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3202253501299273741, guid: 541a5aca6384b1148a638d85ea8c52bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 506737536415110403}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9df5f6e431d8134199affbd2d41a97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
