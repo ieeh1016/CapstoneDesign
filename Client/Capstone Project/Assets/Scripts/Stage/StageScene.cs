@@ -36,6 +36,7 @@ public class StageScene : BaseScene
                 Debug.Log("Wrong engine name");
                 Managers.Scene.LoadScene(Define.Scene.Lobby);
             }
+
         }
     }
     public override void Clear()
