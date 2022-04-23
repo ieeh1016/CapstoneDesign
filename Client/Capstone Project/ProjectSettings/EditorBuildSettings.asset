@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainPage.unity
     guid: 189e68af955337d4d948a376d5d7a7bb
+  - enabled: 0
+    path: Assets/Scenes/aaaa.unity
+    guid: f4165faf6a5c6e54b882ea8438403b23
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FirstStudyStage.unity
     guid: 7703176ec044e6f40adc5512b258e2ad
   - enabled: 1

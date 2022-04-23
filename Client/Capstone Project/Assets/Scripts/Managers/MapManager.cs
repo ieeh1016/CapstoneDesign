@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -36,9 +37,17 @@ public class MapManager : I_CheckClear
 
         int rowCount = 0;
         int blockId = 0;
-        foreach (string line in System.IO.File.ReadLines(Application.dataPath + $"/Resources/MapGeneratingFiles/{sceneName}.txt"))
+
+        TextAsset asset = Resources.Load<TextAsset>($"MapGeneratingFiles/{sceneName}");
+        string str = asset.text;
+        string[] splitLines = str.Split('\n');
+        int lines = splitLines.Length;
+
+        //StringReader stringReader = new StringReader(asset.text);
+
+        for (int i = 0; i < lines; i++ /*File.ReadLines(Application.dataPath + $"/Resources/MapGeneratingFiles/{sceneName}.txt")*/)
         {
-            if (line.Length > (int)Define.Map.MapWidth) // 가로로 놓을 수 있는 블록의 최대 개수 20
+            if (splitLines[i].Length > (int)Define.Map.MapWidth) // 가로로 놓을 수 있는 블록의 최대 개수 20
             {
                 Debug.Log("Too many Blocks on a row");
                 return false;
@@ -46,13 +55,13 @@ public class MapManager : I_CheckClear
 
             float currentBlockZStartPosition = -(float)Define.Setting.BlockStartPosition - (int)Define.Setting.BlockWidth * rowCount;
 
-            for (int colCount = 0; colCount < line.Length; colCount++)
+            for (int colCount = 0; colCount < splitLines[i].Length; colCount++)
             {
                 string name = null;
                 GameObject block = null;
                 
 
-                switch (line[colCount])
+                switch (splitLines[i][colCount])
                 {
                     case 'S':
                         name = "StartBlock";
@@ -115,7 +124,7 @@ public class MapManager : I_CheckClear
                     block.transform.localPosition = new Vector3((float)Define.Setting.BlockStartPosition + (int)Define.Setting.BlockWidth * colCount, _blockStartHeight, currentBlockZStartPosition);
                     block.AddComponent<Block>();
                     block.GetComponent<Block>().BlockId = blockId;
-                    block.GetComponent<Block>().BlockType = line[colCount];
+                    block.GetComponent<Block>().BlockType = splitLines[i][colCount];
                     Map.Add(blockId, block);
 
                     if (name.Equals("StartBlock") || name.Equals("StartBlock(Right)") || name.Equals("StartBlock(Down)") || name.Equals("StartBlock(Left)"))

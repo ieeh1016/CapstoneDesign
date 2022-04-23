@@ -41,7 +41,8 @@ public class StageScene : BaseScene
             if (be2ProgEnv == null)
             {
                 Debug.Log("Wrong engine name");
-                Managers.Scene.LoadScene(Define.Scene.Lobby);
+                SceneManager.LoadScene("MainPage");
+                StageManager.ToMain = true;
             }
 
             else
