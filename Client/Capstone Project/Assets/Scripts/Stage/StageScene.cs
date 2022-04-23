@@ -5,13 +5,16 @@ using UnityEngine;
 public class StageScene : BaseScene
 {
     GameObject be2ProgEnv = null;
-    public bool IncludeFuntionBlock = false;
+
+    [SerializeField]
+    private bool IncludeFuntionBlock = false;
     protected override void Init()
     {
         base.Init();
         SceneType = Define.Scene.Game;
         bool success = Managers.Map.GenerateMap();
         success = Managers.Coin.GenerateCoin();
+
 
         if (!success) // 맵, 코인 둘 중 하나라도 생성 실패 시
             Managers.Scene.LoadScene(Define.Scene.Lobby);
@@ -36,7 +39,17 @@ public class StageScene : BaseScene
                 Debug.Log("Wrong engine name");
                 Managers.Scene.LoadScene(Define.Scene.Lobby);
             }
+            else
+            {
+                Transform quarterViewCamera = be2ProgEnv.transform.Find("QuaterView Camera");
+                if (quarterViewCamera != null)
+                    quarterViewCamera.GetComponent<CameraController>().Player = character;
+            }
+                
+            
         }
+
+
     }
     public override void Clear()
     {

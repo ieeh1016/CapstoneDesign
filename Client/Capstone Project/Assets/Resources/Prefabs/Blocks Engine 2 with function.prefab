@@ -733,7 +733,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 415374180733474506, guid: 1370685827829de40b673379982016d1, type: 3}
+  m_Sprite: {fileID: -3660999260942943879, guid: 96ad729f09808bc41b94693a3e7da940,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5311,7 +5312,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4313568910298028942}
         m_TargetAssemblyTypeName: BE2_ExecutionManager, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: PlayAfterDelay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5324,6 +5325,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7211997263221217389}
         m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
         m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 734128425052277891}
+        m_TargetAssemblyTypeName: CameraController, Assembly-CSharp
+        m_MethodName: ChangeToQuarterView
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28229,6 +28242,7 @@ Transform:
   - {fileID: 7688997297748319301}
   - {fileID: 2926468089891674101}
   - {fileID: 6419902752541186398}
+  - {fileID: 6303312508768423675}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45489,6 +45503,103 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1001 &2756367342017690766
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4313568910336368629}
+    m_Modifications:
+    - target: {fileID: 3202253501299273741, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: _delta.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202253501299273741, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: _delta.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895242, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_Name
+      value: QuaterView Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 541a5aca6384b1148a638d85ea8c52bf, type: 3}
+--- !u!4 &6303312508768423675 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8158631549245895285, guid: 541a5aca6384b1148a638d85ea8c52bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2756367342017690766}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &734128425052277891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3202253501299273741, guid: 541a5aca6384b1148a638d85ea8c52bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2756367342017690766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9df5f6e431d8134199affbd2d41a97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3135141888451279497
 PrefabInstance:
   m_ObjectHideFlags: 0

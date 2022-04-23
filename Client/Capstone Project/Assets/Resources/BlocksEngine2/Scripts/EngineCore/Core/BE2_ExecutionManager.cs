@@ -45,6 +45,11 @@ public class BE2_ExecutionManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
     }
 
+    public void PlayAfterDelay()
+    {
+        Invoke("Play", 0.2f);
+    }
+
     public void Stop()
     {
         BE2_MainEventsManager.Instance.TriggerEvent(BE2EventTypes.OnStop);

@@ -32,7 +32,9 @@ public class Define
     }
     public enum CameraMode
     {
-        QuarterView      
+        QuarterView,
+        OverView,
+        
     }
 
     public enum Map
