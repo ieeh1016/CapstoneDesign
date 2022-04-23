@@ -20,18 +20,24 @@ public class CoinManager : I_CheckClear
         string sceneName = SceneManager.GetActiveScene().name;
 
         int coinId = 0;
-        foreach (string line in System.IO.File.ReadLines(Application.dataPath + $"/Resources/MapGeneratingFiles/{sceneName}Coin.txt"))
+
+        TextAsset asset = Resources.Load<TextAsset>($"MapGeneratingFiles/{sceneName}Coin");
+        string str = asset.text;
+        string[] splitLines = str.Split('\n');
+        int lines = splitLines.Length;
+
+        for (int i = 0; i < lines; i++/*string line in System.IO.File.ReadLines(Application.dataPath + $"/Resources/MapGeneratingFiles/{sceneName}Coin.txt")*/)
         {
-            if (line.Length > (int)Define.Map.MapWidth) // 가로로 놓을 수 있는 블록의 최대 개수 20
+            if (splitLines[i].Length > (int)Define.Map.MapWidth) // 가로로 놓을 수 있는 블록의 최대 개수 20
             {
                 Debug.Log("Too many char on a row");
                 return false;
             }
 
-            for (int colCount = 0; colCount < line.Length; colCount++)
+            for (int colCount = 0; colCount < splitLines[i].Length; colCount++)
             {
                 GameObject coin = null;
-                if (line[colCount].Equals('1'))
+                if (splitLines[i][colCount].Equals('1'))
                 {
                     coin = Managers.Resource.Instantiate($"Coin", GameObject.Find("Island").transform);
                     GameObject parentBlock = null;
@@ -51,7 +57,7 @@ public class CoinManager : I_CheckClear
                     coin.GetComponent<Coin>().CoinId = coinId;
                 }
 
-                else if (!line[colCount].Equals('0'))
+                else if (!splitLines[i][colCount].Equals('0'))
                 {
                     Debug.Log("Wrong character in coin map");
                     return false;
