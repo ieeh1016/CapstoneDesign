@@ -19,24 +19,14 @@ public class PacketManager
 		
 	public void Register()
 	{
-		_makeFunc.Add((ushort)PacketID.S_BroadcastEnterGame, MakePacket<S_BroadcastEnterGame>);
-		_handler.Add((ushort)PacketID.S_BroadcastEnterGame, PacketHandler.S_BroadcastEnterGameHandler);
-		_makeFunc.Add((ushort)PacketID.S_BroadcastLeaveGame, MakePacket<S_BroadcastLeaveGame>);
-		_handler.Add((ushort)PacketID.S_BroadcastLeaveGame, PacketHandler.S_BroadcastLeaveGameHandler);
-		_makeFunc.Add((ushort)PacketID.S_PlayerList, MakePacket<S_PlayerList>);
-		_handler.Add((ushort)PacketID.S_PlayerList, PacketHandler.S_PlayerListHandler);
-		_makeFunc.Add((ushort)PacketID.S_BroadcastMove, MakePacket<S_BroadcastMove>);
-		_handler.Add((ushort)PacketID.S_BroadcastMove, PacketHandler.S_BroadcastMoveHandler);
-		_makeFunc.Add((ushort)PacketID.S_ChallengeTotalStars, MakePacket<S_ChallengeTotalStars>);
-		_handler.Add((ushort)PacketID.S_ChallengeTotalStars, PacketHandler.S_ChallengeTotalStarsHandler);
-		_makeFunc.Add((ushort)PacketID.S_ChallengeCheckMyRanking, MakePacket<S_ChallengeCheckMyRanking>);
-		_handler.Add((ushort)PacketID.S_ChallengeCheckMyRanking, PacketHandler.S_ChallengeCheckMyRankingHandler);
-		_makeFunc.Add((ushort)PacketID.S_GetStudyMaxStage, MakePacket<S_GetStudyMaxStage>);
-		_handler.Add((ushort)PacketID.S_GetStudyMaxStage, PacketHandler.S_GetStudyMaxStageHandler);
-		_makeFunc.Add((ushort)PacketID.S_LoadChallengeStar, MakePacket<S_LoadChallengeStar>);
-		_handler.Add((ushort)PacketID.S_LoadChallengeStar, PacketHandler.S_LoadChallengeStarHandler);
-		_makeFunc.Add((ushort)PacketID.S_ChallengeTop30, MakePacket<S_ChallengeTop30>);
-		_handler.Add((ushort)PacketID.S_ChallengeTop30, PacketHandler.S_ChallengeTop30Handler);
+		_makeFunc.Add((ushort)PacketID.S_Reply_Name_input, MakePacket<S_Reply_Name_input>);
+		_handler.Add((ushort)PacketID.S_Reply_Name_input, PacketHandler.S_Reply_Name_inputHandler);
+		_makeFunc.Add((ushort)PacketID.S_Challenge_Load_Star, MakePacket<S_Challenge_Load_Star>);
+		_handler.Add((ushort)PacketID.S_Challenge_Load_Star, PacketHandler.S_Challenge_Load_StarHandler);
+		_makeFunc.Add((ushort)PacketID.S_Challenge_MyPage, MakePacket<S_Challenge_MyPage>);
+		_handler.Add((ushort)PacketID.S_Challenge_MyPage, PacketHandler.S_Challenge_MyPageHandler);
+		_makeFunc.Add((ushort)PacketID.S_Challenge_Top30Rank, MakePacket<S_Challenge_Top30Rank>);
+		_handler.Add((ushort)PacketID.S_Challenge_Top30Rank, PacketHandler.S_Challenge_Top30RankHandler);
 
 	}
 

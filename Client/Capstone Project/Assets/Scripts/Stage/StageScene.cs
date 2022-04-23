@@ -16,7 +16,7 @@ public class StageScene : BaseScene
         success = Managers.Coin.GenerateCoin();
 
 
-        if (!success) // ¸Ê, ÄÚÀÎ µÑ Áß ÇÏ³ª¶óµµ »ı¼º ½ÇÆĞ ½Ã
+        if (!success) // ë§µ, ì½”ì¸ ë‘˜ ì¤‘ í•˜ë‚˜ë¼ë„ ìƒì„± ì‹¤íŒ¨ ì‹œ
             Managers.Scene.LoadScene(Define.Scene.Lobby);
         else
         {
@@ -39,6 +39,7 @@ public class StageScene : BaseScene
                 Debug.Log("Wrong engine name");
                 Managers.Scene.LoadScene(Define.Scene.Lobby);
             }
+
             else
             {
                 Transform quarterViewCamera = be2ProgEnv.transform.Find("QuaterView Camera");
@@ -46,7 +47,7 @@ public class StageScene : BaseScene
                     quarterViewCamera.GetComponent<CameraController>().Player = character;
             }
                 
-            
+
         }
 
 
