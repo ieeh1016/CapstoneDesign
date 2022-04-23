@@ -26,6 +26,9 @@ public class CoinManager : I_CheckClear
         string[] splitLines = str.Split('\n');
         int lines = splitLines.Length;
 
+        for (int i = 0; i < lines; i++)
+            splitLines[i] = splitLines[i].Trim('\r');
+
         for (int i = 0; i < lines; i++/*string line in System.IO.File.ReadLines(Application.dataPath + $"/Resources/MapGeneratingFiles/{sceneName}Coin.txt")*/)
         {
             if (splitLines[i].Length > (int)Define.Map.MapWidth) // 가로로 놓을 수 있는 블록의 최대 개수 20

@@ -43,6 +43,9 @@ public class MapManager : I_CheckClear
         string[] splitLines = str.Split('\n');
         int lines = splitLines.Length;
 
+        for (int i = 0; i < lines; i++)
+            splitLines[i] = splitLines[i].Trim('\r');
+
         //StringReader stringReader = new StringReader(asset.text);
 
         for (int i = 0; i < lines; i++ /*File.ReadLines(Application.dataPath + $"/Resources/MapGeneratingFiles/{sceneName}.txt")*/)
