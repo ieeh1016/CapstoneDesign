@@ -66,13 +66,21 @@ public class UIManager
         return sceneUI;
     }
 
+    public void ShowPopupUI(string name = null)
+    {
+        if (string.IsNullOrEmpty(name))
+            return;
+
+        
+    }
+
     public T ShowPopupUI<T>(string name = null) where T : UI_Popup
     {
         if (string.IsNullOrEmpty(name))
             name = typeof(T).Name;
 
 
-        GameObject go = Managers.Resource.Instantiate($"UI/Popup/{name}");
+        GameObject go = Managers.Resource.Instantiate($"Prefabs/{name}");
         T popup = Util.GetOrAddComponent<T>(go);
         _popupStack.Push(popup);
 

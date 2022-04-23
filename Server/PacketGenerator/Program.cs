@@ -118,6 +118,7 @@ namespace PacketGenerator
 					case "short":
 					case "ushort":
 					case "int":
+					case "uint":
 					case "long":
 					case "float":
 					case "double":

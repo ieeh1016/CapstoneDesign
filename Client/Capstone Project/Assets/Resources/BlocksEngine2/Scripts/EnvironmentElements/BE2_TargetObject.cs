@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
 {
-    enum Direction
+    public enum Direction
     {
         up = 0,
         right = 1,
@@ -44,7 +44,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
     }
 
 
-    int currentDirection = (int)Direction.up;
+    public int currentDirection = (int)Direction.up;
 
     public Transform Transform => transform;
     public I_BE2_ProgrammingEnv ProgrammingEnv { get; set; }
