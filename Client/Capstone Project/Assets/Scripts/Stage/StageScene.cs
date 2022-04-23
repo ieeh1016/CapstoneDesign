@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageScene : BaseScene
 {
@@ -17,7 +18,10 @@ public class StageScene : BaseScene
 
 
         if (!success) // 맵, 코인 둘 중 하나라도 생성 실패 시
-            Managers.Scene.LoadScene(Define.Scene.Lobby);
+        {
+            SceneManager.LoadScene("MainPage");
+            StageManager.ToMain = true;
+        }
         else
         {
             GameObject character = Managers.TargetObject.GetTargetObject("Character");
