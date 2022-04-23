@@ -20,25 +20,25 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
         {
             if (!IsActive && value)
             {
-                int instructionsCount = InstructionsArray.Length;
-                for (int i = 0; i < instructionsCount; i++)
-                {
-                    InstructionsArray[i].InstructionBase.OnStackActive();
-                }
+                //int instructionsCount = InstructionsArray.Length;
+                //for (int i = 0; i < instructionsCount; i++)
+                //{
+                //    InstructionsArray[i].InstructionBase.OnStackActive();
+                //}
 
-                // activate all shadows
-                foreach (I_BE2_Instruction instruction in InstructionsArray)
-                {
-                    instruction.InstructionBase.Block.SetShadowActive(true);
-                }
+                //// activate all shadows
+                //foreach (I_BE2_Instruction instruction in InstructionsArray)
+                //{
+                //    instruction.InstructionBase.Block.SetShadowActive(true);
+                //}
             }
             else if (IsActive && !value)
             {
-                // deactivate all shadows
-                foreach (I_BE2_Instruction instruction in InstructionsArray)
-                {
-                    instruction.InstructionBase.Block.SetShadowActive(false);
-                }
+                //// deactivate all shadows
+                //foreach (I_BE2_Instruction instruction in InstructionsArray)
+                //{
+                //    instruction.InstructionBase.Block.SetShadowActive(false);
+                //}
             }
 
             _isActive = value;
