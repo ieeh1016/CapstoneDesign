@@ -7,7 +7,8 @@ using System;
 public class UserManager
 {
     string UId;
-    ushort studyProgress;
+    string name;
+    ushort challengeProgress;
     ushort totalStars;
     int ranking;
     Dictionary<ushort, ushort> _challengeStageInfo = new Dictionary<ushort, ushort>();
@@ -19,10 +20,16 @@ public class UserManager
         set { UId = value; }
     }
 
-    public ushort StudyProgress
+    public string Name
     {
-        get { return studyProgress; }
-        set { studyProgress = value; }
+        get { return name; }
+        set { name = value; }
+    }
+
+    public ushort ChallengeProgress
+    {
+        get { return challengeProgress; }
+        set { challengeProgress = value; }
     }
 
     public ushort TotalStars
@@ -43,17 +50,17 @@ public class UserManager
     }
 
 
-    public void SetChallengeInfoByPacket(S_LoadChallengeStar packet)
+    public void SetChallengeInfoByPacket(S_Challenge_Load_Star packet)
     {
-        foreach (S_LoadChallengeStar.StageStar s in packet.stageStars)
+        foreach (S_Challenge_Load_Star.StageStar s in packet.stageStars)
         {
             _challengeStageInfo.Add(s.stageId, s.numberOfStars);
         }
     }
 
-    public void SetChallengeTop30(S_ChallengeTop30 packet)
+    public void SetChallengeTop30(S_Challenge_Top30Rank packet)
     {
-        foreach (S_ChallengeTop30.Rank s in packet.ranks)
+        foreach (S_Challenge_Top30Rank.Rank s in packet.ranks)
         {
             _challengeTop30.Add(s.UId, s.ranking);
         }

@@ -26,16 +26,15 @@ public class PacketEvent : MonoBehaviour
 
     public void SendRequestChallengeTop30()
     {
-        C_RequestChallengeTop30 packet = new C_RequestChallengeTop30();
+        C_Request_Challenge_Top30Rank packet = new C_Request_Challenge_Top30Rank();
 
-        packet.UId = Managers.User.UID;
 
         Managers.Network.Send(packet.Write());
     }
 
-    public void SendRequestMyChallengeRanking()
+    public void SendRequestMyPage()
     {
-        C_RequestMyChallengeRanking packet = new C_RequestMyChallengeRanking();
+        C_Request_Challenge_MyPage packet = new C_Request_Challenge_MyPage();
 
         packet.UId = Managers.User.UID;
 

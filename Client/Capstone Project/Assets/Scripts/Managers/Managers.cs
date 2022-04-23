@@ -20,6 +20,7 @@ public class Managers : MonoBehaviour
     ResourceManager _resource = new ResourceManager();
     SceneManagerEx _scene = new SceneManagerEx();
     SoundManager _sound = new SoundManager();
+    StageManager _stage = new StageManager();
     UIManager _ui = new UIManager();
     MapManager _map = new MapManager();
     TargetObjectManager _targetObject = new TargetObjectManager();
@@ -37,6 +38,7 @@ public class Managers : MonoBehaviour
     public static ResourceManager Resource { get { return Instance._resource; } }
     public static SceneManagerEx Scene { get { return Instance._scene; } }
     public static SoundManager Sound { get { return Instance._sound; } }
+    public static StageManager Stage { get { return Instance._stage; } }
     public static UIManager UI { get { return Instance._ui; } }
     public static MapManager Map { get { return Instance._map; } }
     public static TargetObjectManager TargetObject { get { return Instance._targetObject; } }

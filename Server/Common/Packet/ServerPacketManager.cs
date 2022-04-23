@@ -19,24 +19,16 @@ public class PacketManager
 		
 	public void Register()
 	{
-		_makeFunc.Add((ushort)PacketID.C_LeaveGame, MakePacket<C_LeaveGame>);
-		_handler.Add((ushort)PacketID.C_LeaveGame, PacketHandler.C_LeaveGameHandler);
-		_makeFunc.Add((ushort)PacketID.C_Move, MakePacket<C_Move>);
-		_handler.Add((ushort)PacketID.C_Move, PacketHandler.C_MoveHandler);
+		_makeFunc.Add((ushort)PacketID.C_Request_Name_input, MakePacket<C_Request_Name_input>);
+		_handler.Add((ushort)PacketID.C_Request_Name_input, PacketHandler.C_Request_Name_inputHandler);
+		_makeFunc.Add((ushort)PacketID.C_Request_Load_Star, MakePacket<C_Request_Load_Star>);
+		_handler.Add((ushort)PacketID.C_Request_Load_Star, PacketHandler.C_Request_Load_StarHandler);
+		_makeFunc.Add((ushort)PacketID.C_Request_Challenge_MyPage, MakePacket<C_Request_Challenge_MyPage>);
+		_handler.Add((ushort)PacketID.C_Request_Challenge_MyPage, PacketHandler.C_Request_Challenge_MyPageHandler);
+		_makeFunc.Add((ushort)PacketID.C_Request_Challenge_Top30Rank, MakePacket<C_Request_Challenge_Top30Rank>);
+		_handler.Add((ushort)PacketID.C_Request_Challenge_Top30Rank, PacketHandler.C_Request_Challenge_Top30RankHandler);
 		_makeFunc.Add((ushort)PacketID.C_ChallengeUpdateStars, MakePacket<C_ChallengeUpdateStars>);
 		_handler.Add((ushort)PacketID.C_ChallengeUpdateStars, PacketHandler.C_ChallengeUpdateStarsHandler);
-		_makeFunc.Add((ushort)PacketID.C_RequestMyChallengeProgress, MakePacket<C_RequestMyChallengeProgress>);
-		_handler.Add((ushort)PacketID.C_RequestMyChallengeProgress, PacketHandler.C_RequestMyChallengeProgressHandler);
-		_makeFunc.Add((ushort)PacketID.C_RequestMyChallengeRanking, MakePacket<C_RequestMyChallengeRanking>);
-		_handler.Add((ushort)PacketID.C_RequestMyChallengeRanking, PacketHandler.C_RequestMyChallengeRankingHandler);
-		_makeFunc.Add((ushort)PacketID.C_OpenNextStudyStage, MakePacket<C_OpenNextStudyStage>);
-		_handler.Add((ushort)PacketID.C_OpenNextStudyStage, PacketHandler.C_OpenNextStudyStageHandler);
-		_makeFunc.Add((ushort)PacketID.C_RequestTotalStars, MakePacket<C_RequestTotalStars>);
-		_handler.Add((ushort)PacketID.C_RequestTotalStars, PacketHandler.C_RequestTotalStarsHandler);
-		_makeFunc.Add((ushort)PacketID.C_RequestStudyProgress, MakePacket<C_RequestStudyProgress>);
-		_handler.Add((ushort)PacketID.C_RequestStudyProgress, PacketHandler.C_RequestStudyProgressHandler);
-		_makeFunc.Add((ushort)PacketID.C_RequestChallengeTop30, MakePacket<C_RequestChallengeTop30>);
-		_handler.Add((ushort)PacketID.C_RequestChallengeTop30, PacketHandler.C_RequestChallengeTop30Handler);
 
 	}
 

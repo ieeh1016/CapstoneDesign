@@ -17,17 +17,19 @@
 		</list>
 	</packet>
 	<packet name="C_Request_Challenge_MyPage">
-		<byte name ="reply"/>
+		<string name="UId"/>
 	</packet>
 	<packet name="S_Challenge_MyPage">
-		<string name="UId"/>
+		<string name="name"/>
+		<int name="ranking"/>
+		<byte name="TotalStars"/>
 	</packet>
 	<packet name="C_Request_Challenge_Top30Rank">
 	</packet>
 	<packet name="S_Challenge_Top30Rank">
 		<list name="Rank">
 			<string name="UId"/>
-			<byte name="ranking"/>
+			<int name="ranking"/>
 			<byte name="totalStars"/>
 		</list>
 	</packet>

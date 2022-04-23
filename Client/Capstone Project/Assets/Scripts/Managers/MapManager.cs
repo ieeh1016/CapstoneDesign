@@ -128,14 +128,17 @@ public class MapManager : I_CheckClear
                         if (name.Equals("StartBlock(Right)"))
                         {
                             character.transform.forward = character.transform.right;
+                            character.GetComponent<Character>().currentDirection = (int)Character.Direction.right;
                         }
                         else if (name.Equals("StartBlock(Down)"))
                         {
                             character.transform.forward = -character.transform.forward;
+                            character.GetComponent<Character>().currentDirection = (int)Character.Direction.down;
                         }
                         else if (name.Equals("StartBlock(Left)"))
                         {
                             character.transform.forward = -character.transform.right;
+                            character.GetComponent<Character>().currentDirection = (int)Character.Direction.left;
                         }
                     }
                     else if (name.Equals("SeaBlock"))
