@@ -5346,6 +5346,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3112891663339348184}
+        m_TargetAssemblyTypeName: ComponentToggle, Assembly-CSharp
+        m_MethodName: setInactive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3973215998072990635
 GameObject:
   m_ObjectHideFlags: 0
@@ -31280,6 +31292,7 @@ GameObject:
   - component: {fileID: 4313568910564614601}
   - component: {fileID: 4313568910564614600}
   - component: {fileID: 4313568910564614599}
+  - component: {fileID: 3112891663339348184}
   m_Layer: 5
   m_Name: Canvas Blocks Selection
   m_TagString: Untagged
@@ -31368,6 +31381,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3112891663339348184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4313568910564614597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a5a2125fca7f54fa3becb0b918db90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4313568910566856857
 GameObject:
   m_ObjectHideFlags: 0
@@ -47133,15 +47158,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57e2465fa262a242a83f66692a0e232, type: 3}
---- !u!1 &6485891661035865816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1181179883860730, guid: c57e2465fa262a242a83f66692a0e232,
-    type: 3}
-  m_PrefabInstance: {fileID: 6487072822829167650}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6419902752541186398 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224799373531786620, guid: c57e2465fa262a242a83f66692a0e232,
+    type: 3}
+  m_PrefabInstance: {fileID: 6487072822829167650}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6485891661035865816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1181179883860730, guid: c57e2465fa262a242a83f66692a0e232,
     type: 3}
   m_PrefabInstance: {fileID: 6487072822829167650}
   m_PrefabAsset: {fileID: 0}
