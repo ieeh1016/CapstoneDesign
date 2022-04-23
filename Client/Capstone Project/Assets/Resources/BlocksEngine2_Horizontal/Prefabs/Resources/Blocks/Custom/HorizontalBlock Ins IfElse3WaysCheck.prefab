@@ -451,9 +451,9 @@ GameObject:
   - component: {fileID: 4513691461918165903}
   - component: {fileID: 4513691461918165902}
   - component: {fileID: 4513691461918165893}
-  - component: {fileID: 5093583316468422592}
+  - component: {fileID: 2037665927739555343}
   m_Layer: 5
-  m_Name: HorizontalBlock Ins IfElseForwardCheck
+  m_Name: HorizontalBlock Ins IfElse3WaysCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &5093583316468422592
+--- !u!114 &2037665927739555343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -554,7 +554,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4513691461918165892}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8fb861fd97a0c3408024922d944a779, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c75a0ce9b4c5c64ba677e8982b23d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4513691462430573751
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2671769758198417163, guid: 1370685827829de40b673379982016d1,
+  m_Sprite: {fileID: -3660999260942943879, guid: 96ad729f09808bc41b94693a3e7da940,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
