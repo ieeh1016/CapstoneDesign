@@ -118,11 +118,23 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
                 _state = CharacterState.Idle;
                 startAnimation(_state);
 
+                bool success = Managers.Stage.CheckConditionCompleted();
+
+                if (success)
+                {
+                    Managers.UI.ShowPopupUI<UI_ClearPopup>();
+                }
+                else
+                {
+                    Managers.UI.ShowPopupUI<UI_FailedPopup>();
+
+
                 if (isMoved)
                 {
                     cameraController.ChangeToOverViewWithDelay();
                     isMoved = false;
                     Debug.Log("move finished");
+
                 }
             }
         }

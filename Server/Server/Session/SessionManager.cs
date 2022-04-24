@@ -11,6 +11,7 @@ namespace Server
 
 		int _sessionId = 0;
 		Dictionary<int, ClientSession> _sessions = new Dictionary<int, ClientSession>();
+		Dictionary<int, ClientSession> _clientSessions = new Dictionary<int, ClientSession>();
 		object _lock = new object();
 
 		public ClientSession Generate()
@@ -29,6 +30,12 @@ namespace Server
 			}
 		}
 
+		public void AddToClientList(ClientSession session)
+        {
+			_clientSessions.Add(session.SessionId, session);
+
+		}
+
 		public ClientSession Find(int id)
 		{
 			lock (_lock)
@@ -39,11 +46,22 @@ namespace Server
 			}
 		}
 
+		public ClientSession FindClientSession(int id)
+        {
+			lock (_lock)
+			{
+				ClientSession session = null;
+				_clientSessions.TryGetValue(id, out session);
+				return session;
+			}
+		}
+
 		public void Remove(ClientSession session)
 		{
 			lock (_lock)
 			{
 				_sessions.Remove(session.SessionId);
+				_clientSessions.Remove(session.SessionId);
 			}
 		}
 	}
