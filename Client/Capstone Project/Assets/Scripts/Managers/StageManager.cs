@@ -55,6 +55,7 @@ public class StageManager
                 if (condition is MapManager)
                 {
                     //ClearAction.Invoke(condition);
+                    Managers.UI.ShowPopupUI<UI_ClearPopup>();
                     //TODO: 서버에게 클리어, 만족한 클리어조건에 대한 정보 담은 패킷 보낸다.
                     return true;
                 }
