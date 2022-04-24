@@ -136,7 +136,9 @@
     <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\DummyNearbyConnectionClient.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
     <Compile Include="Assets\GooglePlayGames\GameInfo.cs" />
+
     <Compile Include="Assets\Scripts\FunctionBlockUpdate.cs" />
+
     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLocalUser.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EnvironmentElements\BE2_TargetObject.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_Raycaster.cs" />
@@ -676,6 +678,12 @@
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
