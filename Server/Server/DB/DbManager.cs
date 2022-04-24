@@ -20,8 +20,8 @@ namespace Server.DB
         static private string DB_IP = "database-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
         static private string DB_Port = "3306";
         static string DB_TARGET = "DB_Test";
-        static string DB_UID = "";
-        static string DB_PWD = "";
+        static string DB_UID = "admin";
+        static string DB_PWD = "rudrlzjarhd1541";
         static string User_DB_Table = "user_data";
         static string Challenge_DB_Table = "challenge_data";
 
@@ -123,7 +123,7 @@ namespace Server.DB
                 {
                     list.Add(new S_Challenge_Top30Rank.Rank()
                     {
-                        UId = Convert.ToString(reader["Uid"]),
+                        UId = Convert.ToString(reader["name"]),
                         ranking = Convert.ToInt32(reader["ranking"]),
                         totalStars = Convert.ToByte(reader["totalStars"])
                     });

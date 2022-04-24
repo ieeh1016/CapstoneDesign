@@ -3,6 +3,7 @@ using ServerCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 
 class PacketHandler
 {
@@ -34,6 +35,8 @@ class PacketHandler
 
     public static void S_Challenge_Top30RankHandler(PacketSession session, IPacket packet)
     {
+        Debug.Log("S_Challenge_Top30RankHandler Received");
+
         S_Challenge_Top30Rank pkt = packet as S_Challenge_Top30Rank;
         ServerSession serverSession = session as ServerSession;
 
