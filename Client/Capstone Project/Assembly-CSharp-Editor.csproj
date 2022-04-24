@@ -56,32 +56,18 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSUtil.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSProjectSettings.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSAndroidSetupUI.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EditorScripts\Editor\BE2_Editor_Inspector.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\NearbyConnectionUI.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSPostBuild.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSUpgrader.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSDocsUI.cs" />
-    <Compile Include="Assets\GooglePlayGames\Editor\GPGSStrings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ExternalDependencyManager\Editor\external-dependency-manager_version-1.2.169_manifest.txt" />
-    <None Include="Assets\GooglePlayGames\Editor\m2repository\com\google\games\gpgs-plugin-support\maven-metadata.xml" />
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.169\Google.IOSResolver.dll" />
     <None Include="Assets\Firebase\Editor\FirebaseAuth_version-8.8.0_manifest.txt" />
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.169\Google.VersionHandlerImpl.dll" />
-    <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
     <None Include="Assets\ExternalDependencyManager\Editor\Google.VersionHandler.dll" />
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.169\Google.JarResolver.dll" />
-    <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
-    <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPlugin_v0.10.14.txt" />
     <None Include="Assets\Firebase\Editor\AuthDependencies.xml" />
     <None Include="Assets\Firebase\Editor\AppDependencies.xml" />
-    <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
     <None Include="Assets\ExternalDependencyManager\Editor\1.2.169\Google.PackageManagerResolver.dll" />
-    <None Include="Assets\GooglePlayGames\Editor\template-Constants.txt" />
     <None Include="Assets\Firebase\Editor\Firebase.Editor.dll" />
   </ItemGroup>
   <ItemGroup>
@@ -777,6 +763,14 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{DB615A99-D362-6D48-C080-905044D8B338}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.Games.Editor.csproj">
+      <Project>{EDD07271-63FA-6B12-7BBC-1E1BE9221B47}</Project>
+      <Name>Google.Play.Games.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Google.Play.Games.csproj">
+      <Project>{FF4D46E6-9479-6242-22FD-6A89630F03C6}</Project>
+      <Name>Google.Play.Games</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

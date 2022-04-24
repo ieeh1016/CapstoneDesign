@@ -108,12 +108,41 @@ EditorBuildSettings:
     path: Assets/Scenes/ConditionStage/Condition 8.unity
     guid: 47ad63523ff6b754c85d6f5985f636a5
   - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 1.unity
+    guid: 7c531039562f0564c8b97f0cf0d20ee4
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 2.unity
+    guid: 3db36ac3d4117f245a5b31ed311095f4
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 3.unity
+    guid: 49cdbac2ab802044aad61da5b96e0521
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 4.unity
+    guid: a9dcea1652515124c99d77a41aca2cf6
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 5.unity
+    guid: 69745f74f70e7514791a377fd67aae34
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 6.unity
+    guid: 43bb16d3660e9334cb9cf8b344c40dc6
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 7.unity
+    guid: a17466ae81f82fe489963b2a29309c2b
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 8.unity
+    guid: 6cf42a41393ef8e478b37e8ac92de42e
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 9.unity
+    guid: 6d6d7d42b441f5a4ca205975a1805631
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 10.unity
+    guid: 81b5b3a20b2ca244dbe254d83028b012
+  - enabled: 1
     path: Assets/Scenes/ConditionStage/Condition 9.unity
     guid: 4c843098c26cfc1468d5b4e0c887e954
   - enabled: 1
     path: Assets/Scenes/ConditionStage/Condition 10.unity
     guid: 8676a9cc8854f49428ab04185c7f255b
-  - enabled: 1
     path: 
     guid: 00000000000000000000000000000000
   m_configObjects: {}

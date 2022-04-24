@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
+    [SerializeField]
     private int _blockId;
+    [SerializeField]
     private char _blockType;
 
     public int BlockId
