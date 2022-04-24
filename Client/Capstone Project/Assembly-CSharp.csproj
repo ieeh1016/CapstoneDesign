@@ -60,27 +60,35 @@
     <Compile Include="Assets\Scripts\swipe.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_Wait.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_And.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerProfile.cs" />
     <Compile Include="Assets\Scripts\To_Select.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\BE2_UI_BlocksSelectionViewer.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotProgEnvViewport.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfElseBothCheck.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfElse3WaysCheck.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\PlatformUtils.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_ChangeColor.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourceManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Utils\BE2_Paths.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_BlockContextMenu.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_WhenKeyPressed.cs" />
     <Compile Include="Assets\Scripts\VolumeControl.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\Event.cs" />
     <Compile Include="Assets\Scripts\Stage\Character.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Random.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\ISavedGameMetadata.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Serialization\BE2_BlockXML.cs" />
     <Compile Include="Assets\Scripts\LoadingSceneController.cs" />
     <Compile Include="Assets\Scripts\Managers\DataManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\EventSystem\BE2_EventsManager.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\NearbyHelperObject.cs" />
     <Compile Include="Assets\Scripts\Managers\InputManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_WhenPlayClicked.cs" />
     <Compile Include="Assets\Scripts\Managers\CodeBlockManager.cs" />
     <Compile Include="Assets\Resources\Suriyun\Scripts\AnimatorSound.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\VideoCapabilities.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesPlatform.cs" />
     <Compile Include="Assets\Scripts\BlockSelectionToggle.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Nor.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\BE2_UI_SelectionPanel.cs" />
@@ -88,9 +96,12 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EnvironmentElements\BE2_ProgrammingEnv.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_DropdownDynamicResize.cs" />
     <Compile Include="Assets\Scripts\UI\Popup\UI_Popup.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesAchievement.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_BlockSectionHeader_Dropdown.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\IEvent.cs" />
     <Compile Include="Assets\Scripts\Packet\PacketEvent.cs" />
     <Compile Include="Assets\Scripts\Network\Connector.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\INearbyConnectionClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_BlockSectionHeader_InputField.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfBothCheck.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BE2_CstColorDropdownItem.cs" />
@@ -100,6 +111,7 @@
     <Compile Include="Assets\Scripts\Stage\Coin.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_RepeatForever.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotBlockBody.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\CommonStatusCodes.cs" />
     <Compile Include="Assets\Scripts\Managers\Managers.cs" />
     <Compile Include="Assets\Scripts\Packet\PacketHandler.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\Custom\BE2_Cst_LookAtAndMove.cs" />
@@ -109,20 +121,34 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\I_BE2_Instruction.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_MoveForward.cs" />
     <Compile Include="Assets\Scripts\Scenes\MainPage.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInStatus.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Achievement.cs" />
     <Compile Include="Assets\Scripts\Stage\I_CheckClear.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_Function.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidJavaConverter.cs" />
     <Compile Include="Assets\Scripts\TestSound.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BlockSections\BE2_HorizontalBlockSectionHeader.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTaskUtils.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_DragSelectionBlock.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Serialization\BE2_BlocksSerializer.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\I_BE2_InstructionBase.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\Custom\BE2_Ins_SpacecraftShoot.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\DummyNearbyConnectionClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
+    <Compile Include="Assets\GooglePlayGames\GameInfo.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLocalUser.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EnvironmentElements\BE2_TargetObject.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_Raycaster.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Events\IEventsClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Block\I_BE2_Block.cs" />
     <Compile Include="Assets\Scripts\Utils\Util.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidNearbyConnectionClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\IVideoClient.cs" />
     <Compile Include="Assets\Resources\CartoonGUIPack\Scripts\JustRotate.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesScore.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Equal.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidSavedGameClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Player.cs" />
     <Compile Include="Assets\Scripts\Managers\UserManager.cs" />
     <Compile Include="Assets\Scripts\Data\Data.Contents.cs" />
     <Compile Include="Assets\Scripts\Network\SendBuffer.cs" />
@@ -132,13 +158,21 @@
     <Compile Include="Assets\Scripts\Managers\CoinManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EnvironmentElements\BE2_TargetObjectSpacecraft3D.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\BE2_BlocksStack.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\IPlayGamesClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Block\BE2_BlockVerticalLayout.cs" />
     <Compile Include="Assets\Scripts\Scenes\BaseScene.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\CaptureOverlayStateListener.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_RepeatUntil.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\CommonTypes.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Cst_RotateYAxis.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidSnapshotMetadata.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\ScorePageToken.cs" />
     <Compile Include="Assets\Resources\Suriyun\Scripts\Camera Scripts\MouseOrbitImproved.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidVideoClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_BlockSectionHeader_VariableLabel.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\I_BE2_Drag.cs" />
+    <Compile Include="Assets\Scripts\GoogleManager.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayGamesClientConfiguration.cs" />
     <Compile Include="Assets\Scripts\Packet\GenPackets.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Utils\BE2_ArrayUtils.cs" />
     <Compile Include="Assets\Resources\Suriyun\Scripts\Swapper.cs" />
@@ -149,6 +183,8 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_MoveForwardWithoutNum.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_SaveLoadContextMenu.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EnvironmentElements\I_BE2_ProgrammingEnv.cs" />
+    <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
+    <Compile Include="Assets\Scripts\Utils\LoginManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_PlaySound.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\I_BE2_BlockSection.cs" />
     <Compile Include="Assets\Resources\Suriyun\Scripts\AnimatorController.cs" />
@@ -157,6 +193,7 @@
     <Compile Include="Assets\Scripts\UI\SubItem\UI_Inven_Item.cs" />
     <Compile Include="Assets\Scripts\Managers\NetworkManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_DragBlock.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\LeaderboardScoreData.cs" />
     <Compile Include="Assets\Scripts\Data\Standards.cs" />
     <Compile Include="Assets\Scripts\ButtonVolumeControl.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\EventSystem\BE2_MainEventsManager.cs" />
@@ -164,29 +201,39 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\I_BE2_BlockSectionHeader.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotOuterArea.cs" />
     <Compile Include="Assets\Scripts\Scenes\LoginScene.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\Logger.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\VirtualJoystick\BE2_VirtualJoystickButton.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Sum.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerStats.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_If.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Extras\BE2_AudioManager.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\AdvertisingResult.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_DragFunction.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Video\VideoCaptureState.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\I_BE2_BlocksStack.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\TokenClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_DragSelectionVariable.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Serialization\BE2_SerializableBlock.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Block\I_BE2_BlockLayout.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Not.cs" />
     <Compile Include="Assets\Scripts\Managers\TargetObjectManager.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInInteractivity.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotProgrammingEnv.cs" />
     <Compile Include="Assets\Scripts\Stage\Block.cs" />
     <Compile Include="Assets\Scripts\Managers\Poolable.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Or.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_SetVariable.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\Misc.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TurnDirectionRight.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\SavedGameMetadataUpdate.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidHelperFragment.cs" />
     <Compile Include="Assets\Scripts\UI\Popup\UI_Button.cs" />
     <Compile Include="Assets\Scripts\Managers\SceneManagerEx.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Base.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\BE2_VariablesManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\BE2_UI_NewVariablePanel.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfForwardCheck.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\ConnectionResponse.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfElse.cs" />
     <Compile Include="Assets\GPGSIds.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BlockSections\BE2_HorizontalBlockSectionBody.cs" />
@@ -202,7 +249,12 @@
     <Compile Include="Assets\Scripts\Network\Session.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\CustomScrollRect.cs" />
     <Compile Include="Assets\Scripts\UI\Scene\UI_Scene.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\ConnectionRequest.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidEventsClient.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SavedGame\ISavedGameClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_Return.cs" />
+    <Compile Include="Assets\GooglePlayGames\OurUtils\PlayGamesHelperObject.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLeaderboard.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfElseRightCheck.cs" />
     <Compile Include="Assets\Scripts\Network\ServerSession.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_BreakLoop.cs" />
@@ -214,6 +266,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_AddVariable.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Utils\BE2_BlockUtils.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TurnDirectionLeft.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\NearbyConnectionConfiguration.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\I_BE2_Raycaster.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_WhenJoystickKeyPressed.cs" />
     <Compile Include="Assets\Scripts\Managers\BlockManager.cs" />
@@ -222,13 +275,16 @@
     <Compile Include="Assets\Scripts\Network\RecvBuffer.cs" />
     <Compile Include="Assets\Scripts\ButtonSound\Button_2.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_KeyPressed.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\NearbyConnectionClientFactory.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\I_BE2_Spot.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\BE2_ExecutionManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfElseForwardCheck.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_InputFieldDynamicResize.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\SignInHelper.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TurnDirection.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_BlockSectionHeader_Operation.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Block\BE2_Block.cs" />
     <Compile Include="Assets\Scripts\Scenes\GameScene.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_Pointer.cs" />
@@ -236,6 +292,7 @@
     <Compile Include="Assets\Scripts\Scenes\MainPage1.cs" />
     <Compile Include="Assets\Scripts\Utils\Extension.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Xnor.cs" />
+    <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTokenClient.cs" />
     <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BlockSections\BE2_HorizontalBlockSection.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotBlockInput.cs" />
@@ -259,6 +316,8 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\VirtualJoystick\BE2_VirtualJoystick.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_BlockSectionHeader_Label.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\I_BE2_BlockSectionHeaderInput.cs" />
+    <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesUserProfile.cs" />
+    <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\EndpointDetails.cs" />
     <Compile Include="Assets\Resources\CartoonGUIPack\Scripts\PressedBtn.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Utils\BE2_Text.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_RotateAxis.cs" />
@@ -274,7 +333,6 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 6Coin.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 10.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge 4.txt" />
-    <None Include="Assets\GooglePlayGames\com.google.play.games\Proguard\games.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 5Coin.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge 3Coin.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 9Coin.txt" />
@@ -617,6 +675,12 @@
     </Reference>
     <Reference Include="Firebase.Auth">
       <HintPath>Assets\Firebase\Plugins\Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -1010,14 +1074,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Google.Play.Games.Editor.csproj">
-      <Project>{EDD07271-63FA-6B12-7BBC-1E1BE9221B47}</Project>
-      <Name>Google.Play.Games.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Google.Play.Games.csproj">
-      <Project>{FF4D46E6-9479-6242-22FD-6A89630F03C6}</Project>
-      <Name>Google.Play.Games</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
