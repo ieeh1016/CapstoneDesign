@@ -15,8 +15,8 @@ namespace Server
 		public override void OnConnected(EndPoint endPoint)
 		{
 			Console.WriteLine($"OnConnected : {endPoint}");
-			Thread.Sleep(5000);
-			Disconnect();
+			/*Thread.Sleep(5000);
+			Disconnect();*/
 		}
 
 		public override void OnRecvPacket(ArraySegment<byte> buffer)
