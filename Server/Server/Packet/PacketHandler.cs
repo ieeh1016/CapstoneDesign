@@ -17,7 +17,7 @@ class PacketHandler
 		clientSession.Send(s_pkt.Write());
 	}
 
-	public static void C_Request_Load_StarHandler(PacketSession session, IPacket packet) //
+	public static void C_Request_Load_Star_Handler(PacketSession session, IPacket packet) //
 	{
 		C_Request_Load_Star pkt = packet as C_Request_Load_Star;
 		ClientSession clientSession = session as ClientSession;
@@ -49,17 +49,12 @@ class PacketHandler
 
 	public static void C_Request_Challenge_Top30RankHandler(PacketSession session, IPacket packet) //
 	{
-		Console.WriteLine("C_Request_Challenge_Top30RankHandler Received");
 		C_Request_Challenge_Top30Rank pkt = packet as C_Request_Challenge_Top30Rank;
 		ClientSession clientSession = session as ClientSession;
-		Console.WriteLine($"SessionId = {clientSession.SessionId}");
-		S_Challenge_Top30Rank s_pkt = new S_Challenge_Top30Rank();
+		S_Challenge_Top30Rank s_pkt = packet as S_Challenge_Top30Rank;
 		List<S_Challenge_Top30Rank.Rank> top_30 = new List<S_Challenge_Top30Rank.Rank>();
 		s_pkt.ranks = Server.DB.DbManager.Study_ChallengeTop30(top_30);
-		
-
-		ClientSession sendSession = SessionManager.Instance.FindClientSession(clientSession.SessionId);
-		sendSession.Send(s_pkt.Write());
+		clientSession.Send(s_pkt.Write());
 	}
 
 	public static void C_ChallengeUpdateStarsHandler(PacketSession session, IPacket packet) //

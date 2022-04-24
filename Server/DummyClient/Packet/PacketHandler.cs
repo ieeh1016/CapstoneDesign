@@ -6,27 +6,40 @@ using System.Text;
 
 class PacketHandler
 {
-	public static void S_BroadcastEnterGameHandler(PacketSession session, IPacket packet)
-	{
-		S_BroadcastEnterGame pkt = packet as S_BroadcastEnterGame;
-		ServerSession serverSession = session as ServerSession;
-	}
+    public static void S_Reply_Name_inputHandler(PacketSession session, IPacket packet)
+    {
+        S_Reply_Name_input pkt = packet as S_Reply_Name_input;
+        ServerSession serverSession = session as ServerSession;
 
-	public static void S_BroadcastLeaveGameHandler(PacketSession session, IPacket packet)
-	{
-		S_BroadcastLeaveGame pkt = packet as S_BroadcastLeaveGame;
-		ServerSession serverSession = session as ServerSession;
-	}
+        // TODO
+    }
 
-	public static void S_PlayerListHandler(PacketSession session, IPacket packet)
-	{
-		S_PlayerList pkt = packet as S_PlayerList;
-		ServerSession serverSession = session as ServerSession;
-	}
+    public static void S_Challenge_Load_StarHandler(PacketSession session, IPacket packet)
+    {
+        S_Challenge_Load_Star pkt = packet as S_Challenge_Load_Star;
+        ServerSession serverSession = session as ServerSession;
 
-	public static void S_BroadcastMoveHandler(PacketSession session, IPacket packet)
-	{
-		S_BroadcastMove pkt = packet as S_BroadcastMove;
-		ServerSession serverSession = session as ServerSession;
-	}
+    }
+
+    public static void S_Challenge_MyPageHandler(PacketSession session, IPacket packet)
+    {
+        S_Challenge_MyPage pkt = packet as S_Challenge_MyPage;
+        ServerSession serverSession = session as ServerSession;
+
+    }
+
+    public static void S_Challenge_Top30RankHandler(PacketSession session, IPacket packet)
+    {
+        S_Challenge_Top30Rank pkt = packet as S_Challenge_Top30Rank;
+        ServerSession serverSession = session as ServerSession;
+
+    }
+
+    /*public static void S_ChallengeTop30Handler(PacketSession session, IPacket packet)
+    {
+        S_ChallengeTop30 pkt = packet as S_ChallengeTop30;
+        ServerSession serverSession = session as ServerSession;
+
+        Managers.User.SetChallengeTop30(pkt);
+    }*/
 }
