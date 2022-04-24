@@ -35,32 +35,45 @@ public class BE2_Ins_BreakLoop : BE2_InstructionBase, I_BE2_Instruction
         _parentConditionInstructions = BE2_BlockUtils.GetParentInstructionOfTypeAll(this, BlockTypeEnum.condition).ToArray();
     }
 
-    public new void Function()
+    public Transform getParentBlock(Transform transform)
     {
 
-        Transform parent = transform.parent.parent.parent;
 
-        Debug.Log($"parent: {parent}");
+        return transform.parent.parent.parent;
+    }
+
+    public new void Function()
+    {
+        Transform parent = transform;
+
+        for(int i = 0; i < 100; i++)
+        {
+
+            parent = getParentBlock(parent);
+            Debug.Log($"parent: {parent}");
+
+            if (parent.GetComponent<BE2_Block>().Type == BlockTypeEnum.loop)
+                break;
+            if (parent.GetComponent<BE2_Block>().Type == BlockTypeEnum.trigger || parent == null)
+            {
+                parent = null;
+                break;
+            }
+
+        }
+
+
+        //Debug.Log($"parent: {parent}");
 
         if(parent != null)
         {
-            parent.GetComponent<BE2_Ins_Repeat>().ExecuteNextInstruction();
+            Debug.Log($"{parent.name}");
+            if(parent.name.Equals("HorizontalBlock Ins Repeat"))
+                parent.GetComponent<BE2_Ins_Repeat>().ExecuteNextInstruction();
+            else if(parent.name.Equals("HorizontalBlock Ins RepeatForever"))
+                parent.GetComponent<BE2_Ins_RepeatForever>().ExecuteNextInstruction();
         }
-        //부모에 있는 반복문 섹션을 찾으
 
-            //if (_parentLoopInstruction != null)
-            //{
-
-
-            //    // v2.4 - bugfix: fixed condition blocks not being reset on a loop break
-            //    foreach (I_BE2_Instruction condIns in _parentConditionInstructions)
-            //    {
-
-            //        condIns.InstructionBase.OnStackActive();
-            //    }
-
-            //    _parentLoopInstruction.InstructionBase.ExecuteNextInstruction();
-            //}
         else
         {
             ExecuteNextInstruction();

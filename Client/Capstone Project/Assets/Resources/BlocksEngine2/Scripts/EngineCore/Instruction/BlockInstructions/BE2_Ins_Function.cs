@@ -19,6 +19,11 @@ public class BE2_Ins_Function : BE2_InstructionBase, I_BE2_Instruction
     //
     //}
 
+    //void Update()
+    //{
+
+    //}
+
     I_BE2_BlockSectionHeaderInput _input0;
     int _counter = 0;
     float _value;
