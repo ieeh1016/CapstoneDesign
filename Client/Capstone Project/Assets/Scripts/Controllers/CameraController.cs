@@ -76,4 +76,9 @@ public class CameraController : MonoBehaviour
         _mode = Define.CameraMode.OverView;
     }
 
+    public void ChangeToOverViewWithDelay(float time = 0.75f)
+    {
+        Invoke("ChangeToOverView", time);
+    }
+
 }

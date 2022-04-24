@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -53,13 +54,21 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
 
     Queue<Vector3> TargetQueue = new Queue<Vector3>();
     Vector3 _target;
+    Vector3 _startPosition;
+
+    CameraController cameraController;
 
     void Start()
     {
-        _target = this.gameObject.transform.position;
+        _target = _startPosition = this.gameObject.transform.position;
+
+
         _state = CharacterState.Idle;
         anim = GetComponent<Animator>();
         startAnimation(_state);
+        isMoved = false;
+
+        cameraController = GameObject.Find("QuaterView Camera").GetComponent<CameraController>();
     }
     
     void Update()
@@ -87,6 +96,9 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
         }
     }
 
+    [SerializeField]
+    private bool isMoved;
+
     //캐릭터가 이동하는 모습을 위한 메서드
     void moveToTarget()
     {
@@ -96,12 +108,16 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
         {
 
             if (TargetQueue.Count > 0)
+            {
                 _target = TargetQueue.Dequeue();
+                //Debug.Log($"TargetQueue.Count: {TargetQueue.Count}   _target: {_target}");
+            }
 
             else
             {
                 _state = CharacterState.Idle;
                 startAnimation(_state);
+
                 bool success = Managers.Stage.CheckConditionCompleted();
 
                 if (success)
@@ -111,26 +127,31 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
                 else
                 {
                     Managers.UI.ShowPopupUI<UI_FailedPopup>();
+
+
+                if (isMoved)
+                {
+                    cameraController.ChangeToOverViewWithDelay();
+                    isMoved = false;
+                    Debug.Log("move finished");
+
                 }
             }
         }
         else
         {
+            if (!isMoved)
+                isMoved = true;
             _state = CharacterState.Moving;
             startAnimation(_state);
             this.gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, _target, _speed * Time.deltaTime);
             this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
         }
-
-        
     }
 
     [SerializeField]
     float _speed = 10f;
     float _counter = 1.0f;
-
-
-
 
 
     void I_BE2_TargetObject.Move()
@@ -145,6 +166,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
 
             Vector3 targetPostion = newBlock.transform.position + new Vector3(0, 0.9f, 0);
             TargetQueue.Enqueue(targetPostion);
+            //Debug.Log($"Enqueue: {targetPostion}");
 
             Vector3 dir = targetPostion - this.gameObject.transform.position;
 
@@ -157,14 +179,10 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
     {
         if (clockWise)
         {
-
-
-
             currentDirection = (currentDirection + 1) % (int)Direction.size;
         }
         else
         {
-
             currentDirection = (currentDirection + (int)Direction.size - 1) % (int)Direction.size;
         }
     }

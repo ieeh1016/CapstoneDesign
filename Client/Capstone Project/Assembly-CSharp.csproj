@@ -136,6 +136,9 @@
     <Compile Include="Assets\GooglePlayGames\BasicApi\Nearby\DummyNearbyConnectionClient.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\PlayGamesClientFactory.cs" />
     <Compile Include="Assets\GooglePlayGames\GameInfo.cs" />
+
+    <Compile Include="Assets\Scripts\FunctionBlockUpdate.cs" />
+
     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesLocalUser.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EnvironmentElements\BE2_TargetObject.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_Raycaster.cs" />
@@ -197,7 +200,7 @@
     <Compile Include="Assets\Scripts\Data\Standards.cs" />
     <Compile Include="Assets\Scripts\ButtonVolumeControl.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\EventSystem\BE2_MainEventsManager.cs" />
-    <Compile Include="Assets\Scripts\ComponentToggle.cs" />
+    <Compile Include="Assets\Scripts\PlayButtonEvents.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\I_BE2_BlockSectionHeader.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotOuterArea.cs" />
     <Compile Include="Assets\Scripts\Scenes\LoginScene.cs" />

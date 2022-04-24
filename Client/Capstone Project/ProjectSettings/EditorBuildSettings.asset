@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainPage.unity
     guid: 189e68af955337d4d948a376d5d7a7bb
   - enabled: 0
-    path: Assets/Scenes/aaaa.unity
-    guid: f4165faf6a5c6e54b882ea8438403b23
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
@@ -26,33 +26,33 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 03fead8b780c10e4882749084b9e8753
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 1.unity
-    guid: f598c3aa50803ac48b5b2762ba566a42
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 2.unity
-    guid: 57e01ee81495ac04bb9f143ae9c55141
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 3.unity
-    guid: 5a4fdaeff9ec6be43a0a2bbb9a7a1d15
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 4.unity
-    guid: 2605bf3b1e586bb42a0d36c22b6cbd27
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 5.unity
-    guid: 22557e806e85a894eac93edc2f8ba164
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 6.unity
-    guid: 1e4fc26efe342c64fa948c8a7039d58f
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 7.unity
-    guid: 537971685bb5df94cb25c0591b9c8572
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 8.unity
-    guid: 657c62f2714997b4c8d85d9d46182392
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 9.unity
-    guid: c14995adccbf9994a925a7917a38dc92
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LoopStage/Loop 1.unity
     guid: c8b101e1a54a3eb4fa8cd86e1dd61b22
@@ -108,12 +108,41 @@ EditorBuildSettings:
     path: Assets/Scenes/ConditionStage/Condition 8.unity
     guid: 47ad63523ff6b754c85d6f5985f636a5
   - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 1.unity
+    guid: 7c531039562f0564c8b97f0cf0d20ee4
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 2.unity
+    guid: 3db36ac3d4117f245a5b31ed311095f4
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 3.unity
+    guid: 49cdbac2ab802044aad61da5b96e0521
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 4.unity
+    guid: a9dcea1652515124c99d77a41aca2cf6
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 5.unity
+    guid: 69745f74f70e7514791a377fd67aae34
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 6.unity
+    guid: 43bb16d3660e9334cb9cf8b344c40dc6
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 7.unity
+    guid: a17466ae81f82fe489963b2a29309c2b
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 8.unity
+    guid: 6cf42a41393ef8e478b37e8ac92de42e
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 9.unity
+    guid: 6d6d7d42b441f5a4ca205975a1805631
+  - enabled: 1
+    path: Assets/Scenes/BasicStage/Basic 10.unity
+    guid: 81b5b3a20b2ca244dbe254d83028b012
+  - enabled: 1
     path: Assets/Scenes/ConditionStage/Condition 9.unity
     guid: 4c843098c26cfc1468d5b4e0c887e954
   - enabled: 1
     path: Assets/Scenes/ConditionStage/Condition 10.unity
     guid: 8676a9cc8854f49428ab04185c7f255b
-  - enabled: 1
-    path: Assets/Scenes/BasicStage/Basic 10.unity
-    guid: 982c4a2a1aad7714394cc465680f933f
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
