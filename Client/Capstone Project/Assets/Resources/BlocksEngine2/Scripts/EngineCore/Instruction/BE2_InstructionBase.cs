@@ -62,6 +62,8 @@ public class BE2_InstructionBase : MonoBehaviour, I_BE2_InstructionBase
         BE2_MainEventsManager.Instance.StopListening(BE2EventTypes.OnPointerUpEnd, GetBlockStack);
     }
 
+    
+
     void GetBlockStack()
     {
         BlocksStack = GetComponentInParent<I_BE2_BlocksStack>();
@@ -104,6 +106,12 @@ public class BE2_InstructionBase : MonoBehaviour, I_BE2_InstructionBase
 
     public void ExecuteSection(int sectionIndex)
     {
+        //Debug.Log($"length: {BlocksStack.InstructionsArray.Length}");
+        //for (int i = 0; i < BlocksStack.InstructionsArray.Length; i++)
+        //{
+        //    Debug.Log($"{i}: {BlocksStack.InstructionsArray[i]}");
+        //}
+
         if (BlocksStack.InstructionsArray.Length > LocationsArray[sectionIndex])
         {
             I_BE2_Instruction instruction = BlocksStack.InstructionsArray[LocationsArray[sectionIndex]];
@@ -135,6 +143,15 @@ public class BE2_InstructionBase : MonoBehaviour, I_BE2_InstructionBase
         if (BlocksStack.InstructionsArray.Length > _lastLocation)
         {
             I_BE2_Instruction instruction = BlocksStack.InstructionsArray[_lastLocation];
+
+            //Debug.Log($"length: {BlocksStack.InstructionsArray.Length}");
+            //Debug.Log($"instruction: {instruction}");
+            //for (int i = 0; i < BlocksStack.InstructionsArray.Length; i++)
+            //{
+            //    Debug.Log($"{i}: {BlocksStack.InstructionsArray[i]}");
+            //}
+
+            //Debug.Log($"instruction: {instruction}");
             BlockTypeEnum type = instruction.InstructionBase.Block.Type;
             // v2.1 - Loops are now executed "in frame" instead of mandatorily "in update". Faster loop execution and nested loops without delay
             //if (type != BlockTypeEnum.loop && !instruction.ExecuteInUpdate && BlocksStack.OverflowGuard < _overflowLimit)
