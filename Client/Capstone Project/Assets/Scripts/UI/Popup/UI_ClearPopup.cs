@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_ClearPopup : UI_Finished
+public class UI_ClearPopup : UI_Popup
 {
     int acquiredStars;
     
     public override void Init()
     {
-        
+        base.Init();
         acquiredStars = Managers.Stage.CompletedConditionList.Count;
-        Transform bg_window = gameObject.transform.Find("ChallegeStage_Complete").Find("bg_window");
+        Transform bg_window = gameObject.transform.Find("bg_window");
 
         for (int i = 0; i < acquiredStars; i++)
         {
