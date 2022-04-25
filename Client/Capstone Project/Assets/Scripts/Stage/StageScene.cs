@@ -51,7 +51,8 @@ public class StageScene : BaseScene
                 if (quarterViewCamera != null)
                     quarterViewCamera.GetComponent<CameraController>().Player = character;
             }
-                
+
+            Managers.Stage.ConditionSet();
 
         }
 

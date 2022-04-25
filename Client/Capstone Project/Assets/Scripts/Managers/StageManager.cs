@@ -35,10 +35,13 @@ public class StageManager
     {
         string sceneName = SceneManager.GetActiveScene().name;
 
-        _incompletedConditionList.Add(Managers.Coin);
-        Managers.CodeBlock.BlockRestriction = (int)Enum.Parse(typeof(Define.StageBlock), sceneName);
-        _incompletedConditionList.Add(Managers.CodeBlock);
-        // TODO, Define.StageBlock에서 읽어온 값을 코드 블록을 관리하는 매니저에게 주고, 매니저는 자신의 지역 변수를 해당 값으로 설정, CheckClear 실행 시 해당 값과 코드 블록의 수 비교
+        if (sceneName.Contains("Challenge"))
+        {
+            _incompletedConditionList.Add(Managers.Coin);
+            Managers.CodeBlock.BlockRestriction = (int)Enum.Parse(typeof(Define.StageBlock), sceneName);
+            _incompletedConditionList.Add(Managers.CodeBlock);
+            // TODO, Define.StageBlock에서 읽어온 값을 코드 블록을 관리하는 매니저에게 주고, 매니저는 자신의 지역 변수를 해당 값으로 설정, CheckClear 실행 시 해당 값과 코드 블록의 수 비교
+        }
         _incompletedConditionList.Add(Managers.Map);
     }
 
@@ -50,7 +53,7 @@ public class StageManager
             if (condition.CheckCleared() == true)
             {
                 _completedConditionList.Add(condition.GetType().Name);
-                _incompletedConditionList.Remove(condition);
+                //_incompletedConditionList.Remove(condition);
 
                 if (condition is MapManager)
                 {

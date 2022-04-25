@@ -48,6 +48,16 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void MoveToNext()
+    {
+        Managers.Clear();
+        string sceneName = SceneManager.GetActiveScene().name;
+        int sceneNameLastIndex = sceneName.Length - 1;
+        int replaceNum = sceneName[sceneNameLastIndex] - '0' + 1;
+        char replacedNum = System.Convert.ToChar(replaceNum);
+        LoadingSceneController.LoadScene(sceneName.Replace(sceneName[sceneNameLastIndex], replacedNum));
+        
+    }
 
     public void MoveToBasic_1()
     {

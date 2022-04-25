@@ -14,6 +14,8 @@ public class BE2_ExecutionManager : MonoBehaviour
 
     public static BE2_ExecutionManager instance;
 
+    public int totalNumOfBlocks = 0;
+
     void Awake()
     {
         UpdateTargetObjects();
@@ -133,4 +135,5 @@ public class BE2_ExecutionManager : MonoBehaviour
                 _programmingEnvsList.Add(programmingEnv);
         }
     }
+
 }
