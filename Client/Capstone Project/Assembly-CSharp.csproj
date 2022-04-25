@@ -218,6 +218,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Block\I_BE2_BlockLayout.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Not.cs" />
     <Compile Include="Assets\Scripts\Managers\TargetObjectManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Popup\UI_Finished.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\SignInInteractivity.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_SpotProgrammingEnv.cs" />
     <Compile Include="Assets\Scripts\Stage\Block.cs" />
