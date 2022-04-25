@@ -70,4 +70,5 @@ public class UserManager
             _challengeTop30.Add(s.ranking, new ChallengeRankerInfo(s.UId, s.ranking));
         }
     }
+
 }

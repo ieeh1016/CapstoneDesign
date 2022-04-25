@@ -86,7 +86,7 @@ namespace Server.DB
 
             string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
-                    "from(Select {0}.Uid, NAME, SUM(Star) as totalStars, RANK() OVER(ORDER BY SUM(Star) DESC) AS ranking from {0} INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table " +
+                    "from(Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC) AS ranking from {0} INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table " +
                         "WHERE Rank_Table.Uid = '{2}'", Challenge_DB_Table, User_DB_Table, UID);
             using (conn = new MySqlConnection(connectString))
             {
@@ -111,7 +111,7 @@ namespace Server.DB
         {
             string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
-                    "from (Select {0}.Uid, NAME, SUM(Star) as totalStars, RANK() OVER(ORDER BY SUM(Star) DESC) AS ranking from {0} " +
+                    "from (Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC) AS ranking from {0} " +
                     "INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table ORDER BY Rank_Table.ranking Asc limit 30", Challenge_DB_Table, User_DB_Table);
 
             using (conn = new MySqlConnection(connectString))
@@ -127,6 +127,16 @@ namespace Server.DB
                         ranking = Convert.ToInt32(reader["ranking"]),
                         totalStars = Convert.ToByte(reader["totalStars"])
                     });
+               
+                }
+                Console.WriteLine(list.Count);
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    Console.WriteLine($"{i}번째 유저 정보");
+                    Console.WriteLine(list[i].UId);
+                    Console.WriteLine(list[i].totalStars);
+
                 }
             }
             return list;
