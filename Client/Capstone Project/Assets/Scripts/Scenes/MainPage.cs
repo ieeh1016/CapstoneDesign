@@ -45,9 +45,8 @@ public class MainPage : MonoBehaviour
             GameObject.Find("MainCanvas").transform.Find("ChallengeStage_Select").gameObject.SetActive(true);
             StageManager.ToMain4 = false;
         }
-        
 
-
+        Managers.Login.LoadTop30();
 
     }
 

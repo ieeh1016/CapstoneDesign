@@ -6,6 +6,7 @@ using System.Text;
 
 class PacketHandler
 {
+    //static public Action UIHandle = null;
     public static void S_Reply_Name_inputHandler(PacketSession session, IPacket packet)
     {
         S_Reply_Name_input pkt = packet as S_Reply_Name_input;
@@ -38,6 +39,9 @@ class PacketHandler
         ServerSession serverSession = session as ServerSession;
 
         Managers.User.SetChallengeTop30(pkt);
+
+        //UIHandle.Invoke();
+        //GameObject.Find("RankUI").GetComponent<RankUI>().SetUI();
     }
 
     /*public static void S_ChallengeTop30Handler(PacketSession session, IPacket packet)

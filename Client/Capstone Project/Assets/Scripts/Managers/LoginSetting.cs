@@ -44,4 +44,11 @@ public class LoginSetting
 
         Managers.Network.Send(packet.Write());
     }
+
+    public void LoadTop30()
+    {
+        C_Request_Challenge_Top30Rank packet = new C_Request_Challenge_Top30Rank();
+
+        Managers.Network.Send(packet.Write());
+    }
 }
