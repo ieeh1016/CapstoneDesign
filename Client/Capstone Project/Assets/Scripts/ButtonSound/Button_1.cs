@@ -21,8 +21,4 @@ public class Button_1 : MonoBehaviour
     {
         Managers.Music.PlaySE("Pop (1)");
     }
-    public void PlaySE2()
-    {
-        Managers.Music.PlaySE("Special (6)");
-    }
 }
