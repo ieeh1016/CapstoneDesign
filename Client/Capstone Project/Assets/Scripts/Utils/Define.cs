@@ -61,7 +61,7 @@ public class Define
     public enum StageBlock // 스테이지 별 별 획득 위한 코드 블록 사용 개수 조건 설정
     {
         FirstStudyStage = 5,
-        Challenge1 = 9,
+        Challenge1 = 17,
     }
 
 }

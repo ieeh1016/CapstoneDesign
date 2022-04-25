@@ -25,7 +25,8 @@ public class CodeBlockManager : I_CheckClear
         BE2_ExecutionManager e2_ExecutionManager = GameObject.Find("Blocks Engine 2 with function").transform.Find("BE2 Execution Manager").GetComponent<BE2_ExecutionManager>();
         int currentNOCodeBlocks; // = e2_ExecutionManager.totalNumOfBlocks;
         
-        currentNOCodeBlocks = CheckChildCount(_be2ProgEnv.transform.Find("Speeder TO and PE")) - 1; // 재귀함수에 의해 Block 추가된 것 -1*/
+        currentNOCodeBlocks = CheckChildCount(_be2ProgEnv.transform.Find("Speeder TO and PE").Find("Canvas Programming Env").Find("Scroll View").Find("Viewport")
+            .Find("ProgrammingEnv").Find("HorizontalBlock Ins WhenPlayClicked").Find("Section0").Find("Body")); // 재귀함수에 의해 Block 추가된 것 -1*/
 
         Debug.Log(currentNOCodeBlocks);
 
@@ -41,7 +42,12 @@ public class CodeBlockManager : I_CheckClear
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            childCount += CheckChildCount(transform.Find("Section0").Find("Body"));
+            Transform childTransform = transform.GetChild(i);
+            childTransform = childTransform.Find("Section0").Find("Body");
+            if (childTransform)
+                childCount += CheckChildCount(childTransform) + 1; // 자식의 개수 + 자신(1)
+            else
+                childCount += 1;
         }
 
         return childCount;
