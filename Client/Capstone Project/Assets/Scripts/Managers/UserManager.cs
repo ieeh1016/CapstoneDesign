@@ -12,7 +12,7 @@ public class UserManager
     ushort totalStars;
     int ranking;
     Dictionary<ushort, ushort> _challengeStageInfo = new Dictionary<ushort, ushort>();
-    Dictionary<string, int> _challengeTop30 = new Dictionary<string, int>();
+    Dictionary<int, ChallengeRankerInfo> _challengeTop30 = new Dictionary<int, ChallengeRankerInfo>();
 
     public string UID
     {
@@ -49,6 +49,11 @@ public class UserManager
         get { return _challengeStageInfo; }
     }
 
+    public Dictionary<int, ChallengeRankerInfo> ChallengeTop30
+    {
+        get { return _challengeTop30; }
+    }
+
 
     public void SetChallengeInfoByPacket(S_Challenge_Load_Star packet)
     {
@@ -62,7 +67,7 @@ public class UserManager
     {
         foreach (S_Challenge_Top30Rank.Rank s in packet.ranks)
         {
-            _challengeTop30.Add(s.UId, s.ranking);
+            _challengeTop30.Add(s.ranking, new ChallengeRankerInfo(s.UId, s.ranking));
         }
     }
 }

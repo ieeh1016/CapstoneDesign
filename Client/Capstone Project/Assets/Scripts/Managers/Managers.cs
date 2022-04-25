@@ -30,6 +30,7 @@ public class Managers : MonoBehaviour
 
     UserManager _user = new UserManager();
     NetworkManager _netWork = new NetworkManager();
+    LoginSetting _loginSetting = new LoginSetting();
 
 
     public static DataManager Data { get { return Instance._data; } }
@@ -48,6 +49,7 @@ public class Managers : MonoBehaviour
 
     public static UserManager User { get { return Instance._user; } }
     public static NetworkManager Network { get { return Instance._netWork; } }
+    public static LoginSetting Login { get { return Instance._loginSetting; } }
 
     // Start is called before the first frame update
     void Start()

@@ -49,11 +49,13 @@ class PacketHandler
 
 	public static void C_Request_Challenge_Top30RankHandler(PacketSession session, IPacket packet) //
 	{
+		Console.WriteLine("C_Request_Challenge_Top30 Received");
 		C_Request_Challenge_Top30Rank pkt = packet as C_Request_Challenge_Top30Rank;
 		ClientSession clientSession = session as ClientSession;
 		S_Challenge_Top30Rank s_pkt = new S_Challenge_Top30Rank();
 		List<S_Challenge_Top30Rank.Rank> top_30 = new List<S_Challenge_Top30Rank.Rank>();
 		s_pkt.ranks = Server.DB.DbManager.Study_ChallengeTop30(top_30);
+
 		clientSession.Send(s_pkt.Write());
 	}
 
