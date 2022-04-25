@@ -80,7 +80,7 @@ public class UIManager
             name = typeof(T).Name;
 
 
-        GameObject go = Managers.Resource.Instantiate($"{name}");
+        GameObject go = Managers.Resource.Instantiate($"Prefabs/{name}");
         T popup = Util.GetOrAddComponent<T>(go);
         _popupStack.Push(popup);
 

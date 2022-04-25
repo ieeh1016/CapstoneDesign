@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
 {
@@ -124,27 +123,6 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
                     cameraController.ChangeToOverViewWithDelay();
                     isMoved = false;
                     Debug.Log("move finished");
-
-                    bool success = Managers.Stage.CheckConditionCompleted();
-                    UI_Popup popup = null;
-                    if (success)
-                    {
-                        if (SceneManager.GetActiveScene().name.Contains("Basic"))
-                        {
-                            popup = Managers.UI.ShowPopupUI<UI_StudyClearPopup>("StudyStage_Complete");
-                            popup.Init();
-                        }
-                        else
-                        {
-                            popup = Managers.UI.ShowPopupUI<UI_ClearPopup>("ChallegeStage_Complete");
-                            popup.Init();
-                        }
-                    }
-                    else
-                    {
-                        popup = Managers.UI.ShowPopupUI<UI_FailedPopup>("Stage_fail");
-                        popup.Init();
-                    }
                 }
             }
         }
