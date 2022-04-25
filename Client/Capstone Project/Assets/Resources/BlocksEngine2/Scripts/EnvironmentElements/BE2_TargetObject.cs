@@ -126,29 +126,25 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
                     Debug.Log("move finished");
 
                     bool success = Managers.Stage.CheckConditionCompleted();
-                    UI_Finished popup = null;
+                    UI_Popup popup = null;
                     if (success)
                     {
                         if (SceneManager.GetActiveScene().name.Contains("Basic"))
                         {
-                            GameObject go = Managers.Resource.Instantiate("StudyStage_Complete1");
-                            popup = go.AddComponent<UI_StudyClearPopup>();
+                            popup = Managers.UI.ShowPopupUI<UI_StudyClearPopup>("StudyStage_Complete");
                             popup.Init();
                         }
                         else
                         {
-                            GameObject go = Managers.Resource.Instantiate("ChallengeStage_Complete1");
-                            popup = go.AddComponent<UI_ClearPopup>();
+                            popup = Managers.UI.ShowPopupUI<UI_ClearPopup>("ChallegeStage_Complete");
                             popup.Init();
                         }
                     }
                     else
                     {
-                        GameObject go = Managers.Resource.Instantiate("Stage_fail1");
-                        popup = go.AddComponent<UI_FailedPopup>();
+                        popup = Managers.UI.ShowPopupUI<UI_FailedPopup>("Stage_fail");
                         popup.Init();
                     }
-                    //GameObject.Find("Blocks Engine 2 with function").SetActive(false);
                 }
             }
         }
