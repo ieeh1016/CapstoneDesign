@@ -10,7 +10,7 @@ public class MainPage1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Managers.Music.SetBackGroundMusic("Casual Game Music 03");
+        Managers.Music.SetBackGroundMusic("Casual Game Music 02 - Oriental");
         Managers.Music.MusicPlayer.Play();
         //audioSourceEffects = Managers.Music.GetSoundEffect("Pop(1)");
 
