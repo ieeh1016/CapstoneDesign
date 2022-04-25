@@ -112,7 +112,7 @@ namespace Server.DB
             string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
                     "from (Select {0}.Uid, NAME, SUM(Star) as totalStars, RANK() OVER(ORDER BY SUM(Star) DESC) AS ranking from {0} " +
-                    "INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table ORDER BY Rank_Table.ranking Asc", Challenge_DB_Table, User_DB_Table);
+                    "INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table ORDER BY Rank_Table.ranking Asc limit 30", Challenge_DB_Table, User_DB_Table);
 
             using (conn = new MySqlConnection(connectString))
             {
@@ -123,7 +123,7 @@ namespace Server.DB
                 {
                     list.Add(new S_Challenge_Top30Rank.Rank()
                     {
-                        UId = Convert.ToString(reader["Uid"]),
+                        UId = Convert.ToString(reader["name"]),
                         ranking = Convert.ToInt32(reader["ranking"]),
                         totalStars = Convert.ToByte(reader["totalStars"])
                     });
