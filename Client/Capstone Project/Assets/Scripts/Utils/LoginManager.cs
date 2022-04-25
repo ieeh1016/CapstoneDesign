@@ -4,15 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using Firebase.Auth;
 
 namespace Login_Util
 {
     public class LoginManager : MonoBehaviour
-    {
-        private Firebase.Auth.FirebaseAuth auth;
-        private Firebase.Auth.FirebaseUser user;
 
+    {
         public GameObject Btn_Login;
         public GameObject Btn_Logout;
         public GameObject User_name_UI;
@@ -21,114 +18,86 @@ namespace Login_Util
         public GameObject Btn_Play_Login;
         public GameObject Btn_Play_Logout;
 
-        //void Start()
-        //{
-        //    //구글 초기설정
-        //    PlayGamesPlatform.InitializeInstance(new PlayGamesClientConfiguration.Builder()
-        //        .RequestIdToken()
-        //        .RequestEmail()
-        //        .Build());
-        //    PlayGamesPlatform.DebugLogEnabled = true;
-        //    PlayGamesPlatform.Activate(); // 구글 플레이 활성화
+        private bool bWaitingForAuth = false;
 
-        //    Btn_Login.SetActive(true);
-        //    Btn_Logout.SetActive(false);
-        //    User_name_UI.SetActive(false);
-        //    CheckFirebaseDependencies();
-        //    auth = FirebaseAuth.DefaultInstance; // Firebase 액세스
-        //}
-        void start()
+        private void Awake()
         {
-            before_Test();
+            // 구글 게임서비스 활성화 (초기화)
+            PlayGamesPlatform.InitializeInstance(new PlayGamesClientConfiguration.Builder().Build());
+            PlayGamesPlatform.DebugLogEnabled = true;
+            PlayGamesPlatform.Activate();
         }
-        //void awake()
-        //{
-        //    CheckFirebaseDependencies();
-        //}
 
-        public void TryGoogleLogin()
+        private void Start()
         {
-            if (!Social.localUser.authenticated) // 로그인 되어 있지 않는지 확인
+            //게임시작시 자동로그인
+            doAutoLogin();
+        }
+
+        // 자동로그인
+        public void doAutoLogin()
+        {
+            if (bWaitingForAuth)
+                return;
+            //구글 로그인이 되어있지 않다면 
+            if (!Social.localUser.authenticated)
             {
-                Social.localUser.Authenticate(success => // 로그인 시도
+                bWaitingForAuth = true;
+                //로그인 인증 처리과정 (콜백함수)
+                Social.localUser.Authenticate(AuthenticateCallback);
+            }
+        }
+
+        // 수동로그인 
+        public void OnBtnLoginClicked()
+        {
+            //이미 인증된 사용자는 바로 로그인 성공된다. 
+            if (Social.localUser.authenticated)
+            {
+                Login_State();
+            }
+            else
+                Social.localUser.Authenticate((bool success) =>
                 {
-                    if (success) // 성공하면
+                    if (success)
                     {
-                        Debug.Log("로그인 성공");
-                        StartCoroutine(TryFirebaseLogin()); // Firebase Login 시도
+                        Login_State();
                     }
-                    else // 실패하면
+                    else
                     {
-                        Debug.Log("로그인 실패");
                         Logout_State();
                     }
                 });
-            }
         }
 
-        public void TryGoogleLogout()
+        // 수동 로그아웃 
+        public void OnBtnLogoutClicked()
         {
-            if (Social.localUser.authenticated) // 로그인 되어 있는지 확인
-            {
-                PlayGamesPlatform.Instance.SignOut(); // Google 로그아웃
-                Debug.Log("구글 로그아웃 완료");
-                auth.SignOut(); // Firebase 로그아웃
-                Debug.Log("파이어베이스 로그아웃 완료");
-                Logout_State();
-            }
+            ((PlayGamesPlatform)Social.Active).SignOut();
+            Logout_State();
         }
 
-        public void CheckFirebaseDependencies()
+
+        // 인증 callback
+        void AuthenticateCallback(bool success)
         {
-            Firebase.Auth.FirebaseUser user = auth.CurrentUser;
-            if (user != null)
+            if (success)
             {
-                string name = user.DisplayName;
-                string uid = user.UserId;
-                User_name_UI.GetComponent<Text>().text = name;
+                // 사용자 이름을 띄어줌 
                 Login_State();
             }
             else
             {
-                User_name_UI.GetComponent<Text>().text = "Default";
                 Logout_State();
             }
         }
 
-        IEnumerator TryFirebaseLogin()
-        {
-            while (string.IsNullOrEmpty(((PlayGamesLocalUser)Social.localUser).GetIdToken()))
-                yield return null;
-            string idToken = ((PlayGamesLocalUser)Social.localUser).GetIdToken();
-
-
-            Credential credential = GoogleAuthProvider.GetCredential(idToken, null);
-            auth.SignInWithCredentialAsync(credential).ContinueWith(task =>
-            {
-                if (task.IsCanceled)
-                {
-                    Debug.LogError("파이어 베이스 로그인 인증 취소");
-                    Logout_State();
-                    return;
-                }
-                if (task.IsFaulted)
-                {
-                    Debug.LogError("파이어베이스 로그인 에러: " + task.Exception);
-                    Logout_State();
-                    return;
-                }
-                else
-                {
-                    Debug.Log("파이어베이스 로그인 성공");
-                    Login_State();
-                }
-            });
-        }
         public void Login_State()
         {
             Btn_Login.SetActive(false);
             Btn_Logout.SetActive(true);
             User_name_UI.SetActive(true);
+            User_name_UI.GetComponent<Text>().text = Social.localUser.userName;
             Btn_MyPage_Login.SetActive(true);
             Btn_MyPage_Logout.SetActive(false);
             Btn_Play_Login.SetActive(true);
