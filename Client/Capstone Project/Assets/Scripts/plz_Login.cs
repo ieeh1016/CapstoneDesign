@@ -20,6 +20,7 @@ public class plz_Login : MonoBehaviour
         
         if (Social.localUser.authenticated)
         {
+            StageManager.Challenge = true;
             c.gameObject.SetActive(false);
             b.gameObject.SetActive(true);
         }
