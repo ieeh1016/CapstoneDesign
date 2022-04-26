@@ -42,7 +42,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchorMax.x
-    path: 
+    path: Scroll View/Viewport/Content
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -70,7 +70,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchorMax.y
-    path: 
+    path: Scroll View/Viewport/Content
     classID: 224
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -82,14 +82,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 4144016777
       attribute: 2711263438
       script: {fileID: 0}
       typeID: 224
       customType: 28
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 4144016777
       attribute: 3600656472
       script: {fileID: 0}
       typeID: 224
@@ -142,7 +142,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchorMax.x
-    path: 
+    path: Scroll View/Viewport/Content
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -170,7 +170,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchorMax.y
-    path: 
+    path: Scroll View/Viewport/Content
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []
