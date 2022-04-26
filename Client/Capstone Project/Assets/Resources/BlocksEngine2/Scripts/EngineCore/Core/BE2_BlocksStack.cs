@@ -112,11 +112,11 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
         }
     }
 
-    GameObject lastFunctionBlockState;
+
 
     public void PopulateStack()
     {
-        //ProgrammingEnv안의 if_function들을 찾음
+        //ProgrammingEnv안의 ins_function들을 찾음
         GameObject[] function_blocks = GameObject.FindGameObjectsWithTag("FunctionBlock");
 
         //못 찾으면 패스
@@ -146,10 +146,8 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
             //모든 function 블록에 불러온 functionArea의 body를 넣어줌
             GameObject function_area_body_copy;
 
-            //Debug.Log($"{lastFunctionBlockState != function_area_body}");
-            if (lastFunctionBlockState != function_area_body)
+            if (function_blocks[0] != function_area_body)
             {
-                lastFunctionBlockState = function_area_body;
                 for (int i = 0; i < function_blocks.Length; i++)
                 {
 
