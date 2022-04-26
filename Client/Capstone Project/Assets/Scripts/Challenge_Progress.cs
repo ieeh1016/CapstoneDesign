@@ -9,8 +9,11 @@ public class Challenge_Progress : MonoBehaviour
     Transform _challenge = GameObject.Find("ChallengeStage_Select").transform;
     void Start()
     {
-        ushort a = 0;
+
+        byte a = 0;
+
         for (ushort i = 1; i <= 10; i++)
+
         {
             if (Managers.User.ChallangeStageInfo.TryGetValue(i, out a))
             {

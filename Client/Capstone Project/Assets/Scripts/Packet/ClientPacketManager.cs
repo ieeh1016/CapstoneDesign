@@ -19,8 +19,6 @@ public class PacketManager
 		
 	public void Register()
 	{
-		_makeFunc.Add((ushort)PacketID.S_Reply_Name_input, MakePacket<S_Reply_Name_input>);
-		_handler.Add((ushort)PacketID.S_Reply_Name_input, PacketHandler.S_Reply_Name_inputHandler);
 		_makeFunc.Add((ushort)PacketID.S_Challenge_Load_Star, MakePacket<S_Challenge_Load_Star>);
 		_handler.Add((ushort)PacketID.S_Challenge_Load_Star, PacketHandler.S_Challenge_Load_StarHandler);
 		_makeFunc.Add((ushort)PacketID.S_Challenge_MyPage, MakePacket<S_Challenge_MyPage>);

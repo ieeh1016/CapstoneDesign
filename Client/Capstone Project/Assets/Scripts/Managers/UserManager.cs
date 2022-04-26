@@ -6,12 +6,12 @@ using System;
 
 public class UserManager
 {
-    string UId;
+    string UId = "TestId";
     string name;
     ushort challengeProgress;
     ushort totalStars;
     int ranking;
-    Dictionary<ushort, ushort> _challengeStageInfo = new Dictionary<ushort, ushort>();
+    Dictionary<ushort, byte> _challengeStageInfo = new Dictionary<ushort, byte>();
     Dictionary<int, ChallengeRankerInfo> _challengeTop30 = new Dictionary<int, ChallengeRankerInfo>();
 
     public string UID
@@ -44,7 +44,7 @@ public class UserManager
         set { ranking = value; }
     }
 
-    public Dictionary<ushort, ushort> ChallangeStageInfo
+    public Dictionary<ushort, byte> ChallangeStageInfo
     {
         get { return _challengeStageInfo; }
     }
@@ -67,7 +67,7 @@ public class UserManager
     {
         foreach (S_Challenge_Top30Rank.Rank s in packet.ranks)
         {
-            _challengeTop30.Add(s.ranking, new ChallengeRankerInfo(s.UId, s.totalStars));
+            _challengeTop30.Add(s.ranking, new ChallengeRankerInfo(s.name, s.totalStars));
         }
     }
 

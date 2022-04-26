@@ -123,7 +123,7 @@ namespace Server.DB
                 {
                     list.Add(new S_Challenge_Top30Rank.Rank()
                     {
-                        UId = Convert.ToString(reader["name"]),
+                        name = Convert.ToString(reader["name"]),
                         ranking = Convert.ToInt32(reader["ranking"]),
                         totalStars = Convert.ToByte(reader["totalStars"])
                     });
@@ -134,7 +134,7 @@ namespace Server.DB
                 for (int i = 0; i < list.Count; i++)
                 {
                     Console.WriteLine($"{i}번째 유저 정보");
-                    Console.WriteLine(list[i].UId);
+                    Console.WriteLine(list[i].name);
                     Console.WriteLine(list[i].totalStars);
 
                 }

@@ -12,9 +12,6 @@ class PacketHandler
 	{
 		C_Request_Name_input pkt = packet as C_Request_Name_input;
 		ClientSession clientSession = session as ClientSession;
-		S_Reply_Name_input s_pkt = new S_Reply_Name_input();
-		s_pkt.reply = Server.DB.DbManager.user_Name_Input(pkt.name, pkt.Uid);
-		clientSession.Send(s_pkt.Write());
 	}
 
 	public static void C_Request_Load_Star_Handler(PacketSession session, IPacket packet) //

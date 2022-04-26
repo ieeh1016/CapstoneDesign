@@ -4,9 +4,6 @@
 		<String name="name"/>
 		<String name="Uid"/>
 	</packet>
-	<packet name="S_Reply_Name_input">
-		<byte name ="reply"/>
-	</packet>
 	<packet name="C_Request_Load_Star">
 		<String name ="UId"/>
 	</packet>
@@ -28,7 +25,7 @@
 	</packet>
 	<packet name="S_Challenge_Top30Rank">
 		<list name="Rank">
-			<string name="UId"/>
+			<string name="name"/>
 			<int name="ranking"/>
 			<byte name="totalStars"/>
 		</list>

@@ -7,14 +7,13 @@ using ServerCore;
 public enum PacketID
 {
 	C_Request_Name_input = 1,
-	S_Reply_Name_input = 2,
-	C_Request_Load_Star = 3,
-	S_Challenge_Load_Star = 4,
-	C_Request_Challenge_MyPage = 5,
-	S_Challenge_MyPage = 6,
-	C_Request_Challenge_Top30Rank = 7,
-	S_Challenge_Top30Rank = 8,
-	C_ChallengeUpdateStars = 9,
+	C_Request_Load_Star = 2,
+	S_Challenge_Load_Star = 3,
+	C_Request_Challenge_MyPage = 4,
+	S_Challenge_MyPage = 5,
+	C_Request_Challenge_Top30Rank = 6,
+	S_Challenge_Top30Rank = 7,
+	C_ChallengeUpdateStars = 8,
 	
 }
 
@@ -64,38 +63,6 @@ public class C_Request_Name_input : IPacket
 		Array.Copy(BitConverter.GetBytes(UidLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		count += UidLen;
-
-		Array.Copy(BitConverter.GetBytes(count), 0, segment.Array, segment.Offset, sizeof(ushort));
-
-		return SendBufferHelper.Close(count);
-	}
-}
-
-public class S_Reply_Name_input : IPacket
-{
-	public byte reply;
-
-	public ushort Protocol { get { return (ushort)PacketID.S_Reply_Name_input; } }
-
-	public void Read(ArraySegment<byte> segment)
-	{
-		ushort count = 0;
-		count += sizeof(ushort);
-		count += sizeof(ushort);
-		this.reply = (byte)segment.Array[segment.Offset + count];
-		count += sizeof(byte);
-	}
-
-	public ArraySegment<byte> Write()
-	{
-		ArraySegment<byte> segment = SendBufferHelper.Open(4096);
-		ushort count = 0;
-
-		count += sizeof(ushort);
-		Array.Copy(BitConverter.GetBytes((ushort)PacketID.S_Reply_Name_input), 0, segment.Array, segment.Offset + count, sizeof(ushort));
-		count += sizeof(ushort);
-		segment.Array[segment.Offset + count] = (byte)this.reply;
-		count += sizeof(byte);
 
 		Array.Copy(BitConverter.GetBytes(count), 0, segment.Array, segment.Offset, sizeof(ushort));
 
@@ -319,16 +286,16 @@ public class S_Challenge_Top30Rank : IPacket
 {
 	public class Rank
 	{
-		public string UId;
+		public string name;
 		public int ranking;
 		public byte totalStars;
 	
 		public void Read(ArraySegment<byte> segment, ref ushort count)
 		{
-			ushort UIdLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+			ushort nameLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
 			count += sizeof(ushort);
-			this.UId = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UIdLen);
-			count += UIdLen;
+			this.name = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, nameLen);
+			count += nameLen;
 			this.ranking = BitConverter.ToInt32(segment.Array, segment.Offset + count);
 			count += sizeof(int);
 			this.totalStars = (byte)segment.Array[segment.Offset + count];
@@ -338,10 +305,10 @@ public class S_Challenge_Top30Rank : IPacket
 		public bool Write(ArraySegment<byte> segment, ref ushort count)
 		{
 			bool success = true;
-			ushort UIdLen = (ushort)Encoding.Unicode.GetBytes(this.UId, 0, this.UId.Length, segment.Array, segment.Offset + count + sizeof(ushort));
-			Array.Copy(BitConverter.GetBytes(UIdLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+			ushort nameLen = (ushort)Encoding.Unicode.GetBytes(this.name, 0, this.name.Length, segment.Array, segment.Offset + count + sizeof(ushort));
+			Array.Copy(BitConverter.GetBytes(nameLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 			count += sizeof(ushort);
-			count += UIdLen;
+			count += nameLen;
 			Array.Copy(BitConverter.GetBytes(this.ranking), 0, segment.Array, segment.Offset + count, sizeof(int));
 			count += sizeof(int);
 			segment.Array[segment.Offset + count] = (byte)this.totalStars;
