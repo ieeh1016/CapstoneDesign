@@ -18,7 +18,6 @@ public class MyPage : MonoBehaviour
 
     public void Load_MyPage()
     {
-
         star_count = Managers.User.TotalStars;
         ScriptTxt = GameObject.Find("Star").GetComponent<Text>();
         string str = star_count.ToString();

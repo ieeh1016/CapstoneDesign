@@ -67,7 +67,7 @@ public class UserManager
     {
         foreach (S_Challenge_Top30Rank.Rank s in packet.ranks)
         {
-            _challengeTop30.Add(s.ranking, new ChallengeRankerInfo(s.UId, s.ranking));
+            _challengeTop30.Add(s.ranking, new ChallengeRankerInfo(s.UId, s.totalStars));
         }
     }
 

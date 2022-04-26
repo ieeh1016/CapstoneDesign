@@ -19,14 +19,14 @@ public class RankUI : MonoBehaviour
         for (int i = 1; i <= 3; i++)
         {
             Transform ranki = rank.Find($"Rank{i}");
-            Text name = ranki.Find("Text").gameObject.GetComponent<Text>();
+            Text name = ranki.Find("Name").gameObject.GetComponent<Text>();
             ChallengeRankerInfo ranker;
             Managers.User.ChallengeTop30.TryGetValue(i, out ranker);
 
             name.text = ranker.userName;
 
-            Text stars = ranki.Find($"rank{i}_star").Find("Text").GetComponent<Text>();
-
+            Text stars = ranki.Find("Text").gameObject.GetComponent<Text>();
+            
             stars.text = ranker.totalStars.ToString();
         }
     }

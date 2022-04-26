@@ -29,8 +29,8 @@ class PacketHandler
         ServerSession serverSession = session as ServerSession;
 
         Managers.User.Name = pkt.name;
-        Managers.User.TotalStars = pkt.TotalStars;
         Managers.User.Ranking = pkt.ranking;
+        Managers.User.TotalStars = pkt.TotalStars;
     }
 
     public static void S_Challenge_Top30RankHandler(PacketSession session, IPacket packet)
