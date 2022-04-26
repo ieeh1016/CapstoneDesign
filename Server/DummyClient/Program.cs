@@ -25,19 +25,6 @@ namespace DummyClient
 				() => { return SessionManager.Instance.Generate(); },
 				10);
 
-			while (true)
-			{
-				try
-				{
-					SessionManager.Instance.SendForEach();
-				}
-				catch (Exception e)
-				{
-					Console.WriteLine(e.ToString());
-				}
-
-				Thread.Sleep(250);
-			}
 		}
 	}
 }
