@@ -18,28 +18,28 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
         get => _isActive;
         set
         {
-            if (!IsActive && value)
-            {
-                int instructionsCount = InstructionsArray.Length;
-                for (int i = 0; i < instructionsCount; i++)
-                {
-                    InstructionsArray[i].InstructionBase.OnStackActive();
-                }
+            //if (!IsActive && value)
+            //{
+            //    int instructionsCount = InstructionsArray.Length;
+            //    for (int i = 0; i < instructionsCount; i++)
+            //    {
+            //        InstructionsArray[i].InstructionBase.OnStackActive();
+            //    }
 
-                // activate all shadows
-                foreach (I_BE2_Instruction instruction in InstructionsArray)
-                {
-                    instruction.InstructionBase.Block.SetShadowActive(true);
-                }
-            }
-            else if (IsActive && !value)
-            {
-                // deactivate all shadows
-                foreach (I_BE2_Instruction instruction in InstructionsArray)
-                {
-                    instruction.InstructionBase.Block.SetShadowActive(false);
-                }
-            }
+            //    // activate all shadows
+            //    foreach (I_BE2_Instruction instruction in InstructionsArray)
+            //    {
+            //        instruction.InstructionBase.Block.SetShadowActive(true);
+            //    }
+            //}
+            //else if (IsActive && !value)
+            //{
+            //    // deactivate all shadows
+            //    foreach (I_BE2_Instruction instruction in InstructionsArray)
+            //    {
+            //        instruction.InstructionBase.Block.SetShadowActive(false);
+            //    }
+            //}
 
             _isActive = value;
         }
@@ -146,8 +146,12 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
             //모든 function 블록에 불러온 functionArea의 body를 넣어줌
             GameObject function_area_body_copy;
 
-            if (function_blocks[0] != function_area_body)
+            if (function_blocks[function_blocks.Length-1].transform.childCount 
+                != function_area_body.transform.childCount)
             {
+                //Debug.Log($"function_blocks[0] {function_blocks[0].transform.childCount}");
+                //Debug.Log($"function_area_body {function_area_body.transform.childCount}");
+
                 for (int i = 0; i < function_blocks.Length; i++)
                 {
 
@@ -156,6 +160,7 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
                     {
                         Destroy(child.gameObject);
                     }
+
 
                     while (function_area_body_copy.transform.childCount != 0)
                     {
