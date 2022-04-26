@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StageScene : BaseScene
 {
@@ -54,6 +56,30 @@ public class StageScene : BaseScene
 
             Managers.Stage.ConditionSet();
 
+            string sceneName = SceneManager.GetActiveScene().name;
+            if (!sceneName.Contains("Challenge"))
+            {
+                GameObject.Find("Blocks Engine 2 with function").transform.Find("Canvas Control Buttons")
+                    .Find("Button Mission").gameObject.SetActive(false);
+            }
+            else
+            {
+                GameObject BlockEngine = GameObject.Find("Blocks Engine 2 with function");
+                //BlockEngine.transform.Find("Speeder TO and PE").gameObject.SetActive(false);
+                //BlockEngine.transform.Find("Canvas Selections").gameObject.SetActive(false);
+                //BlockEngine.transform.Find("Canvas Blocks Selection").gameObject.SetActive(false);
+                Transform missionUI = BlockEngine.transform.Find("Stage_ClearMission");
+                //missionUI.gameObject.SetActive(true);
+                Text missionBlockText = missionUI.Find("bg_black").Find("bg_window").Find("GO (1)").Find("Text").GetComponent<Text>();
+
+                Define.StageBlock stageBlocks;
+                if (Enum.TryParse(sceneName, out stageBlocks))
+                {
+                    missionBlockText.text = $"블럭의 개수를 {(int)stageBlocks}개 이하로\n 사용하세요!";
+                }
+                    
+
+            }
         }
 
 
