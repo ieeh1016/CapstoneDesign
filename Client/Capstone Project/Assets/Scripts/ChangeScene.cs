@@ -268,52 +268,52 @@ public class ChangeScene : MonoBehaviour
     public void MoveToChallenge_1()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 1");
+        LoadingSceneController.LoadScene("Challenge1");
     }
     public void MoveToChallenge_2()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 2");
+        LoadingSceneController.LoadScene("Challenge2");
     }
     public void MoveToChallenge_3()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 3");
+        LoadingSceneController.LoadScene("Challenge3");
     }
     public void MoveToChallenge_4()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 4");
+        LoadingSceneController.LoadScene("Challenge4");
     }
     public void MoveToChallenge_5()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 5");
+        LoadingSceneController.LoadScene("Challenge5");
     }
     public void MoveToChallenge_6()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 6");
+        LoadingSceneController.LoadScene("Challenge6");
     }
     public void MoveToChallenge_7()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 7");
+        LoadingSceneController.LoadScene("Challenge7");
     }
     public void MoveToChallenge_8()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 8");
+        LoadingSceneController.LoadScene("Challenge8");
     }
     public void MoveToChallenge_9()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 9");
+        LoadingSceneController.LoadScene("Challenge9");
     }
     public void MoveToChallenge_10()
     {
         Managers.Clear();
-        LoadingSceneController.LoadScene("Challenge 10");
+        LoadingSceneController.LoadScene("Challenge10");
     }
 
 
