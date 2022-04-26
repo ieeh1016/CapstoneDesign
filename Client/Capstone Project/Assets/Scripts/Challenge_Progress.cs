@@ -10,7 +10,7 @@ public class Challenge_Progress : MonoBehaviour
     public Toggle toggle;
     void Start()
     {
-        ushort a = 0;
+        byte a = 0;
         for(ushort i = 1; i <= 10; i++)
         {
             Managers.User.ChallangeStageInfo.TryGetValue(i, out a);
