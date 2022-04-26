@@ -146,10 +146,8 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
             //모든 function 블록에 불러온 functionArea의 body를 넣어줌
             GameObject function_area_body_copy;
 
-
             if (function_blocks[0] != function_area_body)
             {
-                Debug.Log($"{function_blocks[0]}");
                 for (int i = 0; i < function_blocks.Length; i++)
                 {
 

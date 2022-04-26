@@ -22,11 +22,11 @@ public class Challenge_Progress : MonoBehaviour
             Level_Close.gameObject.SetActive(false);
 
             //Text name = .Find("Name").gameObject.GetComponent<Text>();
-            for (int j = 1; j<= a; j++)
-            {
-                toggle = Level_Open.Find($"Toggle-Star{j}"); // on
+            //for (int j = 1; j<= a; j++)
+            //{
+            //    toggle = Level_Open.Find($"Toggle-Star{j}"); // on
 
-            }
+            //}
         }
     }
 }

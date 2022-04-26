@@ -291,6 +291,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_InputFieldDynamicResize.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\SignInHelper.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TurnDirection.cs" />
+    <Compile Include="Assets\Scripts\Challenge_Progress.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_BlockSectionHeader_Operation.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Block\BE2_Block.cs" />
@@ -335,7 +336,6 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
-    <Compile Include="Assets\Scripts\Challenge_Progress.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
