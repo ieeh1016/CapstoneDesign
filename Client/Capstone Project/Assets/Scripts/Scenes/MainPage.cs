@@ -46,8 +46,8 @@ public class MainPage : MonoBehaviour
             StageManager.ToMain4 = false;
         }
 
+        Managers.Login.SendRequestMyPage();
         Managers.Login.LoadTop30();
-
     }
 
     // Update is called once per frame

@@ -80,9 +80,9 @@ namespace Server.DB
             return star_Dic;
         }
 
-        public static List<Data_Structure> Challenge_MyPage(String UID)
+        public static Data_Structure Challenge_MyPage(String UID)
         {
-            List<Data_Structure> data_set = new List<Data_Structure>();
+            Data_Structure data_set = new Data_Structure();
 
             string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
@@ -95,12 +95,10 @@ namespace Server.DB
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    data_set.Add(new Data_Structure()
-                    {
-                        name = Convert.ToString(reader["name"]),
-                        ranking = Convert.ToInt32(reader["ranking"]),
-                        TotalStars = Convert.ToByte(reader["totalStars"])
-                    });
+                    data_set.name = Convert.ToString(reader["name"]);
+                    data_set.ranking = Convert.ToInt32(reader["ranking"]);
+                    data_set.TotalStars = Convert.ToByte(reader["totalStars"]);
+
                 }
             }
             return data_set;
@@ -127,7 +125,7 @@ namespace Server.DB
                         ranking = Convert.ToInt32(reader["ranking"]),
                         totalStars = Convert.ToByte(reader["totalStars"])
                     });
-               
+
                 }
                 Console.WriteLine(list.Count);
 
