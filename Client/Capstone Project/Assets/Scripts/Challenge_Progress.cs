@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class Challenge_Progress : MonoBehaviour
 {
-    Transform _challenge = GameObject.Find("ChallengeStage_Select").transform;
+    
     void Start()
     {
 
+        Managers.User.ChallangeStageInfo.Add(1, 0);
+        Transform _challenge = GameObject.Find("ChallengeStage_Select").transform;
         byte a = 0;
 
         for (ushort i = 1; i <= 10; i++)
