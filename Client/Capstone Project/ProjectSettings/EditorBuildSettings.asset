@@ -32,6 +32,36 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge10.unity
+    guid: 92f7e7b6c7e219a49b42bb5e38fb2a81
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge9.unity
+    guid: a0fe4ac0bdb253340958d13fd9d7f3f4
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge8.unity
+    guid: 81fa3a58b4939a24d85a26334fb760a7
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge7.unity
+    guid: e3a8ee9d7a6327048900b8a5e690d211
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge6.unity
+    guid: d854608feedc2b842bba38b76f5256fb
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge4.unity
+    guid: fb6749f80f0f7c84680c585e108e669c
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge1.unity
+    guid: 4d4b22c5dac500b46a0d6ff7fb0e386c
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge2.unity
+    guid: 87406776371953a4884e1fa92d97b11a
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge3.unity
+    guid: cefd38c38bb6dc643bad626f52bbe4db
+  - enabled: 1
+    path: Assets/Scenes/Challenge/Challenge5.unity
+    guid: ba0d2512f9085b44aa2f0113dcbbb1c4
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -143,6 +173,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ConditionStage/Condition 10.unity
     guid: 8676a9cc8854f49428ab04185c7f255b
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}
