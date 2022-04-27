@@ -9,8 +9,6 @@ public class Challenge_Progress : MonoBehaviour
     
     void Start()
     {
-
-        Managers.User.ChallangeStageInfo.Add(1, 0);
         Transform _challenge = GameObject.Find("ChallengeStage_Select").transform;
         byte a = 0;
 
