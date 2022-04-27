@@ -123,18 +123,14 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
         //있으면 모든 if_function의 body에다가 functionarea의 body를 복사해서 넣
         if (function_blocks.Length != 0)
         {
-            GameObject function_area = GameObject.Find("FunctionArea");
-            //Debug.Log($"function_area, {function_area.name}");
-
 
             //functionArea의 body를 불러옴
-            GameObject function_area_body = function_area.transform.Find("Section0").gameObject;
-            function_area_body = function_area_body.transform.Find("Body").gameObject;
-
+            GameObject function_area_body = GameObject.Find("FunctionArea").transform.Find("Section0").Find("Body").gameObject;
+            //function_area_body = function_area_body.transform.Find("Body").gameObject;
 
 
             //functionArea에 function블록이 재귀적으로 들어가지 못하도록 제거
-            foreach (Transform ins in function_area_body.transform)
+            foreach (Transform ins in function_area_body.GetComponentsInChildren<Transform>())
             {
                 if (ins.name.Equals("HorizontalBlock Ins Function"))
                     Destroy(ins.gameObject);
@@ -145,11 +141,13 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
 
             //모든 function 블록에 불러온 functionArea의 body를 넣어줌
             GameObject function_area_body_copy;
-            Debug.Log($"function_blocks[0] {function_blocks[function_blocks.Length - 1].transform.childCount != function_area_body.transform.childCount}");
-            if (function_blocks[function_blocks.Length-1].transform.childCount != function_area_body.transform.childCount)
+            //Debug.Log($"area childCount {AllChildrenCount(function_area_body)}");
+            //Debug.Log($"block childCount {AllChildrenCount(function_blocks[function_blocks.Length - 1])}");
+            //Debug.Log(AllChildrenCount(function_area_body) != AllChildrenCount(function_blocks[function_blocks.Length - 1]));
+            if (AllChildrenCount(function_area_body) != AllChildrenCount(function_blocks[function_blocks.Length - 1]))
             {
-                Debug.Log($"function_blocks[0] {function_blocks[0].transform.childCount}");
-                Debug.Log($"function_area_body {function_area_body.transform.childCount}");
+                //Debug.Log($"function_blocks[0] {function_blocks[0].transform.childCount}");
+                //Debug.Log($"function_area_body {function_area_body.transform.childCount}");
 
                 for (int i = 0; i < function_blocks.Length; i++)
                 {
@@ -163,6 +161,7 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
 
                     while (function_area_body_copy.transform.childCount != 0)
                     {
+
                         Transform child = function_area_body_copy.transform.GetChild(0);
                         child.SetParent(function_blocks[i].transform, false);
 
@@ -186,6 +185,30 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
         //    Debug.Log($"{i}: {InstructionsArray[i]}");
         //}
     }
+    public int AllChildrenCount(GameObject g)
+    {
+        bool lastCaret = false;
+        int minusCount = 0;
+
+        Transform[] allChildren = g.GetComponentsInChildren<Transform>();
+
+        // InputField Input Caret이 2번 count되는걸 막음
+        foreach (Transform i in allChildren)
+        {
+            if (i.ToString().Contains("Caret"))
+                if (lastCaret == false)
+                    lastCaret = true;
+                else
+                    minusCount += 1;
+            else
+                lastCaret = false;
+        }
+
+
+        return allChildren.Length - minusCount;
+    }
+
+
 
     void PopulateStackRecursive(I_BE2_Block parentBlock)
     {
