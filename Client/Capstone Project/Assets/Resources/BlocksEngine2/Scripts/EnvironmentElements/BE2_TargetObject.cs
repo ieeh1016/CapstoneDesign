@@ -157,6 +157,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
                                     Managers.User.ChallangeStageInfo.Remove(challengeNum);
                                     Managers.User.ChallangeStageInfo.Add(challengeNum, stars);
                                     Managers.User.ChallangeStageInfo.Add((ushort)(challengeNum + 1), 0);
+                                    Managers.User.TotalStars += (ushort)currentCount;
 
                                     C_ChallengeUpdateStars pkt = new C_ChallengeUpdateStars();
                                     pkt.UId = Managers.User.UID;
