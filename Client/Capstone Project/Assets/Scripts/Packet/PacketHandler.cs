@@ -3,6 +3,7 @@ using ServerCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using UnityEngine;
 
 class PacketHandler
 {
@@ -14,6 +15,8 @@ class PacketHandler
         ServerSession serverSession = session as ServerSession;
 
         Managers.User.SetChallengeInfoByPacket(pkt);
+
+        session.Disconnect();
     }
 
     public static void S_Challenge_MyPageHandler(PacketSession session, IPacket packet)
@@ -24,15 +27,19 @@ class PacketHandler
         Managers.User.Name = pkt.name;
         Managers.User.Ranking = pkt.ranking;
         Managers.User.TotalStars = pkt.TotalStars;
+
+        session.Disconnect();
     }
 
     public static void S_Challenge_Top30RankHandler(PacketSession session, IPacket packet)
     {
+        Debug.Log("S_Challenge_Top30RankHandler called");
         S_Challenge_Top30Rank pkt = packet as S_Challenge_Top30Rank;
         ServerSession serverSession = session as ServerSession;
 
         Managers.User.SetChallengeTop30(pkt);
 
+        session.Disconnect();
         //UIHandle.Invoke();
         //GameObject.Find("RankUI").GetComponent<RankUI>().SetUI();
     }

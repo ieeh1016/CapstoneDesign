@@ -12,6 +12,7 @@ class PacketHandler
     {
         C_Request_Name_input pkt = packet as C_Request_Name_input;
         ClientSession clientSession = session as ClientSession;
+        session.Disconnect();
     }
 
     public static void C_Request_Load_Star_Handler(PacketSession session, IPacket packet) //
@@ -29,6 +30,7 @@ class PacketHandler
             });
         }
         clientSession.Send(s_pkt.Write());
+        session.Disconnect();
     }
 
     public static void C_Request_Challenge_MyPageHandler(PacketSession session, IPacket packet)
@@ -43,6 +45,7 @@ class PacketHandler
         s_pkt.TotalStars = data_set.TotalStars;
 
         clientSession.Send(s_pkt.Write());
+        session.Disconnect();
     }
 
     public static void C_Request_Challenge_Top30RankHandler(PacketSession session, IPacket packet) //
@@ -55,6 +58,7 @@ class PacketHandler
         s_pkt.ranks = Server.DB.DbManager.Study_ChallengeTop30(top_30);
 
         clientSession.Send(s_pkt.Write());
+        session.Disconnect();
     }
 
     public static void C_ChallengeUpdateStarsHandler(PacketSession session, IPacket packet) //
