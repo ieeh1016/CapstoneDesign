@@ -73,4 +73,18 @@ public class Define
         Challenge10 = 15,
     }
 
+    public enum KnightTypeByStage
+    {
+        FirstStudyStage = 1,
+        Challenge1 = 1,
+        Challenge2 = 1,
+        Challenge3 = 1,
+        Challenge4 = 1,
+        Challenge5 = 1,
+        Challenge6 = 1,
+        Challenge7 = 1,
+        Challenge8 = 1,
+        Challenge9 = 1,
+        Challenge10 = 1,
+    }
 }

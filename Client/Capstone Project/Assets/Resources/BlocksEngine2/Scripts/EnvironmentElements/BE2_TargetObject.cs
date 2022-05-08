@@ -108,6 +108,14 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
 
         if (dir.magnitude < 0.001f)
         {
+            if (Managers.Map.CheckDeadBlock())
+            {
+                UI_Finished popup = null;
+                GameObject go = Managers.Resource.Instantiate("Stage_fail1");
+                popup = go.AddComponent<UI_FailedPopup>();
+                popup.Init();
+            }
+
 
             if (TargetQueue.Count > 0)
             {
