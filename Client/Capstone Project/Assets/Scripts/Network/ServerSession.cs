@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net;
 using ServerCore;
+using UnityEngine;
 
 namespace DummyClient
 {
@@ -10,11 +11,13 @@ namespace DummyClient
 	{
 		public override void OnConnected(EndPoint endPoint)
 		{
+			Debug.Log($"OnConnected : {endPoint}");
 			Console.WriteLine($"OnConnected : {endPoint}");			
 		}
 
 		public override void OnDisconnected(EndPoint endPoint)
 		{
+			Debug.Log($"OnDisconnected : {endPoint}");
 			Console.WriteLine($"OnDisconnected : {endPoint}");
 		}
 
