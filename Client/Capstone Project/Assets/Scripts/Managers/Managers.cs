@@ -27,7 +27,7 @@ public class Managers : MonoBehaviour
     CoinManager _coin = new CoinManager();
     CodeBlockManager _block = new CodeBlockManager();
     MusicManager _music = new MusicManager();
-
+    MapObjectManager _mapObject = new MapObjectManager();
     UserManager _user = new UserManager();
     NetworkManager _netWork = new NetworkManager();
     LoginSetting _loginSetting = new LoginSetting();
@@ -50,6 +50,7 @@ public class Managers : MonoBehaviour
     public static UserManager User { get { return Instance._user; } }
     public static NetworkManager Network { get { return Instance._netWork; } }
     public static LoginSetting Login { get { return Instance._loginSetting; } }
+    public static MapObjectManager MapObject { get { return Instance._mapObject; } }
 
     // Start is called before the first frame update
     void Start()

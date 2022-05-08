@@ -86,6 +86,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_WhenPlayClicked.cs" />
     <Compile Include="Assets\Scripts\Managers\CodeBlockManager.cs" />
     <Compile Include="Assets\Resources\Suriyun\Scripts\AnimatorSound.cs" />
+    <Compile Include="Assets\AurynSky\Forest Pack\Scripts\MaterialMover.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Video\VideoCapabilities.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\DummyClient.cs" />
     <Compile Include="Assets\GooglePlayGames\ISocialPlatform\PlayGamesPlatform.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Assets\Scripts\Scenes\BaseScene.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Video\CaptureOverlayStateListener.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_RepeatUntil.cs" />
+    <Compile Include="Assets\AurynSky\Forest Pack\Scripts\Rotator.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\CommonTypes.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Cst_RotateYAxis.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidSnapshotMetadata.cs" />
@@ -188,6 +190,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_SaveLoadContextMenu.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EnvironmentElements\I_BE2_ProgrammingEnv.cs" />
     <Compile Include="Assets\GooglePlayGames\PluginVersion.cs" />
+    <Compile Include="Assets\Scripts\Managers\MapObjectManager.cs" />
     <Compile Include="Assets\Scripts\Utils\LoginManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_PlaySound.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\I_BE2_BlockSection.cs" />
@@ -285,6 +288,8 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_KeyPressed.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\NearbyConnectionClientFactory.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\I_BE2_Spot.cs" />
+    <Compile Include="Assets\AurynSky\Forest Pack\Scripts\WheelController.cs" />
+    <Compile Include="Assets\AurynSky\Forest Pack\Scripts\ChestDemo.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Core\BE2_ExecutionManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfElseForwardCheck.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
@@ -336,6 +341,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
+    <Compile Include="Assets\WindyBlocks\Ball\Model\Billboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
@@ -343,6 +349,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 10Coin.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 6Coin.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 10.txt" />
+    <None Include="Assets\BlackBull\ReadMe.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge4.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 5Coin.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge3Coin.txt" />
@@ -402,6 +409,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 8.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge8Coin.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 7.txt" />
+    <None Include="Assets\WindyBlocks\TerrainDetails\Flowers\Materials\Flowers.shader" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 1.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 8Coin.txt" />
@@ -409,6 +417,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 9.txt" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Auth.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge5Coin.txt" />
+    <None Include="Assets\WindyBlocks\Clouds\Materials\CloudRealistic.shader" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-8_8_0.dll" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\readme.txt" />
@@ -419,6 +428,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 2.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge9Coin.txt" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+    <None Include="Assets\Resources\MapGeneratingFiles\FirstStudyStageObject.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 6.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 4.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 9.txt" />
@@ -436,9 +446,11 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 1.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge7Coin.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
+    <None Include="Assets\SkySeries Freebie\Hdri setup.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 3.txt" />
     <None Include="Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge1.txt" />
+    <None Include="Assets\Downtown Game Studio\Nature Pack - Low Polly Trees &amp; Bushes\Documentation.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge10.txt" />
     <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 2Coin.txt" />
@@ -447,6 +459,8 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 7.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 7Coin.txt" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
+    <None Include="Assets\AurynSky\Forest Pack\READ ME.txt" />
+    <None Include="Assets\Toon_Knights\Hey.txt" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 5Coin.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 10.txt" />

@@ -23,6 +23,17 @@ public class MapManager : I_CheckClear
         return false;
     }
 
+    public bool CheckDeadBlock()
+    {
+        GameObject block = null;
+        if (Map.TryGetValue(Managers.TargetObject.GetTargetObject("Character").GetComponent<Character>().CurrentPositionInMap, out block))
+        {
+            return block.GetComponent<Block>().BlockType.Equals('D');
+        }
+
+        return false;
+    }
+
 
     public bool GenerateMap() // 씬 이름과 동일한 텍스트 파일 불러와서 맵 생성
     {
@@ -128,7 +139,7 @@ public class MapManager : I_CheckClear
                     block.AddComponent<Block>();
                     block.GetComponent<Block>().BlockId = blockId;
                     block.GetComponent<Block>().BlockType = splitLines[i][colCount];
-                    Map.Add(blockId, block);
+                    
 
                     if (name.Equals("StartBlock") || name.Equals("StartBlock(Right)") || name.Equals("StartBlock(Down)") || name.Equals("StartBlock(Left)"))
                     {
@@ -161,6 +172,8 @@ public class MapManager : I_CheckClear
                     {
                         block.transform.localPosition += new Vector3(0, 1.6f, 0);
                     }
+
+                    Map.Add(blockId, block);
                     blockId++;
                 }
             }
@@ -174,6 +187,8 @@ public class MapManager : I_CheckClear
     {
         return Map;
     }
+
+    
 
     public int Move(int direction, int velocity)
     {
