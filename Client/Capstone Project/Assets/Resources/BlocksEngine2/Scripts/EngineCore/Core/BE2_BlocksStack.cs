@@ -150,12 +150,9 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
             //functionArea에 function블록이 재귀적으로 들어가지 못하도록 제거
             foreach (Transform ins in function_area_body.GetComponentsInChildren<Transform>())
             {
-                if (ins.name.Equals("HorizontalBlock Ins Function"))
+                if (ins.name.Contains("HorizontalBlock Ins Function"))
                     Managers.Resource.Destroy(ins.gameObject);
             }
-
-
-
 
             //모든 function 블록에 불러온 functionArea의 body를 넣어줌
             GameObject function_area_body_copy;

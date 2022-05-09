@@ -230,4 +230,9 @@ public class MapObjectManager
         }
         return true;
     }
+
+    public void Clear()
+    {
+        objectMap.Clear();
+    }
 }

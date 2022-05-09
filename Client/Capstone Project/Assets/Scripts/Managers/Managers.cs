@@ -102,5 +102,6 @@ public class Managers : MonoBehaviour
         Coin.Clear();
         Stage.Clear();
         TargetObject.Clear();
+        MapObject.Clear();
     }
 }

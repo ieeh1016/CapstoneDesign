@@ -11,6 +11,8 @@ public class MapManager : I_CheckClear
 
     public float _blockStartHeight = 0.1f;
     public float _cameraRotationX = 81f;
+    string moveableBlockTypes = "1ESUDL";
+
 
     public bool CheckCleared() // 현재 캐릭터의 위치가 EndBlock이라면 True 반환
     {
@@ -231,7 +233,8 @@ public class MapManager : I_CheckClear
                 if (Map.TryGetValue(currentPositionInMap + direction, out block) && block != null)
                 {
                     char blockType = block.GetComponent<Block>().BlockType;
-                    if (blockType.Equals('S') || blockType.Equals('1') || blockType.Equals('E'))
+                    
+                    if (moveableBlockTypes.Contains(blockType.ToString()))
                     {
                         currentPositionInMap += direction;
                         targetObject.CurrentPositionInMap = currentPositionInMap;

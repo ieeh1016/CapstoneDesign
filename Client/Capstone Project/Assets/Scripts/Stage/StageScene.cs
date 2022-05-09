@@ -45,7 +45,6 @@ public class StageScene : BaseScene
             else
             {
                 Transform quarterViewCamera = be2ProgEnv.transform.Find("QuaterView Camera");
-                Debug.Log("find");
                 if (quarterViewCamera != null)
                 {
                     
