@@ -116,6 +116,24 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
 
     public void PopulateStack()
     {
+        fuctionAreaUpdate();
+
+        InstructionsArray = new I_BE2_Instruction[0];
+        PopulateStackRecursive(TriggerInstruction.InstructionBase.Block);
+        _arrayLength = InstructionsArray.Length;
+
+
+        //Debug.Log($"length: {InstructionsArray.Length}");
+        //for (int i = 0; i < InstructionsArray.Length; i++)
+        //{
+        //    Debug.Log($"{i}: {InstructionsArray[i]}");
+        //}
+    }
+
+
+
+    void fuctionAreaUpdate()
+    {
         //ProgrammingEnv안의 ins_function들을 찾음
         GameObject[] function_blocks = GameObject.FindGameObjectsWithTag("FunctionBlock");
 
@@ -133,7 +151,7 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
             foreach (Transform ins in function_area_body.GetComponentsInChildren<Transform>())
             {
                 if (ins.name.Equals("HorizontalBlock Ins Function"))
-                    Destroy(ins.gameObject);
+                    Managers.Resource.Destroy(ins.gameObject);
             }
 
 
@@ -144,7 +162,7 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
             //Debug.Log($"area childCount {AllChildrenCount(function_area_body)}");
             //Debug.Log($"block childCount {AllChildrenCount(function_blocks[function_blocks.Length - 1])}");
             //Debug.Log(AllChildrenCount(function_area_body) != AllChildrenCount(function_blocks[function_blocks.Length - 1]));
-            if (AllChildrenCount(function_area_body) != AllChildrenCount(function_blocks[function_blocks.Length - 1]))
+            if (AllInsCount(function_area_body) != AllInsCount(function_blocks[function_blocks.Length - 1]))
             {
                 //Debug.Log($"function_blocks[0] {function_blocks[0].transform.childCount}");
                 //Debug.Log($"function_area_body {function_area_body.transform.childCount}");
@@ -155,7 +173,7 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
                     function_area_body_copy = Instantiate(function_area_body);
                     foreach (Transform child in function_blocks[i].transform)
                     {
-                        Destroy(child.gameObject);
+                        Managers.Resource.Destroy(child.gameObject);
                     }
 
 
@@ -169,43 +187,14 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
                         child.transform.localScale = new Vector3(0, 0, 0);
 
                     }
-                    Destroy(function_area_body_copy);
+                    Managers.Resource.Destroy(function_area_body_copy);
                 }
             }
         }
-
-        InstructionsArray = new I_BE2_Instruction[0];
-        PopulateStackRecursive(TriggerInstruction.InstructionBase.Block);
-        _arrayLength = InstructionsArray.Length;
-
-
-        //Debug.Log($"length: {InstructionsArray.Length}");
-        //for (int i = 0; i < InstructionsArray.Length; i++)
-        //{
-        //    Debug.Log($"{i}: {InstructionsArray[i]}");
-        //}
     }
-    public int AllChildrenCount(GameObject g)
+    int AllInsCount(GameObject g)
     {
-        bool lastCaret = false;
-        int minusCount = 0;
-
-        Transform[] allChildren = g.GetComponentsInChildren<Transform>();
-
-        // InputField Input Caret이 2번 count되는걸 막음
-        foreach (Transform i in allChildren)
-        {
-            if (i.ToString().Contains("Caret"))
-                if (lastCaret == false)
-                    lastCaret = true;
-                else
-                    minusCount += 1;
-            else
-                lastCaret = false;
-        }
-
-
-        return allChildren.Length - minusCount;
+        return g.GetComponentsInChildren<BE2_Block>().Length;
     }
 
 

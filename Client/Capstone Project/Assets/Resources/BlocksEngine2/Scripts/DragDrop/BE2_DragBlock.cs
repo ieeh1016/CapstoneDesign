@@ -61,7 +61,7 @@ public class BE2_DragBlock : MonoBehaviour, I_BE2_Drag
         I_BE2_Spot spot = _dragDropManager.Raycaster.FindClosestSpotForBlock(this, _dragDropManager.detectionDistance);
 
         Transform ghostBlockTransform = _dragDropManager.GhostBlockTransform;
-        if (spot is BE2_SpotBlockBody && spot.Block != Block)
+        if (spot is BE2_SpotBlockBody && spot.Block != Block && !spot.Block.ToString().Contains("HorizontalBlock Ins Function"))
         {
             ghostBlockTransform.SetParent(spot.Transform);
             ghostBlockTransform.localScale = Vector3.one;
