@@ -26,6 +26,7 @@ public class Managers : MonoBehaviour
     TargetObjectManager _targetObject = new TargetObjectManager();
     CoinManager _coin = new CoinManager();
     CodeBlockManager _block = new CodeBlockManager();
+    CodingAreaManager _codingArea  = new CodingAreaManager();
     MusicManager _music = new MusicManager();
     MapObjectManager _mapObject = new MapObjectManager();
     UserManager _user = new UserManager();
@@ -45,6 +46,7 @@ public class Managers : MonoBehaviour
     public static TargetObjectManager TargetObject { get { return Instance._targetObject; } }
     public static CoinManager Coin { get { return Instance._coin; } }
     public static CodeBlockManager CodeBlock { get { return Instance._block; } }
+    public static CodingAreaManager CodingArea { get { return Instance._codingArea; } }
     public static MusicManager Music { get { return Instance._music; } }
 
     public static UserManager User { get { return Instance._user; } }
@@ -100,5 +102,6 @@ public class Managers : MonoBehaviour
         Coin.Clear();
         Stage.Clear();
         TargetObject.Clear();
+        MapObject.Clear();
     }
 }
