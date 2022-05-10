@@ -48,7 +48,7 @@ public class TargetObjectManager
     public void Clear()
     {
         _targetObject = null;
-        _targetDict.Remove("Character");
+        _targetDict.Remove(Managers.User.Character);
 
     }
 }
