@@ -11,6 +11,7 @@ public class UserManager
     ushort challengeProgress;
     ushort totalStars;
     int ranking;
+    string selectedChracter;
     Dictionary<ushort, byte> _challengeStageInfo = new Dictionary<ushort, byte>();
     Dictionary<int, ChallengeRankerInfo> _challengeTop30 = new Dictionary<int, ChallengeRankerInfo>();
 
@@ -42,6 +43,12 @@ public class UserManager
     {
         get { return ranking; }
         set { ranking = value; }
+    }
+
+    public string Character
+    {
+        get { return selectedChracter; }
+        set { selectedChracter = value; }
     }
 
     public Dictionary<ushort, byte> ChallangeStageInfo
