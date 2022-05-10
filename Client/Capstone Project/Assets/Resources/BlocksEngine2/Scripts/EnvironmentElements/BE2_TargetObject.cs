@@ -114,6 +114,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
                 GameObject go = Managers.Resource.Instantiate("Stage_fail1");
                 popup = go.AddComponent<UI_FailedPopup>();
                 popup.Init();
+                return;
             }
 
 
