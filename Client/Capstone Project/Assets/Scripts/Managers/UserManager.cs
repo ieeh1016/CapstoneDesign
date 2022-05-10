@@ -11,7 +11,7 @@ public class UserManager
     ushort challengeProgress;
     ushort totalStars;
     int ranking;
-    string selectedChracter;
+    string selectedChracter = "Character";
     Dictionary<ushort, byte> _challengeStageInfo = new Dictionary<ushort, byte>();
     Dictionary<int, ChallengeRankerInfo> _challengeTop30 = new Dictionary<int, ChallengeRankerInfo>();
 

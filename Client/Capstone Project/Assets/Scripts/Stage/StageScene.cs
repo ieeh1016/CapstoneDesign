@@ -24,7 +24,7 @@ public class StageScene : BaseScene
         }
         else
         {
-            GameObject character = Managers.TargetObject.GetTargetObject("Character");
+            GameObject character = Managers.TargetObject.GetTargetObject(Managers.User.Character);
             Vector3 startPosition = character.transform.position;
             if (startPosition == null)
             {
