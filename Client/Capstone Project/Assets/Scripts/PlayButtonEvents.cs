@@ -25,10 +25,12 @@ public class PlayButtonEvents : MonoBehaviour
 
             Managers.CodingArea._mainAreaSaved = Instantiate(g.transform.Find("HorizontalBlock Ins WhenPlayClicked").Find("Section0").Find("Body"));
             DontDestroyOnLoad(Managers.CodingArea._mainAreaSaved);
+            Managers.CodingArea._mainAreaSaved.name = "mainAreaSaved";
             Debug.Log($"{Managers.CodingArea._mainAreaSaved.name}");
 
             Managers.CodingArea._functionAreaSaved = Instantiate(g.transform.Find("FunctionArea").Find("Section0").Find("Body"));
             DontDestroyOnLoad(Managers.CodingArea._functionAreaSaved);
+            Managers.CodingArea._functionAreaSaved.name = "functionAreaSaved";
             Debug.Log($"{Managers.CodingArea._functionAreaSaved.name}");
 
 
@@ -45,6 +47,10 @@ public class PlayButtonEvents : MonoBehaviour
             e2ExecutionManager.totalNumOfBlocks = GameObject.Find("HorizontalBlock Ins WhenPlayClicked").GetComponent<BE2_BlocksStack>().InstructionsArray.Length; // 실행 시점의 블록 개수 저장
             Debug.Log(e2ExecutionManager.totalNumOfBlocks);
             e2ExecutionManager.PlayAfterDelay();
+
+            //isMoved = true 명령 블록 조합이 캐릭터가 움직이지 않는 경우 강제조정
+            BE2_TargetObject bE2_TargetObject = Managers.TargetObject.GetTargetObjectComponent();
+            bE2_TargetObject.SetIsMovedTrueWithDelay(1.5f);
 
 
             //시작 버튼 제거

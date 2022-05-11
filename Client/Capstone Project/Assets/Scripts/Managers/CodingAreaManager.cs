@@ -54,8 +54,10 @@ public class CodingAreaManager
 
     public void Clear()
     {
-        _mainAreaSaved = null;
-        _functionAreaSaved = null;
+        if (_mainAreaSaved != null)
+            Managers.Resource.Destroy(_mainAreaSaved.gameObject);
+        if (_functionAreaSaved != null)
+            Managers.Resource.Destroy(_functionAreaSaved.gameObject);
 
         _mainArea = null;
         _functionArea = null;

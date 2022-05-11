@@ -45,6 +45,7 @@ public class ChangeScene : MonoBehaviour
     }
     public void MoveToStage()
     {
+        Managers.CodingArea.Clear();
         MoveToMain();
     }
     
@@ -58,6 +59,7 @@ public class ChangeScene : MonoBehaviour
     {
     
         Managers.Clear();
+        Managers.CodingArea.Clear();
         string sceneName = SceneManager.GetActiveScene().name;
         int sceneNameLastIndex = sceneName.Length - 1;
         int replaceNum = sceneName[sceneNameLastIndex] + 1; //basic 1
