@@ -65,9 +65,8 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
         _target = _startPosition = this.gameObject.transform.position;
 
 
-        _state = CharacterState.Idle;
         anim = GetComponent<Animator>();
-        startAnimation(_state);
+        SetAnimation(CharacterState.Idle);
         isMoved = false;
 
         cameraController = GameObject.Find("QuaterView Camera").GetComponent<CameraController>();
@@ -78,9 +77,10 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
         moveToTarget();
     }
 
-    void startAnimation(CharacterState state)
+    void SetAnimation(CharacterState state)
     {
-        switch (state)
+        _state = state;
+        switch (_state)
         {
 
             case CharacterState.Idle:
@@ -126,8 +126,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
 
             else
             {
-                _state = CharacterState.Idle;
-                startAnimation(_state);
+                SetAnimation(CharacterState.Idle);
 
                 if (isMoved)
                 {
@@ -145,8 +144,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
         {
             if (!isMoved)
                 isMoved = true;
-            _state = CharacterState.Moving;
-            startAnimation(_state);
+            SetAnimation(CharacterState.Moving);
             this.gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, _target, _speed * Time.deltaTime);
             this.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
         }
@@ -209,6 +207,12 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
             popup = go.AddComponent<UI_FailedPopup>();
             popup.Init();
         }
+    }
+
+    void SetIsMovedTrue() { isMoved = true; }
+    public void SetIsMovedTrueWithDelay(float time = 0.75f)
+    {
+        Invoke(nameof(SetIsMovedTrue), time);
     }
 
     [SerializeField]
