@@ -39,6 +39,8 @@ class PacketHandler
 
         Managers.User.SetChallengeTop30(pkt);
 
+        Managers.User.RankPacketArrival = true;
+
         session.Disconnect();
         //UIHandle.Invoke();
         //GameObject.Find("RankUI").GetComponent<RankUI>().SetUI();

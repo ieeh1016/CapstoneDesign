@@ -12,9 +12,18 @@ public class RankUI : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine("WaitForPacket");
+        Managers.User.RankPacketArrival = false; // 패킷이 도착할 때까지 대기하기 위한 변수
+        Managers.Login.LoadTop30(); 
+
+        while(Managers.User.RankPacketArrival == false) // 서버로부터 패킷이 도착할 때까지 대기
+        {
+            // busy wait for rank packet
+        }
+
+        //StartCoroutine("WaitForPacket");
 
         Debug.Log("SetUI 블렸엉라ㅓ");
+
         Transform rank = gameObject.transform.Find("Rank");
         for (int i = 1; i <= 3; i++)
         {
