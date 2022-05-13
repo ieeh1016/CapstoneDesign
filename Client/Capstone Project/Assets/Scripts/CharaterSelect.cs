@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CharaterSelect : MonoBehaviour
 {
+    private void Start()
+    {
+        
+    }
+
     public void SetCharacter(int characterNum)
     {
         

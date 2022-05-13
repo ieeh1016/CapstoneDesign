@@ -21,17 +21,7 @@ public class PlayButtonEvents : MonoBehaviour
         if(_section.childCount != 0)
         {
             //코딩 영역 저장
-            GameObject g = GameObject.Find("ProgrammingEnv");
-
-            Managers.CodingArea._mainAreaSaved = Instantiate(g.transform.Find("HorizontalBlock Ins WhenPlayClicked").Find("Section0").Find("Body"));
-            DontDestroyOnLoad(Managers.CodingArea._mainAreaSaved);
-            Managers.CodingArea._mainAreaSaved.name = "mainAreaSaved";
-            Debug.Log($"{Managers.CodingArea._mainAreaSaved.name}");
-
-            Managers.CodingArea._functionAreaSaved = Instantiate(g.transform.Find("FunctionArea").Find("Section0").Find("Body"));
-            DontDestroyOnLoad(Managers.CodingArea._functionAreaSaved);
-            Managers.CodingArea._functionAreaSaved.name = "functionAreaSaved";
-            Debug.Log($"{Managers.CodingArea._functionAreaSaved.name}");
+            Managers.CodingArea.SaveArea();
 
 
             //카메라 전환
