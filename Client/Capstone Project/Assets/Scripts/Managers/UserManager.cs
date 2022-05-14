@@ -12,6 +12,8 @@ public class UserManager
     ushort totalStars;
     int ranking;
     string selectedChracter = "Character";
+    bool rankPacketArrival = false;
+
     Dictionary<ushort, byte> _challengeStageInfo = new Dictionary<ushort, byte>();
     Dictionary<int, ChallengeRankerInfo> _challengeTop30 = new Dictionary<int, ChallengeRankerInfo>();
 
@@ -49,6 +51,12 @@ public class UserManager
     {
         get { return selectedChracter; }
         set { selectedChracter = value; }
+    }
+
+    public bool RankPacketArrival
+    {
+        get { return rankPacketArrival; }
+        set { rankPacketArrival = value; }
     }
 
     public Dictionary<ushort, byte> ChallangeStageInfo
