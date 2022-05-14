@@ -12,8 +12,10 @@ public class CharaterSelect : MonoBehaviour
 
     private void Start()
     {
+        //_challengeStageInfo로 수정할 것
         //_progress = Managers.User.ChallengeProgress;
-        _progress = 5; //테스트용으로 넣음, 실제에선 Managers.User.ChallengeProgress사용
+
+        _progress = 5; //테스트용 나중에 위의 코드로 변경할 것
 
         _btns = gameObject.GetComponentsInChildren<CharacterSelectBtns>();
 
