@@ -87,4 +87,11 @@ public class Define
         Challenge9 = 1,
         Challenge10 = 1,
     }
+
+    public enum CharBtnState
+    {
+        Chooseable = 0,
+        Chosen = 1,
+        Locked = 2,
+    }
 }

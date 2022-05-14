@@ -46,22 +46,10 @@ public class StageScene : BaseScene
             {
                 Transform quarterViewCamera = be2ProgEnv.transform.Find("QuaterView Camera");
                 if (quarterViewCamera != null)
-                {
-                    
                     quarterViewCamera.GetComponent<CameraController>().Player = character;
 
-                }
-
                 Managers.CodingArea.Init();
-
                 Managers.CodingArea.PutArea();
-
-                if (Managers.CodingArea._mainAreaSaved != null)
-                    Destroy(Managers.CodingArea._mainAreaSaved.gameObject);
-                if (Managers.CodingArea._functionAreaSaved != null)
-                    Destroy(Managers.CodingArea._functionAreaSaved.gameObject);
-
-                RefreshCodingArea(Managers.CodingArea._mainArea, Managers.CodingArea._functionArea);
 
             }
 
@@ -96,50 +84,7 @@ public class StageScene : BaseScene
 
     }
 
-    void RefreshCodingArea(Transform mainBody, Transform functionBody)
-    {
-        Debug.Log("refresh called");
-        if (mainBody != null)
-        {
-            int count = mainBody.childCount;
-            GameObject[] copyObject = new GameObject[count];
-
-            Debug.Log("${mainBody.childCount}");
-
-            for (int i = 0; i < count; i++)
-            {
-                GameObject go = mainBody.GetChild(i).gameObject;
-                copyObject[i] = GameObject.Instantiate(go);
-                Managers.Resource.Destroy(go);
-            }
-
-            for (int i = 0; i < count; i++)
-            {
-                copyObject[i].transform.SetParent(mainBody, false);
-            }
-        }
-
-        if (functionBody != null)
-        {
-            int count = functionBody.childCount;
-            GameObject[] copyObject = new GameObject[count];
-
-            Debug.Log("${functionBody.childCount}");
-
-            for (int i = 0; i < count; i++)
-            {
-                GameObject go = functionBody.GetChild(i).gameObject;
-                copyObject[i] = GameObject.Instantiate(go);
-                Managers.Resource.Destroy(go);
-            }
-
-            for (int i = 0; i < count; i++)
-            {
-                copyObject[i].transform.SetParent(functionBody, false);
-            }
-        }
-
-    }
+    
     public override void Clear()
     {
 
