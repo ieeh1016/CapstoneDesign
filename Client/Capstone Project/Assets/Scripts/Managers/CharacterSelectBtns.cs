@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character_Select_Btns : MonoBehaviour
+public class CharacterSelectBtns : MonoBehaviour
 {
-    public enum CharBtnState
-    {
-        Chooseable = 0,
-        Chosen = 1,
-        Locked = 2,
-    }
+
 
     [SerializeField]
-    CharBtnState _state;
+    Define.CharBtnState _state;
 
     GameObject Choose_Char;
     GameObject Current_Chosen;
@@ -21,16 +16,18 @@ public class Character_Select_Btns : MonoBehaviour
     public void Awake()
     {
         Init();
+        CharacterSelectBtnState(_state);
     }
 
     public void Init()
     {
+        _state = Define.CharBtnState.Locked;
         Choose_Char = transform.Find("Choose_Char").gameObject;
         Current_Chosen = transform.Find("Current_Chosen").gameObject;
         Locked = transform.Find("Locked").gameObject;
     }
 
-    public void CharacterSelectBtnState(CharBtnState state)
+    public void CharacterSelectBtnState(Define.CharBtnState state)
     {
         Choose_Char.SetActive(false);
         Current_Chosen.SetActive(false);
@@ -38,18 +35,25 @@ public class Character_Select_Btns : MonoBehaviour
 
         switch (state)
         {
-            case CharBtnState.Chooseable:
+            case Define.CharBtnState.Chooseable:
                 Choose_Char.SetActive(true);
                 break;
 
-            case CharBtnState.Chosen:
+            case Define.CharBtnState.Chosen:
                 Current_Chosen.SetActive(true);
                 break;
 
-            case CharBtnState.Locked:
+            case Define.CharBtnState.Locked:
             default:
                 Locked.SetActive(true);
                 break;
         }
+
+        _state = state;
+    }
+
+    public void CharacterChosen()
+    {
+        CharacterSelectBtnState(Define.CharBtnState.Chosen);
     }
 }

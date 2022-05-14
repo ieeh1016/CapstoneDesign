@@ -322,6 +322,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BE2_CstColorDropdownDynamicResize.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\I_BE2_BlockSectionHeaderItem.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EditorScripts\BE2_Inspector.cs" />
+    <Compile Include="Assets\Scripts\Managers\CharacterSelectBtns.cs" />
     <Compile Include="Assets\Scripts\CoinCollision.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\BE2_UI_VariableViewer.cs" />
     <Compile Include="Assets\Scripts\Managers\StageManager.cs" />
@@ -345,7 +346,6 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
-    <Compile Include="Assets\Scripts\Managers\Character_Select_Btns.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
