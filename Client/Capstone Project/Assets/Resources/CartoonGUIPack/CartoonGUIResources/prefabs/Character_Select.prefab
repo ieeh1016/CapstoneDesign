@@ -240,7 +240,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &114722701255053744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,6 +789,7 @@ GameObject:
   - component: {fileID: 3838464203208022854}
   - component: {fileID: 7214692879358076959}
   - component: {fileID: 5714345960291861403}
+  - component: {fileID: 1730110943171993813}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -910,6 +911,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1730110943171993813}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5714345960291861403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,6 +933,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1730110943171993813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244711981379559138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &553829954609421836
@@ -1343,6 +1368,7 @@ GameObject:
   - component: {fileID: 2114732367937492965}
   - component: {fileID: 9119141794788552671}
   - component: {fileID: 8289214852132640006}
+  - component: {fileID: 5900100856752707375}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -1464,6 +1490,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5900100856752707375}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8289214852132640006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1474,6 +1512,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5900100856752707375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156268598370489577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1268799005603994698
@@ -2586,6 +2636,7 @@ GameObject:
   - component: {fileID: 6957405114782044641}
   - component: {fileID: 5254014181826269983}
   - component: {fileID: 3874857134527021960}
+  - component: {fileID: 982967930793333560}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -2707,6 +2758,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 982967930793333560}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3874857134527021960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2717,6 +2780,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &982967930793333560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027576627030513589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2042947586285441723
@@ -3181,7 +3256,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6767697182970588182}
   m_HandleRect: {fileID: 6217068615320335556}
   m_Direction: 0
-  m_Value: 0.000009711583
+  m_Value: 0.000009659925
   m_Size: 0.33989415
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3512,6 +3587,7 @@ GameObject:
   - component: {fileID: 8799805727317019562}
   - component: {fileID: 1974224454630034817}
   - component: {fileID: 9080682662319809588}
+  - component: {fileID: 8087155374323018160}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -3633,6 +3709,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8087155374323018160}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9080682662319809588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3643,6 +3731,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8087155374323018160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815700405907628960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2921579899191735511
@@ -3992,6 +4092,7 @@ GameObject:
   - component: {fileID: 2795357018284691439}
   - component: {fileID: 4372174280148924124}
   - component: {fileID: 3352374153431698127}
+  - component: {fileID: 3879604667126122304}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -4113,6 +4214,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3879604667126122304}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3352374153431698127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4123,6 +4236,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3879604667126122304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191183034060442852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3206586615675531331
@@ -6327,6 +6452,7 @@ GameObject:
   - component: {fileID: 8068671733218428546}
   - component: {fileID: 5102277738130484170}
   - component: {fileID: 8974581184362302284}
+  - component: {fileID: 2686161913170809507}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -6448,6 +6574,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2686161913170809507}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8974581184362302284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6458,6 +6596,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2686161913170809507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190786309349980064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6389141427432085730
@@ -7317,6 +7467,7 @@ GameObject:
   - component: {fileID: 4422334037630664671}
   - component: {fileID: 8233596409561855828}
   - component: {fileID: 6345283283064378271}
+  - component: {fileID: 2469454851810070548}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -7438,6 +7589,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2469454851810070548}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6345283283064378271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7448,6 +7611,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2469454851810070548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7039431435565688050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7138946312990220211
@@ -8074,6 +8249,7 @@ GameObject:
   - component: {fileID: 7963670638553365776}
   - component: {fileID: 9153432692508637876}
   - component: {fileID: 4251880035225148112}
+  - component: {fileID: 1264158726194461117}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -8195,6 +8371,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1264158726194461117}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4251880035225148112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8205,6 +8393,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1264158726194461117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785487825988999996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7824188478864333067
@@ -8373,6 +8573,7 @@ GameObject:
   - component: {fileID: 7104074172616291692}
   - component: {fileID: 1084333595701890359}
   - component: {fileID: 5943089538048863748}
+  - component: {fileID: 1550036322565144959}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -8494,6 +8695,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1550036322565144959}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5943089538048863748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8504,6 +8717,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1550036322565144959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7868368730332813228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8037733052082810076
@@ -8519,6 +8744,7 @@ GameObject:
   - component: {fileID: 1294945348349787874}
   - component: {fileID: 1933132380592222216}
   - component: {fileID: 2640138692567387071}
+  - component: {fileID: 3828446937493140014}
   m_Layer: 5
   m_Name: Choose_Char
   m_TagString: Untagged
@@ -8640,6 +8866,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3828446937493140014}
+        m_TargetAssemblyTypeName: Button_1, Assembly-CSharp
+        m_MethodName: PlaySE
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2640138692567387071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8650,6 +8888,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26cc595c6ff1d09459d380bd72542288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3828446937493140014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8037733052082810076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427c4d54aab0d6149b03d5fb104da44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8107467745317764087
