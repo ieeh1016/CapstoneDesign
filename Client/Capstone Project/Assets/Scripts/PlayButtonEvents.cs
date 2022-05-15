@@ -38,10 +38,6 @@ public class PlayButtonEvents : MonoBehaviour
             Debug.Log(e2ExecutionManager.totalNumOfBlocks);
             e2ExecutionManager.PlayAfterDelay();
 
-            //isMoved = true 명령 블록 조합이 캐릭터가 움직이지 않는 경우 강제조정
-            BE2_TargetObject bE2_TargetObject = Managers.TargetObject.GetTargetObjectComponent();
-            bE2_TargetObject.SetIsMovedTrueWithDelay(1.5f);
-
 
             //시작 버튼 제거
             gameObject.SetActive(false);
