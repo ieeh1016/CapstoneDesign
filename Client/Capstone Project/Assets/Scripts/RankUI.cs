@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class RankUI : MonoBehaviour
 {
+    float waitTime = 0;
     public IEnumerator WaitForPacket()
     {
         yield return new WaitForSeconds(2.0f);
@@ -18,6 +19,9 @@ public class RankUI : MonoBehaviour
         while(Managers.User.RankPacketArrival == false) // 서버로부터 패킷이 도착할 때까지 대기
         {
             // busy wait for rank packet
+            waitTime += Time.deltaTime;
+            if (waitTime >= 3)
+                return;
         }
 
         //StartCoroutine("WaitForPacket");
