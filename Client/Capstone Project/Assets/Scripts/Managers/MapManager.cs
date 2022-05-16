@@ -142,7 +142,7 @@ public class MapManager : I_CheckClear
                     block.GetComponent<Block>().BlockType = splitLines[i][colCount];
                     
 
-                    if (name.Equals("StartBlock") || name.Equals("StartBlock(Right)") || name.Equals("StartBlock(Down)") || name.Equals("StartBlock(Left)"))
+                    if (name.Contains("Start"))
                     {
                         GameObject character = Managers.TargetObject.GetTargetObject(Managers.User.Character);
                         Debug.Log($"{character}");
@@ -150,17 +150,17 @@ public class MapManager : I_CheckClear
                         character.GetComponent<Character>().CurrentPositionInMap = blockId;
                         character.GetComponent<Character>().CurrentBlock = block;
 
-                        if (name.Equals("StartBlock(Right)"))
+                        if (name.Contains("Right"))
                         {
                             character.transform.forward = character.transform.right;
                             character.GetComponent<Character>().currentDirection = (int)Character.Direction.right;
                         }
-                        else if (name.Equals("StartBlock(Down)"))
+                        else if (name.Contains("Down"))
                         {
                             character.transform.forward = -character.transform.forward;
                             character.GetComponent<Character>().currentDirection = (int)Character.Direction.down;
                         }
-                        else if (name.Equals("StartBlock(Left)"))
+                        else if (name.Contains("Left"))
                         {
                             character.transform.forward = -character.transform.right;
                             character.GetComponent<Character>().currentDirection = (int)Character.Direction.left;
@@ -179,10 +179,12 @@ public class MapManager : I_CheckClear
                             GameObject character;
 
                             string stageNum = stageName.Substring(9);
-
-                            character = Managers.Resource.Instantiate($"Character{stageNum}", go.transform);
-                            character.transform.position = block.transform.position + new Vector3(0, 0.9f, 0);
-
+                            int stageNumber = int.Parse(stageNum);
+                            if (stageNumber > 0 && stageNumber < 10)
+                            {
+                                character = Managers.Resource.Instantiate($"Character{stageNumber + 1}", go.transform);
+                                character.transform.position = block.transform.position + new Vector3(0, 0.9f, 0);
+                            }
                         }
                     }
 
