@@ -12,8 +12,8 @@ public class InputManager
     bool _pressed = false;
     public void OnUpdate()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) //UI가 클릭되었는지 체크
-            return;
+        //if (EventSystem.current.IsPointerOverGameObject()) //UI가 클릭되었는지 체크
+        //    return;
 
         if (Input.anyKey && KeyAction != null)
             KeyAction.Invoke();
