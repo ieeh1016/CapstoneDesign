@@ -14254,6 +14254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa72ac7a063eefa64a2bee69e19617f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalNumOfBlocks: 0
 --- !u!114 &4313568910298028943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15870,6 +15871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a5a2125fca7f54fa3becb0b918db90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _section: {fileID: 0}
 --- !u!1 &4313568910566856857
 GameObject:
   m_ObjectHideFlags: 0
