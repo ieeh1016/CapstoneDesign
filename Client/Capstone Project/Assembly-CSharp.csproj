@@ -70,9 +70,11 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_ChangeColor.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourceManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Utils\BE2_Paths.cs" />
+    <Compile Include="Assets\Scripts\MessageBoxController.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_BlockContextMenu.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_WhenKeyPressed.cs" />
     <Compile Include="Assets\Scripts\VolumeControl.cs" />
+    <Compile Include="Assets\Scripts\Managers\MessageBoxManager.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\Events\Event.cs" />
     <Compile Include="Assets\Scripts\Stage\Character.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Random.cs" />
@@ -214,6 +216,7 @@
     <Compile Include="Assets\GooglePlayGames\OurUtils\Logger.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\VirtualJoystick\BE2_VirtualJoystickButton.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Sum.cs" />
+    <Compile Include="Assets\Scripts\CameraResolution.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\PlayerStats.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_If.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Extras\BE2_AudioManager.cs" />
@@ -334,6 +337,7 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\I_BE2_UI_ContextMenu.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
     <Compile Include="Assets\WindyBlocks\Ball\Model\Billboard.cs" />
+    <Compile Include="Assets\Scripts\TextEffect.cs" />
     <Compile Include="Assets\Scripts\BGScroller.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_If3WaysCheck.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\I_BE2_BlockSectionBody.cs" />
