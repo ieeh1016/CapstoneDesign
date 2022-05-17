@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 281842845}
   - component: {fileID: 281842844}
   m_Layer: 0
-  m_Name: castle.219
+  m_Name: Cloud3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 335502565}
   - component: {fileID: 335502564}
   m_Layer: 0
-  m_Name: castle.220
+  m_Name: Cloud4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 586457352}
   - component: {fileID: 586457351}
   m_Layer: 0
-  m_Name: castle.221
+  m_Name: Cloud5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 776701398}
   - component: {fileID: 776701397}
   m_Layer: 0
-  m_Name: castle.223
+  m_Name: Cloud1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 1766308173}
   - component: {fileID: 1766308172}
   m_Layer: 0
-  m_Name: castle.003
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1024,7 +1024,7 @@ GameObject:
   - component: {fileID: 1914173260}
   - component: {fileID: 1914173259}
   m_Layer: 0
-  m_Name: castle.218
+  m_Name: Cloud2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1120,7 +1120,7 @@ GameObject:
   - component: {fileID: 2057387532}
   - component: {fileID: 2057387531}
   m_Layer: 0
-  m_Name: castle.222
+  m_Name: Cloud6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
