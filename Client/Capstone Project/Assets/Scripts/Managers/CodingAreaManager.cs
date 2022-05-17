@@ -68,12 +68,12 @@ public class CodingAreaManager
             _mainAreaSaved = GameObject.Instantiate(go.transform.Find("HorizontalBlock Ins WhenPlayClicked").Find("Section0").Find("Body"));
             GameObject.DontDestroyOnLoad(_mainAreaSaved);
             _mainAreaSaved.name = "mainAreaSaved";
-            Debug.Log($"{_mainAreaSaved.name}");
+            //Debug.Log($"{_mainAreaSaved.name}");
 
             _functionAreaSaved = GameObject.Instantiate(go.transform.Find("FunctionArea").Find("Section0").Find("Body"));
             GameObject.DontDestroyOnLoad(Managers.CodingArea._functionAreaSaved);
             _functionAreaSaved.name = "functionAreaSaved";
-            Debug.Log($"{_functionAreaSaved.name}");
+            //Debug.Log($"{_functionAreaSaved.name}");
         }
         catch(NullReferenceException e)
         {

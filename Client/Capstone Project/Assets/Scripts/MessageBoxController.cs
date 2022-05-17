@@ -56,7 +56,7 @@ public class MessageBoxController : MonoBehaviour
         _xmlList = xmlRead(_state);
 
         _clickCount = 0;
-        DeployMessageBox(_clickCount);
+        DeployMessage(_clickCount);
         _clickCount++;
     }
 
@@ -70,9 +70,7 @@ public class MessageBoxController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                DeployMessageBox(_clickCount);
-
-
+                DeployMessage(_clickCount);
                 _clickCount++;
             }
         }
@@ -86,7 +84,7 @@ public class MessageBoxController : MonoBehaviour
     }
 
 
-    private void DeployMessageBox(int seq)
+    private void DeployMessage(int seq)
     {
         try
         {

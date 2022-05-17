@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CharaterSelect : MonoBehaviour
@@ -12,10 +13,7 @@ public class CharaterSelect : MonoBehaviour
 
     private void Start()
     {
-        //_challengeStageInfo로 수정할 것
-        //_progress = Managers.User.ChallengeProgress;
-
-        _progress = 5; //테스트용 나중에 위의 코드로 변경할 것
+        _progress = MaxProgress(Managers.User.ChallangeStageInfo);
 
         _btns = gameObject.GetComponentsInChildren<CharacterSelectBtns>();
 
@@ -34,6 +32,23 @@ public class CharaterSelect : MonoBehaviour
 
         //if(Managers.User.Name != null)
         //    SetBtnsState(Managers.User.ChallengeProgress);
+    }
+
+    int MaxProgress(Dictionary<ushort, byte> dict)
+    {
+        
+        if (dict.Count == 0)
+        {
+            //Debug.Log($"max: {1}");
+
+            return 1;
+        }
+
+
+        var max = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+        //Debug.Log($"max: {max}");
+
+        return max;
     }
 
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6015191691126027096}
   - component: {fileID: 83901276359361208}
   m_Layer: 5
-  m_Name: Character8WithLenderCamera
+  m_Name: Character5WithLenderCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 3b052e3b6ed47bf4382d3e9aa84ca39d, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: ee8273f60a7eb014c9e3b9e7f2d00c11, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 6146842428740844158, guid: e7191a139e5f45e4396e087bc33603f9,
         type: 3}
       propertyPath: m_Name
-      value: Character8
+      value: Character5
       objectReference: {fileID: 0}
     - target: {fileID: 6775146891179319492, guid: e7191a139e5f45e4396e087bc33603f9,
         type: 3}
