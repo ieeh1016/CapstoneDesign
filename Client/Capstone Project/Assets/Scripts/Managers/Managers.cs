@@ -71,7 +71,6 @@ public class Managers : MonoBehaviour
 
         if (s_instance == null)
         {
-            Debug.Log($"manager init called");
             GameObject go = GameObject.Find("@Managers");
             if (go == null)
             {
