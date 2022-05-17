@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MessageBoxController : MonoBehaviour
@@ -16,57 +17,136 @@ public class MessageBoxController : MonoBehaviour
     [SerializeField]
     GameObject dialog_Avatar;
 
+    [SerializeField]
+    GameObject PressToContinue;
+
     XmlNodeList _xmlList;
 
-    TextEffect _textEffect;
+    TypingEffect _textEffect;
 
-    int clickCount = 0;
+    Define.MessageBoxState _state;
 
-    // Start is called before the first frame update
-    void Start()
+
+
+    int _clickCount;
+
+
+    private void Start()
     {
-        _textEffect = dialog_text.GetComponent<TextEffect>();
-        _xmlList = xmlRead();
+        _state = Define.MessageBoxState.Start;
+        Init(_state);
+
+    }
+
+    private void OnEnable()
+    {
+        Init(_state);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
+    {
+        UpdateMessageBox();
+
+    }
+
+    private void Init(Define.MessageBoxState state)
+    {
+        _textEffect = dialog_text.GetComponent<TypingEffect>();
+        _xmlList = xmlRead(_state);
+
+        _clickCount = 0;
+        DeployMessageBox(_clickCount);
+        _clickCount++;
+    }
+
+    private void UpdateMessageBox()
+    {
+
+        if (_textEffect.isTyping == false)
+        {
+            if (!PressToContinue.activeSelf)
+                PressToContinue.SetActive(true);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                DeployMessageBox(_clickCount);
+
+
+                _clickCount++;
+            }
+        }
+        else
+        {
+            if (PressToContinue.activeSelf)
+                PressToContinue.SetActive(false);
+
+        }
+
+    }
+
+
+    private void DeployMessageBox(int seq)
     {
         try
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Debug.Log(_xmlList[clickCount]["text"].InnerText);
-                _textEffect.m_Message = _xmlList[clickCount]["text"].InnerText;
-                dialog_name.GetComponent<Text>().text = _xmlList[clickCount]["name"].InnerText;
-                StartCoroutine(_textEffect.Typing());
-                
-                clickCount++;
-            }
+            //Debug.Log(_xmlList[seq]["text"].InnerText);
+            _textEffect.m_Message = _xmlList[seq]["text"].InnerText;
+            dialog_name.GetComponent<Text>().text = _xmlList[seq]["name"].InnerText;
+            StartCoroutine(_textEffect.Typing());
         }
         catch(NullReferenceException e)
         {
-            Debug.Log($"end of index, length = {_xmlList.Count}");
+            Debug.Log($"end of dialog, current state is {_state}");
+
+            if (_state == Define.MessageBoxState.Start)
+                _state = Define.MessageBoxState.End;
+            else
+                _state = Define.MessageBoxState.Start;
+
+            gameObject.SetActive(false);
         }
 
     }
 
-    public void DeployMessageBox()
+    public XmlNodeList xmlRead(Define.MessageBoxState state)
     {
 
-    }
+        string path = string.Format("DialogScript/{0}{1}Dialog",
+            SceneManager.GetActiveScene().name,
+            Enum.GetName(typeof(Define.MessageBoxState), _state));
 
-    public XmlNodeList xmlRead(string path = "")
-    {
-        string temp = "";
+        try
+        {
+            TextAsset asset = Resources.Load<TextAsset>(path);
 
-        XmlDocument xml = new XmlDocument();
+            //Debug.Log($"xml content: {asset.text} ");
 
-        xml.Load("D:\\uni\\22-1\\Challenge1StartDialog.xml"); //"D:\\test\\config.xml" == @"D:\test\config.xml" 
+            XmlDocument xml = new XmlDocument();
 
-        XmlNodeList xmlList = xml.SelectNodes("/Message/dialog");
+            xml.LoadXml(asset.text); //"D:\\test\\config.xml" == @"D:\test\config.xml" 
 
-        return xmlList;
+            XmlNodeList xmlList = xml.SelectNodes("/Message/dialog");
+
+            return xmlList;
+
+        }
+        catch (NullReferenceException e)
+        {
+            Debug.Log($"fail to load DialogScript from {path}");
+            Clear();
+            gameObject.SetActive(false);
+            return null;
+        }
+
+
+        void Clear()
+        {
+            _clickCount = 0;
+            _textEffect = null;
+            _xmlList = null;
+        }
+
 
         //foreach (XmlNode xnl in xmlList)
         //{

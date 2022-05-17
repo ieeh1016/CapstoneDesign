@@ -145,7 +145,7 @@ public class MapManager : I_CheckClear
                     if (name.Equals("StartBlock") || name.Equals("StartBlock(Right)") || name.Equals("StartBlock(Down)") || name.Equals("StartBlock(Left)"))
                     {
                         GameObject character = Managers.TargetObject.GetTargetObject(Managers.User.Character);
-                        Debug.Log($"{character}");
+                        //Debug.Log($"{character}");
                         character.transform.position = block.transform.position + new Vector3(0, 0.9f, 0);
                         character.GetComponent<Character>().CurrentPositionInMap = blockId;
                         character.GetComponent<Character>().CurrentBlock = block;

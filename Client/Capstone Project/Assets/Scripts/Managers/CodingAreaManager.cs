@@ -86,13 +86,13 @@ public class CodingAreaManager
 
     void RefreshCodingArea(Transform Area)
     {
-        Debug.Log("refresh called");
+        //Debug.Log("refresh called");
         if (Area != null)
         {
             int count = Area.childCount;
             GameObject[] copyObject = new GameObject[count];
 
-            Debug.Log("${mainBody.childCount}");
+            //Debug.Log("${mainBody.childCount}");
 
             for (int i = 0; i < count; i++)
             {

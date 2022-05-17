@@ -76,9 +76,11 @@ public class StageScene : BaseScene
                 {
                     missionBlockText.text = $"블럭의 개수를 {(int)stageBlocks}개 이하로\n 사용하세요!";
                 }
-                    
+
+                Managers.Resource.Instantiate("MessageBox");
 
             }
+
         }
 
 

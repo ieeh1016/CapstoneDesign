@@ -94,4 +94,10 @@ public class Define
         Chosen = 1,
         Locked = 2,
     }
+
+    public enum MessageBoxState
+    {
+        Start = 0,
+        End = 1,
+    }
 }
