@@ -24,7 +24,7 @@ public class MessageBoxController : MonoBehaviour
 
     TypingEffect _textEffect;
 
-    Define.MessageBoxState _state;
+    //string _state;
 
 
 
@@ -33,14 +33,13 @@ public class MessageBoxController : MonoBehaviour
 
     private void Start()
     {
-        _state = Define.MessageBoxState.Start;
-        Init(_state);
+        Init();
 
     }
 
     private void OnEnable()
     {
-        Init(_state);
+        Init();
     }
 
     // Update is called once per frame
@@ -50,10 +49,10 @@ public class MessageBoxController : MonoBehaviour
 
     }
 
-    private void Init(Define.MessageBoxState state)
+    private void Init()
     {
         _textEffect = dialog_text.GetComponent<TypingEffect>();
-        _xmlList = xmlRead(_state);
+        _xmlList = xmlRead();
 
         _clickCount = 0;
         DeployMessage(_clickCount);
@@ -88,31 +87,45 @@ public class MessageBoxController : MonoBehaviour
     {
         try
         {
+            if (_clickCount >= _xmlList.Count)
+            {
+                if (Managers.MessageBox.XmlNameToRead.Contains("Start"))
+                {
+                    GameObject stageScene = GameObject.Find("@Scene");
+                    stageScene.GetComponent<StageScene>().StartGenerating();
+                }
+                else
+                {
+                    Managers.Stage.HandleSuccess();
+                }
+                Destroy(gameObject);
+            }
+            else
             //Debug.Log(_xmlList[seq]["text"].InnerText);
-            _textEffect.m_Message = _xmlList[seq]["text"].InnerText;
-            dialog_name.GetComponent<Text>().text = _xmlList[seq]["name"].InnerText;
-            StartCoroutine(_textEffect.Typing());
+            {
+                _textEffect.m_Message = _xmlList[seq]["text"].InnerText;
+                dialog_name.GetComponent<Text>().text = _xmlList[seq]["name"].InnerText;
+                StartCoroutine(_textEffect.Typing());
+            }
         }
         catch(NullReferenceException e)
         {
-            Debug.Log($"end of dialog, current state is {_state}");
+            //Debug.Log($"end of dialog, current state is {_state}");
 
-            if (_state == Define.MessageBoxState.Start)
-                _state = Define.MessageBoxState.End;
-            else
-                _state = Define.MessageBoxState.Start;
+            //if (_state == Define.MessageBoxState.Start)
+            //    _state = Define.MessageBoxState.End;
+            //else
+            //    _state = Define.MessageBoxState.Start;
 
             gameObject.SetActive(false);
         }
 
     }
 
-    public XmlNodeList xmlRead(Define.MessageBoxState state)
+    public XmlNodeList xmlRead()
     {
 
-        string path = string.Format("DialogScript/{0}{1}Dialog",
-            SceneManager.GetActiveScene().name,
-            Enum.GetName(typeof(Define.MessageBoxState), _state));
+        string path = string.Format("DialogScript/{0}", Managers.MessageBox.XmlNameToRead);
 
         try
         {

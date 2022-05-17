@@ -13,9 +13,27 @@ public class StageScene : BaseScene
     {
         base.Init();
         SceneType = Define.Scene.Game;
+        if (Managers.MessageBox.ReplayStatus == false) // 리플레이가 아니라면
+        {
+            Managers.MessageBox.ShowStartMessageBox();
+        }
+        else // 리플레이 상태라면
+        {
+            StartGenerating();
+            Managers.MessageBox.ReplayStatus = false;
+        }
+    }
+
+    public override void Clear()
+    {
+
+    }
+
+    public void StartGenerating()
+    {
         bool success = Managers.Map.GenerateMap();
         success &= Managers.MapObject.GenerateObject();
-        
+
 
         if (!success) // 맵, 코인 둘 중 하나라도 생성 실패 시
         {
@@ -77,19 +95,9 @@ public class StageScene : BaseScene
                     missionBlockText.text = $"블럭의 개수를 {(int)stageBlocks}개 이하로\n 사용하세요!";
                 }
 
-                Managers.Resource.Instantiate("MessageBox");
 
             }
-
         }
-
-
-    }
-
-    
-    public override void Clear()
-    {
-
     }
 
 }

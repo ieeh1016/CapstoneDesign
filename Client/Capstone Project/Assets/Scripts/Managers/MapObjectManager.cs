@@ -77,29 +77,29 @@ public class MapObjectManager
                     case 'R':
                         name = "Knight(Right)";
                         break;
-                    case 'T':
-                        name = "Tiger(Up)";
-                        break;
-                    case 'Q':
-                        name = "Tiger(Left)";
-                        break;
-                    case 'E':
-                        name = "Tiger(Right)";
-                        break;
-                    case 'Y':
-                        name = "Tiger(Down)";
-                        break;
-                    case 'B':
-                        name = "BlackBull(Up)";
-                        break;
-                    case 'Z':
-                        name = "BlackBull(Left)";
-                        break;
-                    case 'X':
-                        name = "BlackBull(Right)";
-                        break;
-                    case 'V':
-                        name = "BlackBull(Down)";
+                    //case 'T':
+                    //    name = "Tiger(Up)";
+                    //    break;
+                    //case 'Q':
+                    //    name = "Tiger(Left)";
+                    //    break;
+                    //case 'E':
+                    //    name = "Tiger(Right)";
+                    //    break;
+                    //case 'Y':
+                    //    name = "Tiger(Down)";
+                    //    break;
+                    //case 'B':
+                    //    name = "BlackBull(Up)";
+                    //    break;
+                    //case 'Z':
+                    //    name = "BlackBull(Left)";
+                    //    break;
+                    //case 'X':
+                    //    name = "BlackBull(Right)";
+                    //    break;
+                    //case 'V':
+                    //    name = "BlackBull(Down)";
                         break;
                     case '1':
                         name = "Tree1";
@@ -127,6 +127,15 @@ public class MapObjectManager
                         break;
                     case 'C':
                         name = "Coin";
+                        break;
+                    case 'F':
+                        name = "ForestCastle_Red";
+                        break;
+                    case 'T':
+                        name = "ForestTower_Red";
+                        break;
+                    case 'E':
+                        name = "ForestBrazzierRed (2)";
                         break;
                     default:
                         Debug.Log("Wrong charcter.");
@@ -163,15 +172,18 @@ public class MapObjectManager
                     continue;
                 }   
 
-                else if (name.Contains("Tree"))
+                else if (name.Contains("Tree") || name.Contains("Forest"))
                 {
                     currentObject = Managers.Resource.Instantiate($"MapObject/{name}", go.transform);
 
                     if (currentObject == null)
                     {
-                        Debug.Log("Tree 생성 실패");
+                        Debug.Log("Tree or Forest 오브젝트 생성 실패");
                         return false;
                     }
+
+                    if (name.Equals("ForestCastle_Red"))
+                        currentObject.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
                 }
 
                 else
@@ -242,7 +254,7 @@ public class MapObjectManager
                 }
 
                 currentObject.transform.localPosition = new Vector3((float)Define.Setting.BlockStartPosition + (int)Define.Setting.BlockWidth * colCount, _objectStartHeight, currentObjectStartPosition);
-                currentObject.transform.localPosition += new Vector3(0, -0.6f, 0);
+                currentObject.transform.localPosition += new Vector3(0, -0.3f, 0);
 
 
                 currentBlock.GetComponent<Block>().BlockType = 'O';

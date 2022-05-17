@@ -142,7 +142,7 @@ public class MapManager : I_CheckClear
                     block.GetComponent<Block>().BlockType = splitLines[i][colCount];
                     
 
-                    if (name.Equals("StartBlock") || name.Equals("StartBlock(Right)") || name.Equals("StartBlock(Down)") || name.Equals("StartBlock(Left)"))
+                    if (name.Contains("StartBlock"))
                     {
                         GameObject character = Managers.TargetObject.GetTargetObject(Managers.User.Character);
                         //Debug.Log($"{character}");
@@ -176,19 +176,20 @@ public class MapManager : I_CheckClear
                         string stageName = SceneManager.GetActiveScene().name;
                         if (stageName.Contains("Challenge"))
                         {
-                            GameObject character;
-
                             string stageNum = stageName.Substring(9);
-
-                            character = Managers.Resource.Instantiate($"Character{stageNum}", go.transform);
-                            character.transform.position = block.transform.position + new Vector3(0, 0.9f, 0);
-
+                            int stageNumber = int.Parse(stageNum);
+                            if (stageNumber > 1 && stageNumber <= 10) // 2~10 스테이지에서만 캐릭터 올려 놓는다.
+                            {
+                                GameObject character;
+                                character = Managers.Resource.Instantiate($"Character{stageNumber}", go.transform);
+                                character.transform.position = block.transform.position + new Vector3(0, 1.4f, 0);
+                            }
                         }
                     }
 
                     else if (!name.Equals("Block"))
                     { 
-                            block.transform.localPosition += new Vector3(0, 1.6f, 0);
+                            block.transform.localPosition += new Vector3(0, 2.5f, 0);
                     }
 
                     Map.Add(blockId, block);
