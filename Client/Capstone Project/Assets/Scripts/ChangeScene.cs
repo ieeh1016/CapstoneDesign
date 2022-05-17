@@ -53,6 +53,7 @@ public class ChangeScene : MonoBehaviour
     public void ReloadMe()
     {
         Managers.Clear();
+        Managers.MessageBox.ReplayStatus = true; // 리플레이 시 메시지박스 출력하지 않기 위한 변수 설정
         Managers.Music.audioSource.gameObject.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

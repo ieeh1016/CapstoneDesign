@@ -32,7 +32,7 @@ public class Managers : MonoBehaviour
     UserManager _user = new UserManager();
     NetworkManager _netWork = new NetworkManager();
     LoginSetting _loginSetting = new LoginSetting();
-
+    MessageBoxManager _messageBox = new MessageBoxManager();
 
     public static DataManager Data { get { return Instance._data; } }
     public static InputManager Input { get { return Instance._input; } }
@@ -53,6 +53,7 @@ public class Managers : MonoBehaviour
     public static NetworkManager Network { get { return Instance._netWork; } }
     public static LoginSetting Login { get { return Instance._loginSetting; } }
     public static MapObjectManager MapObject { get { return Instance._mapObject; } }
+    public static MessageBoxManager MessageBox { get { return Instance._messageBox; } }
 
     // Start is called before the first frame update
     void Start()
