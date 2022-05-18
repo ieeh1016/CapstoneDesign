@@ -115,7 +115,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog_name: {fileID: 1518543743297436}
   dialog_text: {fileID: 3374543981235610497}
-  dialog_Avatar: {fileID: 0}
+  dialog_Avatar_Image: {fileID: 3358253495521635319}
+  dialog_Avatar_List: {fileID: 3985261337881588732}
   PressToContinue: {fileID: 2279182030061615322}
 --- !u!1 &1309642358977168
 GameObject:
