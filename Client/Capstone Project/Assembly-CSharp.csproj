@@ -53,7 +53,7 @@
     <UnityVersion>2020.3.30f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfElseLeftCheck.cs" />
@@ -340,6 +340,7 @@
     <Compile Include="Assets\Scripts\TypingEffect.cs" />
     <Compile Include="Assets\Scripts\BGScroller.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_If3WaysCheck.cs" />
+    <Compile Include="Assets\Scripts\Packet\Obfuscator.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\BlockSections\I_BE2_BlockSectionBody.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Xor.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\VirtualJoystick\BE2_VirtualJoystick.cs" />
@@ -354,7 +355,6 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\BE2_UI_ContextMenuManager.cs" />
     <Compile Include="Assets\Minimal\MainGui.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_TranslateToPosition.cs" />
-    <Compile Include="Assets\Scripts\Packet\Obfuscator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />

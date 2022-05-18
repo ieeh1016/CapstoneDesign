@@ -87,8 +87,10 @@ public class MessageBoxController : MonoBehaviour
     {
         try
         {
+
             if (_clickCount >= _xmlList.Count)
             {
+
                 if (Managers.MessageBox.XmlNameToRead.Contains("Start"))
                 {
                     GameObject stageScene = GameObject.Find("@Scene");
@@ -110,14 +112,17 @@ public class MessageBoxController : MonoBehaviour
         }
         catch(NullReferenceException e)
         {
-            //Debug.Log($"end of dialog, current state is {_state}");
-
-            //if (_state == Define.MessageBoxState.Start)
-            //    _state = Define.MessageBoxState.End;
-            //else
-            //    _state = Define.MessageBoxState.Start;
-
-            gameObject.SetActive(false);
+            Debug.Log("fail to deploy message");
+            if (Managers.MessageBox.XmlNameToRead.Contains("Start"))
+            {
+                GameObject stageScene = GameObject.Find("@Scene");
+                stageScene.GetComponent<StageScene>().StartGenerating();
+            }
+            else
+            {
+                Managers.Stage.HandleSuccess();
+            }
+            Destroy(gameObject);
         }
 
     }
@@ -146,7 +151,6 @@ public class MessageBoxController : MonoBehaviour
         {
             Debug.Log($"fail to load DialogScript from {path}");
             Clear();
-            gameObject.SetActive(false);
             return null;
         }
 
