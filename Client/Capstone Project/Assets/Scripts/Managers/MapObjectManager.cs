@@ -8,7 +8,7 @@ public class MapObjectManager
 {
     Dictionary<int, GameObject> objectMap = new Dictionary<int, GameObject>();
 
-    public float _objectStartHeight = 1.5f;
+    public float _objectStartHeight = 1.7f;
 
     public bool GenerateObject()
     {
@@ -100,7 +100,7 @@ public class MapObjectManager
                     //    break;
                     //case 'V':
                     //    name = "BlackBull(Down)";
-                        break;
+                    //    break;
                     case '1':
                         name = "Tree1";
                         break;
@@ -183,7 +183,7 @@ public class MapObjectManager
                     }
 
                     if (name.Equals("ForestCastle_Red"))
-                        currentObject.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+                        currentObject.transform.localScale = new Vector3(0.85f, 0.85f, 0.85f);
                 }
 
                 else
@@ -254,8 +254,9 @@ public class MapObjectManager
                 }
 
                 currentObject.transform.localPosition = new Vector3((float)Define.Setting.BlockStartPosition + (int)Define.Setting.BlockWidth * colCount, _objectStartHeight, currentObjectStartPosition);
-                currentObject.transform.localPosition += new Vector3(0, -0.3f, 0);
 
+                if (name.Contains("Brazzier"))
+                    currentObject.transform.position += new Vector3(0, 0.9f, 0);
 
                 currentBlock.GetComponent<Block>().BlockType = 'O';
                  

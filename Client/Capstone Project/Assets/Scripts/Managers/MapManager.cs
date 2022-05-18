@@ -146,7 +146,7 @@ public class MapManager : I_CheckClear
                     {
                         GameObject character = Managers.TargetObject.GetTargetObject(Managers.User.Character);
                         //Debug.Log($"{character}");
-                        character.transform.position = block.transform.position + new Vector3(0, 0.9f, 0);
+                        character.transform.position = block.transform.position + new Vector3(0, 1.7f, 0);
                         character.GetComponent<Character>().CurrentPositionInMap = blockId;
                         character.GetComponent<Character>().CurrentBlock = block;
 
@@ -182,14 +182,14 @@ public class MapManager : I_CheckClear
                             {
                                 GameObject character;
                                 character = Managers.Resource.Instantiate($"Character{stageNumber}", go.transform);
-                                character.transform.position = block.transform.position + new Vector3(0, 1.4f, 0);
+                                character.transform.position = block.transform.position + new Vector3(0, 1.7f, 0);
                             }
                         }
                     }
 
-                    else if (!name.Equals("Block"))
+                    else if (name.Equals("Block") == false)
                     { 
-                            block.transform.localPosition += new Vector3(0, 2.5f, 0);
+                            block.transform.localPosition += new Vector3(0, 2.9f, 0);
                     }
 
                     Map.Add(blockId, block);
