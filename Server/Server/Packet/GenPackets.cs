@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net;
 using ServerCore;
+using Server.Obfuscator;
 
 public enum PacketID
 {
@@ -14,7 +15,7 @@ public enum PacketID
 	C_Request_Challenge_Top30Rank = 6,
 	S_Challenge_Top30Rank = 7,
 	C_ChallengeUpdateStars = 8,
-	
+
 }
 
 public interface IPacket
@@ -29,7 +30,6 @@ public class C_Request_Name_input : IPacket
 {
 	public string name;
 	public string Uid;
-
 	public ushort Protocol { get { return (ushort)PacketID.C_Request_Name_input; } }
 
 	public void Read(ArraySegment<byte> segment)
@@ -37,12 +37,14 @@ public class C_Request_Name_input : IPacket
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
-		ushort nameLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+		ushort nameLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
+		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, nameLen);
 		this.name = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, nameLen);
 		count += nameLen;
-		ushort UidLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+		ushort UidLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
+		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, UidLen);
 		this.Uid = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UidLen);
 		count += UidLen;
 	}
@@ -55,15 +57,16 @@ public class C_Request_Name_input : IPacket
 		count += sizeof(ushort);
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.C_Request_Name_input), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
-		ushort nameLen = (ushort)Encoding.Unicode.GetBytes(this.name, 0, this.name.Length, segment.Array, segment.Offset + count + sizeof(ushort));
-		Array.Copy(BitConverter.GetBytes(nameLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+		ushort nameLen = (ushort)Encoding.Unicode.GetBytes((this.name), 0, this.name.Length, segment.Array, segment.Offset + count + sizeof(ushort));
+		Obfuscator.stringEncoding(segment.Array, segment.Offset + count + sizeof(ushort), nameLen);
+		Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding(nameLen)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		count += nameLen;
 		ushort UidLen = (ushort)Encoding.Unicode.GetBytes(this.Uid, 0, this.Uid.Length, segment.Array, segment.Offset + count + sizeof(ushort));
-		Array.Copy(BitConverter.GetBytes(UidLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+		Obfuscator.stringEncoding(segment.Array, segment.Offset + count + sizeof(ushort), UidLen);
+		Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding(UidLen)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		count += UidLen;
-
 		Array.Copy(BitConverter.GetBytes(count), 0, segment.Array, segment.Offset, sizeof(ushort));
 
 		return SendBufferHelper.Close(count);
@@ -81,8 +84,9 @@ public class C_Request_Load_Star : IPacket
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
-		ushort UIdLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+		ushort UIdLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
+		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, UIdLen);
 		this.UId = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UIdLen);
 		count += UIdLen;
 	}
@@ -96,7 +100,8 @@ public class C_Request_Load_Star : IPacket
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.C_Request_Load_Star), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		ushort UIdLen = (ushort)Encoding.Unicode.GetBytes(this.UId, 0, this.UId.Length, segment.Array, segment.Offset + count + sizeof(ushort));
-		Array.Copy(BitConverter.GetBytes(UIdLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+		Obfuscator.stringEncoding(segment.Array, segment.Offset + count + sizeof(ushort), UIdLen);
+		Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding(UIdLen)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		count += UIdLen;
 
@@ -112,24 +117,24 @@ public class S_Challenge_Load_Star : IPacket
 	{
 		public byte stageId;
 		public byte numberOfStars;
-	
+
 		public void Read(ArraySegment<byte> segment, ref ushort count)
 		{
-			this.stageId = (byte)segment.Array[segment.Offset + count];
+			this.stageId = Obfuscator.byteDecoding((byte)segment.Array[segment.Offset + count]);
 			count += sizeof(byte);
-			this.numberOfStars = (byte)segment.Array[segment.Offset + count];
+			this.numberOfStars = Obfuscator.byteDecoding((byte)segment.Array[segment.Offset + count]);
 			count += sizeof(byte);
 		}
-	
+
 		public bool Write(ArraySegment<byte> segment, ref ushort count)
 		{
 			bool success = true;
-			segment.Array[segment.Offset + count] = (byte)this.stageId;
+			segment.Array[segment.Offset + count] = Obfuscator.byteEncoding((byte)this.stageId);
 			count += sizeof(byte);
-			segment.Array[segment.Offset + count] = (byte)this.numberOfStars;
+			segment.Array[segment.Offset + count] = Obfuscator.byteEncoding((byte)this.numberOfStars);
 			count += sizeof(byte);
 			return success;
-		}	
+		}
 	}
 	public List<StageStar> stageStars = new List<StageStar>();
 
@@ -141,7 +146,7 @@ public class S_Challenge_Load_Star : IPacket
 		count += sizeof(ushort);
 		count += sizeof(ushort);
 		this.stageStars.Clear();
-		ushort stageStarLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+		ushort stageStarLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
 		for (int i = 0; i < stageStarLen; i++)
 		{
@@ -159,7 +164,7 @@ public class S_Challenge_Load_Star : IPacket
 		count += sizeof(ushort);
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.S_Challenge_Load_Star), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
-		Array.Copy(BitConverter.GetBytes((ushort)this.stageStars.Count), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+		Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding((ushort)this.stageStars.Count)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		foreach (StageStar stageStar in this.stageStars)
 			stageStar.Write(segment, ref count);
@@ -181,8 +186,9 @@ public class C_Request_Challenge_MyPage : IPacket
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
-		ushort UIdLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+		ushort UIdLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
+		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, UIdLen);
 		this.UId = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UIdLen);
 		count += UIdLen;
 	}
@@ -196,7 +202,8 @@ public class C_Request_Challenge_MyPage : IPacket
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.C_Request_Challenge_MyPage), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		ushort UIdLen = (ushort)Encoding.Unicode.GetBytes(this.UId, 0, this.UId.Length, segment.Array, segment.Offset + count + sizeof(ushort));
-		Array.Copy(BitConverter.GetBytes(UIdLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+		Obfuscator.stringEncoding(segment.Array, segment.Offset + count, UIdLen);
+		Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding(UIdLen)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		count += UIdLen;
 
@@ -219,13 +226,14 @@ public class S_Challenge_MyPage : IPacket
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
-		ushort nameLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+		ushort nameLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
+		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, nameLen);
 		this.name = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, nameLen);
 		count += nameLen;
-		this.ranking = BitConverter.ToInt32(segment.Array, segment.Offset + count);
+		this.ranking = Obfuscator.intDecoding(BitConverter.ToInt32(segment.Array, segment.Offset + count));
 		count += sizeof(int);
-		this.TotalStars = (byte)segment.Array[segment.Offset + count];
+		this.TotalStars = Obfuscator.byteDecoding((byte)segment.Array[segment.Offset + count]);
 		count += sizeof(byte);
 	}
 
@@ -238,12 +246,13 @@ public class S_Challenge_MyPage : IPacket
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.S_Challenge_MyPage), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		ushort nameLen = (ushort)Encoding.Unicode.GetBytes(this.name, 0, this.name.Length, segment.Array, segment.Offset + count + sizeof(ushort));
-		Array.Copy(BitConverter.GetBytes(nameLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+		Obfuscator.stringEncoding(segment.Array, segment.Offset + count + sizeof(ushort), nameLen);
+		Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding(nameLen)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		count += nameLen;
-		Array.Copy(BitConverter.GetBytes(this.ranking), 0, segment.Array, segment.Offset + count, sizeof(int));
+		Array.Copy(BitConverter.GetBytes(Obfuscator.intEncoding(this.ranking)), 0, segment.Array, segment.Offset + count, sizeof(int));
 		count += sizeof(int);
-		segment.Array[segment.Offset + count] = (byte)this.TotalStars;
+		segment.Array[segment.Offset + count] = Obfuscator.byteEncoding((byte)this.TotalStars);
 		count += sizeof(byte);
 
 		Array.Copy(BitConverter.GetBytes(count), 0, segment.Array, segment.Offset, sizeof(ushort));
@@ -254,7 +263,7 @@ public class S_Challenge_MyPage : IPacket
 
 public class C_Request_Challenge_Top30Rank : IPacket
 {
-	
+
 
 	public ushort Protocol { get { return (ushort)PacketID.C_Request_Challenge_Top30Rank; } }
 
@@ -263,7 +272,7 @@ public class C_Request_Challenge_Top30Rank : IPacket
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
-		
+
 	}
 
 	public ArraySegment<byte> Write()
@@ -274,7 +283,7 @@ public class C_Request_Challenge_Top30Rank : IPacket
 		count += sizeof(ushort);
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.C_Request_Challenge_Top30Rank), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
-		
+
 
 		Array.Copy(BitConverter.GetBytes(count), 0, segment.Array, segment.Offset, sizeof(ushort));
 
@@ -289,32 +298,35 @@ public class S_Challenge_Top30Rank : IPacket
 		public string name;
 		public int ranking;
 		public byte totalStars;
-	
+
 		public void Read(ArraySegment<byte> segment, ref ushort count)
 		{
-			ushort nameLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+			ushort nameLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 			count += sizeof(ushort);
+			Obfuscator.stringDecoding(segment.Array, segment.Offset + count, nameLen);
 			this.name = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, nameLen);
 			count += nameLen;
-			this.ranking = BitConverter.ToInt32(segment.Array, segment.Offset + count);
+			this.ranking = Obfuscator.intDecoding(BitConverter.ToInt32(segment.Array, segment.Offset + count));
 			count += sizeof(int);
-			this.totalStars = (byte)segment.Array[segment.Offset + count];
+			this.totalStars = Obfuscator.byteDecoding((byte)segment.Array[segment.Offset + count]);
 			count += sizeof(byte);
+
 		}
-	
+
 		public bool Write(ArraySegment<byte> segment, ref ushort count)
 		{
 			bool success = true;
 			ushort nameLen = (ushort)Encoding.Unicode.GetBytes(this.name, 0, this.name.Length, segment.Array, segment.Offset + count + sizeof(ushort));
-			Array.Copy(BitConverter.GetBytes(nameLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+			Obfuscator.stringEncoding(segment.Array, segment.Offset + count + sizeof(ushort), nameLen);
+			Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding(nameLen)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 			count += sizeof(ushort);
 			count += nameLen;
-			Array.Copy(BitConverter.GetBytes(this.ranking), 0, segment.Array, segment.Offset + count, sizeof(int));
+			Array.Copy(BitConverter.GetBytes(Obfuscator.intEncoding(this.ranking)), 0, segment.Array, segment.Offset + count, sizeof(int));
 			count += sizeof(int);
-			segment.Array[segment.Offset + count] = (byte)this.totalStars;
+			segment.Array[segment.Offset + count] = Obfuscator.byteEncoding((byte)this.totalStars);
 			count += sizeof(byte);
 			return success;
-		}	
+		}
 	}
 	public List<Rank> ranks = new List<Rank>();
 
@@ -326,7 +338,7 @@ public class S_Challenge_Top30Rank : IPacket
 		count += sizeof(ushort);
 		count += sizeof(ushort);
 		this.ranks.Clear();
-		ushort rankLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+		ushort rankLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
 		for (int i = 0; i < rankLen; i++)
 		{
@@ -344,7 +356,7 @@ public class S_Challenge_Top30Rank : IPacket
 		count += sizeof(ushort);
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.S_Challenge_Top30Rank), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
-		Array.Copy(BitConverter.GetBytes((ushort)this.ranks.Count), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+		Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding((ushort)this.ranks.Count)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		foreach (Rank rank in this.ranks)
 			rank.Write(segment, ref count);
@@ -368,13 +380,14 @@ public class C_ChallengeUpdateStars : IPacket
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
-		ushort UIdLen = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+		ushort UIdLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
+		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, UIdLen);
 		this.UId = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UIdLen);
 		count += UIdLen;
-		this.stageId = (byte)segment.Array[segment.Offset + count];
+		this.stageId = Obfuscator.byteDecoding((byte)segment.Array[segment.Offset + count]);
 		count += sizeof(byte);
-		this.numberOfStars = (byte)segment.Array[segment.Offset + count];
+		this.numberOfStars = Obfuscator.byteDecoding((byte)segment.Array[segment.Offset + count]);
 		count += sizeof(byte);
 	}
 
@@ -387,12 +400,13 @@ public class C_ChallengeUpdateStars : IPacket
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.C_ChallengeUpdateStars), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		ushort UIdLen = (ushort)Encoding.Unicode.GetBytes(this.UId, 0, this.UId.Length, segment.Array, segment.Offset + count + sizeof(ushort));
+		Obfuscator.stringEncoding(segment.Array, segment.Offset + count + sizeof(ushort), UIdLen);
 		Array.Copy(BitConverter.GetBytes(UIdLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		count += UIdLen;
-		segment.Array[segment.Offset + count] = (byte)this.stageId;
+		segment.Array[segment.Offset + count] = Obfuscator.byteEncoding((byte)this.stageId);
 		count += sizeof(byte);
-		segment.Array[segment.Offset + count] = (byte)this.numberOfStars;
+		segment.Array[segment.Offset + count] = Obfuscator.byteEncoding((byte)this.numberOfStars);
 		count += sizeof(byte);
 
 		Array.Copy(BitConverter.GetBytes(count), 0, segment.Array, segment.Offset, sizeof(ushort));
