@@ -15,7 +15,10 @@ public class MessageBoxController : MonoBehaviour
     GameObject dialog_text;
 
     [SerializeField]
-    GameObject dialog_Avatar;
+    GameObject dialog_Avatar_Image;
+
+    [SerializeField]
+    GameObject dialog_Avatar_List;
 
     [SerializeField]
     GameObject PressToContinue;
@@ -37,10 +40,10 @@ public class MessageBoxController : MonoBehaviour
 
     }
 
-    private void OnEnable()
-    {
-        Init();
-    }
+    //private void OnEnable()
+    //{
+    //    Init();
+    //}
 
     // Update is called once per frame
     private void Update()
@@ -77,11 +80,9 @@ public class MessageBoxController : MonoBehaviour
         {
             if (PressToContinue.activeSelf)
                 PressToContinue.SetActive(false);
-
         }
 
     }
-
 
     private void DeployMessage(int seq)
     {
@@ -96,7 +97,7 @@ public class MessageBoxController : MonoBehaviour
                     GameObject stageScene = GameObject.Find("@Scene");
                     stageScene.GetComponent<StageScene>().StartGenerating();
                 }
-                else
+                else if(Managers.MessageBox.XmlNameToRead.Contains("End"))
                 {
                     Managers.Stage.HandleSuccess();
                 }
@@ -105,6 +106,7 @@ public class MessageBoxController : MonoBehaviour
             else
             //Debug.Log(_xmlList[seq]["text"].InnerText);
             {
+                DeployAvatar(_xmlList[seq]["avatar"].InnerText);
                 _textEffect.m_Message = _xmlList[seq]["text"].InnerText;
                 dialog_name.GetComponent<Text>().text = _xmlList[seq]["name"].InnerText;
                 StartCoroutine(_textEffect.Typing());
@@ -112,19 +114,58 @@ public class MessageBoxController : MonoBehaviour
         }
         catch(NullReferenceException e)
         {
-            Debug.Log("fail to deploy message");
+            Debug.Log("Failed to deploy messages");
             if (Managers.MessageBox.XmlNameToRead.Contains("Start"))
             {
                 GameObject stageScene = GameObject.Find("@Scene");
                 stageScene.GetComponent<StageScene>().StartGenerating();
             }
-            else
+            else if (Managers.MessageBox.XmlNameToRead.Contains("End"))
             {
                 Managers.Stage.HandleSuccess();
             }
             Destroy(gameObject);
         }
 
+    }
+
+    void DeployAvatar(string avatar)
+    {
+        try
+        {
+            if (avatar.Contains("character"))
+                avatar.Replace("character", "Character");
+
+            //Debug.Log($"{avatar}");
+
+            if (avatar.Contains("Character"))
+            {
+                Transform tf = dialog_Avatar_List.transform.Find(avatar + "WithLenderCamera");
+
+                if (tf == null)
+                {
+                    Managers.Resource.Instantiate(avatar + "WithLenderCamera", dialog_Avatar_List.transform);
+                    tf = dialog_Avatar_List.transform.Find(avatar + "WithLenderCamera");
+                    //Debug.Log($"new tf.name: {tf.name}");
+                }
+                Texture tex = (Texture)Resources.Load("Texture/" + avatar, typeof(Texture));
+                dialog_Avatar_Image.GetComponent<RawImage>().texture = tex;
+            }
+            else
+            {
+                Debug.Log($"An avatar name should contain a substring \"Character\" {avatar}");
+            }
+        }
+        catch(NullReferenceException e)
+        {
+            Debug.Log($"Failed to deploy avatar: {avatar}");
+        }
+
+
+        //1. 이름에 Character가 들어갈경우
+        //1.1 avatar리스트에서 찾을 수 있을 경우
+        //1.2 avatar리스트에서 찾을 수 없을 경우
+        //2. 아닌경우
     }
 
     public XmlNodeList xmlRead()
@@ -149,7 +190,7 @@ public class MessageBoxController : MonoBehaviour
         }
         catch (NullReferenceException e)
         {
-            Debug.Log($"fail to load DialogScript from {path}");
+            Debug.Log($"Failed to load DialogScript from {path}");
             Clear();
             return null;
         }

@@ -156,8 +156,8 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
 
             //모든 function 블록에 불러온 functionArea의 body를 넣어줌
             GameObject function_area_body_copy;
-            //Debug.Log($"area childCount {AllChildrenCount(function_area_body)}");
-            //Debug.Log($"block childCount {AllChildrenCount(function_blocks[function_blocks.Length - 1])}");
+            Debug.Log($"area childCount {AllInsCount(function_area_body)}");
+            Debug.Log($"block childCount {AllInsCount(function_blocks[function_blocks.Length - 1])}");
             //Debug.Log(AllChildrenCount(function_area_body) != AllChildrenCount(function_blocks[function_blocks.Length - 1]));
             if (AllInsCount(function_area_body) != AllInsCount(function_blocks[function_blocks.Length - 1]))
             {
