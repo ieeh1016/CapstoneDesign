@@ -161,7 +161,7 @@ public class MapObjectManager
                             Debug.Log($"There is no block under the coin{blockId}");
                             return false;
                         }
-                        currentObject.transform.position = parentBlock.transform.position + new Vector3(0, Managers.Coin.coinHeight, 0);
+                        currentObject.transform.position += parentBlock.transform.position + new Vector3(0, Managers.Coin.coinHeight, 0);
 
                         Managers.Coin.CoinMap.Add(blockId, currentObject);
                     }
@@ -253,7 +253,7 @@ public class MapObjectManager
                     }
                 }
 
-                currentObject.transform.localPosition = new Vector3((float)Define.Setting.BlockStartPosition + (int)Define.Setting.BlockWidth * colCount, _objectStartHeight, currentObjectStartPosition);
+                currentObject.transform.localPosition += new Vector3((float)Define.Setting.BlockStartPosition + (int)Define.Setting.BlockWidth * colCount, _objectStartHeight, currentObjectStartPosition);
 
                 if (name.Contains("Brazzier"))
                     currentObject.transform.position += new Vector3(0, 0.9f, 0);

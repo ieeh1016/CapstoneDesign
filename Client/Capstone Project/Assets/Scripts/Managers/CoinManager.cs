@@ -8,7 +8,7 @@ public class CoinManager : I_CheckClear
 {
     public Dictionary<int, GameObject> CoinMap = new Dictionary<int, GameObject>();
 
-    public float coinHeight = 1.5f;
+    public float coinHeight = 2.1f;
 
     public bool CheckCleared()
     {
