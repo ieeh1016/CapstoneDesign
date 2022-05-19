@@ -157,6 +157,10 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
         
         if (success) // 목적지에 도달했다면
         {
+            if (Managers.Map.characterOnDestination != null) // 목적지에 다른 캐릭터가 있다면
+            {
+                Destroy(Managers.Map.characterOnDestination);
+            }
             Managers.MessageBox.ShowEndMessageBox();
         }
         else
@@ -186,7 +190,7 @@ public class BE2_TargetObject : MonoBehaviour, I_BE2_TargetObject
                 return;
 
 
-            Vector3 targetPostion = newBlock.transform.position + new Vector3(0, 0.9f, 0);
+            Vector3 targetPostion = newBlock.transform.position + new Vector3(0, Managers.Map.characterStartHeight, 0);
             TargetQueue.Enqueue(targetPostion);
             //Debug.Log($"Enqueue: {targetPostion}");
 

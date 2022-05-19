@@ -15,4 +15,13 @@ public class CoinCollision : MonoBehaviour
         }
     }
 
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject == Managers.TargetObject.GetTargetObject(Managers.User.Character))
+    //    {
+    //        Debug.Log("ÄÚÀÎÈ¹µæ!");
+    //        Managers.Coin.AcquireCoin(gameObject);
+    //    }
+    //}
+
 }
