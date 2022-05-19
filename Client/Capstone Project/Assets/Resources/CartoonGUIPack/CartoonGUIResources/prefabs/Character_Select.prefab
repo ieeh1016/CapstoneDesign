@@ -686,7 +686,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1307"
+  m_Text: "\uD3EC\uD0A4"
 --- !u!1 &244711981379559138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,7 +1490,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1301"
+  m_Text: "\uB8E8\uD06C"
 --- !u!1 &1475630971283549095
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,7 +2030,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1309"
+  m_Text: "\uD1B5\uD0A4"
 --- !u!1 &1990492141185187964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,7 +2427,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1303"
+  m_Text: "\uB370\uC774\uBA3C"
 --- !u!1 &2084217450440694913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,7 +2690,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1308"
+  m_Text: "\uCF54\uB2C8"
 --- !u!1 &2331074129613482954
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,7 +3049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1302"
+  m_Text: "\uBE0C\uB8E8\uC2A4"
 --- !u!1 &2623033702614241883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3455,7 +3455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1304"
+  m_Text: "\uC0CC\uB514"
 --- !u!1 &3191183034060442852
 GameObject:
   m_ObjectHideFlags: 0
@@ -4315,7 +4315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD13010"
+  m_Text: "\uC81C\uC2DC"
 --- !u!1 &4594738509609556793
 GameObject:
   m_ObjectHideFlags: 0
@@ -7208,7 +7208,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1305"
+  m_Text: "\uBE0C\uB8E9"
 --- !u!1 &7477410322886116411
 GameObject:
   m_ObjectHideFlags: 0
@@ -8753,7 +8753,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD1306"
+  m_Text: "\uBAA8\uD1A4"
 --- !u!1 &8936344605267438716
 GameObject:
   m_ObjectHideFlags: 0

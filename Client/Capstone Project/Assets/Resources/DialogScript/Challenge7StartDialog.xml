@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge7" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character7</avatar>
+
+        <name>포키</name>
+
+        <text>앗! 샌디! 나 좀 구해줘!</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character4</avatar>
+
+        <name>포키</name>
+
+        <text>어딜 가든 말썽이구만.. 조금만 기다리게</text>
+
+    </dialog>
+	
+
+	
+</Message>

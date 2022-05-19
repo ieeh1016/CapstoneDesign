@@ -54,9 +54,12 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
 
     void Start()
     {
-        PopulateStack();
+
+        Invoke(nameof(PopulateStack), 0.5f);
+        //PopulateStack();
         BE2_MainEventsManager.Instance.StartListening(BE2EventTypes.OnPointerUpEnd, PopulateStack);
         BE2_MainEventsManager.Instance.StartListening(BE2EventTypes.OnStop, StopStack);
+
     }
 
     void OnDisable()
@@ -71,18 +74,6 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
         Pointer = 0;
         IsActive = false;
     }
-
-    //void Update()
-    //{
-    //    Debug.Log($"length: {InstructionsArray.Length}");
-    //    for (int i = 0; i < InstructionsArray.Length; i++)
-    //    {
-    //        Debug.Log($"{i}: {InstructionsArray[i]}");
-    //    }
-
-
-
-    //}
 
     public int OverflowGuard { get; set; }
     int _overflowLimit = 100;

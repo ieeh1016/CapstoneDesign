@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge1" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>오늘도 재밌었다. 내일 또 만나자.</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character2</avatar>
+
+        <name>브루스</name>
+
+        <text>그래 내일 봐~</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>벌써 저녁 먹을 시간이네. 얼른 가야겠다 오늘 저녁 메뉴는 뭘까?</text>
+
+    </dialog>
+
+	
+</Message>

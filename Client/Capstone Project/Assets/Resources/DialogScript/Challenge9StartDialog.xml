@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge9" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character8</avatar>
+
+        <name>코니</name>
+
+        <text>통키! 잠깐만 기다려!</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character9</avatar>
+
+        <name>통키</name>
+
+        <text>코니~~!!</text>
+
+    </dialog>
+	
+	
+
+	
+</Message>

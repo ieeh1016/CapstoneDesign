@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge4" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character2</avatar>
+
+        <name>브루스</name>
+
+        <text>그나저나 갑자기 왜 마왕이 납치를 한 걸까?</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>나도 모르겠어..</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character4</avatar>
+
+        <name>나그네</name>
+
+        <text>어이! 자네들!</text>
+
+    </dialog>
+
+
+	<dialog seq = "3">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>누구지? 만나러 가보자</text>
+
+    </dialog>
+	
+</Message>

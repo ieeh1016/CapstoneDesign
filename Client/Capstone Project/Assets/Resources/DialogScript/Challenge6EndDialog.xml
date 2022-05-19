@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge6" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>아빠 괜찮으세요?!</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character6</avatar>
+
+        <name>아빠</name>
+
+        <text>난 괜찮다, 하지만 코니가…</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>어서 같이 데리러 가요!</text>
+
+    </dialog>
+	
+	
+</Message>

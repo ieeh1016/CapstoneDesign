@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge7" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character7</avatar>
+
+        <name>포키</name>
+
+        <text>고맙네 고마워~</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character4</avatar>
+
+        <name>샌디</name>
+
+        <text>자네는 저번에도 그러더니 여전하구만.</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>저번에도? 이런 일이 처음이 아닌가 보군요?</text>
+
+    </dialog>
+	
+	<dialog seq = "3">
+
+        <avatar>Character7</avatar>
+
+        <name>포키</name>
+
+        <text>하하하~</text>
+
+    </dialog>	
+</Message>

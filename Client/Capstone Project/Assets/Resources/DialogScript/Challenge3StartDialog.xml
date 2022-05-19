@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge3" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>엇? 저기 누구야? 데이먼 아니야?</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character2</avatar>
+
+        <name>브루스</name>
+
+        <text>그렇네? 왜 저기에 가만히 있는 거지?</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>데이먼! 거기서 뭐해!</text>
+
+    </dialog>
+
+
+	<dialog seq = "3">
+
+        <avatar>Character3</avatar>
+
+        <name>데이먼</name>
+
+        <text>얘들아! 보지만 말고 나 좀 도와줘!</text>
+
+    </dialog>
+	
+</Message>

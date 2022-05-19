@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge8" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>코니, 괜찮아?</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character8</avatar>
+
+        <name>코니</name>
+
+        <text>응, 괜찮아. 그런데 저쪽에 갇혀 있는 친구가 한 명 더 있어.</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character8</avatar>
+
+        <name>코니</name>
+
+        <text>나가는 길에 같이 데리고 가자.</text>
+
+    </dialog>
+	
+</Message>

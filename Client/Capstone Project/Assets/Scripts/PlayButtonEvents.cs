@@ -7,14 +7,17 @@ public class PlayButtonEvents : MonoBehaviour
 {
 
     [SerializeField]
-    private Transform _section = null;
+    private Transform _section;
+    [SerializeField]
+    private GameObject _stopButton;
+    [SerializeField]
+    private GameObject _missionButton;
+    [SerializeField]
+    private GameObject _questionButton;
 
 
     public void PlayEvents()
     {
-        _section = GameObject.Find("HorizontalBlock Ins WhenPlayClicked").transform;
-        _section = _section.GetChild(0).GetChild(1);
-
 
         
         //실행 시킬게 없다면 패스 
@@ -39,8 +42,15 @@ public class PlayButtonEvents : MonoBehaviour
             e2ExecutionManager.PlayAfterDelay();
 
 
-            //시작 버튼 제거
+            //중단 버튼 위치 변경
+            _stopButton.transform.localPosition = gameObject.transform.localPosition;
+
+
+            //시작 버튼, 미션 버튼, 설명 버튼 제거
             gameObject.SetActive(false);
+            _missionButton.SetActive(false);
+            _questionButton.SetActive(false);
+
 
         }
 

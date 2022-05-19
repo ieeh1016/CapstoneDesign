@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge1" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character10</avatar>
+
+        <name>엄마</name>
+
+        <text>루크, 왔구나. 오자마자 좋지 않은 소식을 전해야 할 것 같아.</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character10</avatar>
+
+        <name>엄마</name>
+
+        <text>여동생이 마왕에게 잡혀가서 아빠가 먼저 구하러 가셨단다.</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Letter</avatar>
+
+        <name>편지</name>
+
+        <text>여동생은 내가 데려간다. 찾으러 와 봐야 소용없다. 크하하핫!</text>
+
+    </dialog>
+	
+	    <dialog seq = "3">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>안 돼! 코니!</text>
+
+    </dialog>
+	
+</Message>

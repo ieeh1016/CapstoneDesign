@@ -49,6 +49,7 @@ public class CodingAreaManager
             }
         }
 
+
         if (_mainAreaSaved != null)
             Managers.Resource.Destroy(_mainAreaSaved.gameObject);
         if (_functionAreaSaved != null)
@@ -66,6 +67,7 @@ public class CodingAreaManager
         try
         {
             _mainAreaSaved = GameObject.Instantiate(go.transform.Find("HorizontalBlock Ins WhenPlayClicked").Find("Section0").Find("Body"));
+
             GameObject.DontDestroyOnLoad(_mainAreaSaved);
             _mainAreaSaved.name = "mainAreaSaved";
             //Debug.Log($"{_mainAreaSaved.name}");
@@ -79,7 +81,6 @@ public class CodingAreaManager
         {
             Debug.Log($"failed to SaveArea: {e}");
         }
-
         
         
     }
@@ -98,6 +99,7 @@ public class CodingAreaManager
             {
                 GameObject go = Area.GetChild(i).gameObject;
                 copyObject[i] = GameObject.Instantiate(go);
+                copyObject[i].name = go.name;
                 Managers.Resource.Destroy(go);
             }
 
