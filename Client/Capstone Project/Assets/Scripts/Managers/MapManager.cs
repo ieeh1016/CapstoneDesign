@@ -100,6 +100,9 @@ public class MapManager : I_CheckClear
                     case '1':
                         name = "Block";
                         break;
+                    case '3':
+                        name = "RedBlock";
+                        break;
                     case 'T':
                         name = "TreeBlock";
                         break;
@@ -180,14 +183,28 @@ public class MapManager : I_CheckClear
                             int stageNumber = int.Parse(stageNum);
                             if (stageNumber > 1 && stageNumber <= 10) // 2~10 스테이지에서만 캐릭터 올려 놓는다.
                             {
+                                TextAsset characterSetting = Resources.Load<TextAsset>($"MapGeneratingFiles/{sceneName}CharacterSetting");
+                                string characterStr = asset.text;
+                                string[] splitLines2 = str.Split('\n');
+                                int lines2 = splitLines2.Length;
+
+                                for (int j = 0; j < lines; j++)
+                                    splitLines[j] = splitLines[j].Trim('\r');
                                 GameObject character;
                                 character = Managers.Resource.Instantiate($"Character{stageNumber}", go.transform);
                                 character.transform.position = block.transform.position + new Vector3(0, 1.7f, 0);
+
+                                if (splitLines2[0][0] == 1)
+                                    character.transform.forward = character.transform.right;
+                                else if (splitLines2[0][0] == 2)
+                                    character.transform.forward = -character.transform.forward;
+                                else if (splitLines2[0][0] == 3)
+                                    character.transform.forward = -character.transform.right;
                             }
                         }
                     }
 
-                    else if (name.Equals("Block") == false)
+                    else if (name.Equals("Block") == false || name.Equals("RedBlock"))
                     { 
                             block.transform.localPosition += new Vector3(0, 2.9f, 0);
                     }
