@@ -12,6 +12,8 @@ public class MapManager : I_CheckClear
     public float _blockStartHeight = 0.1f;
     public float _cameraRotationX = 81f;
     string moveableBlockTypes = "1ESUDL";
+    public GameObject characterOnDestination;
+    public float characterStartHeight = 1.7f;
 
 
     public bool CheckCleared() // 현재 캐릭터의 위치가 EndBlock이라면 True 반환
@@ -149,7 +151,7 @@ public class MapManager : I_CheckClear
                     {
                         GameObject character = Managers.TargetObject.GetTargetObject(Managers.User.Character);
                         //Debug.Log($"{character}");
-                        character.transform.position = block.transform.position + new Vector3(0, 1.7f, 0);
+                        character.transform.position = block.transform.position + new Vector3(0, characterStartHeight, 0);
                         character.GetComponent<Character>().CurrentPositionInMap = blockId;
                         character.GetComponent<Character>().CurrentBlock = block;
 
@@ -190,16 +192,16 @@ public class MapManager : I_CheckClear
 
                                 for (int j = 0; j < lines; j++)
                                     splitLines[j] = splitLines[j].Trim('\r');
-                                GameObject character;
-                                character = Managers.Resource.Instantiate($"Character{stageNumber}", go.transform);
-                                character.transform.position = block.transform.position + new Vector3(0, 1.7f, 0);
+
+                                characterOnDestination = Managers.Resource.Instantiate($"Character{stageNumber}", go.transform);
+                                characterOnDestination.transform.position = block.transform.position + new Vector3(0, characterStartHeight, 0);
 
                                 if (splitLines2[0][0] == 1)
-                                    character.transform.forward = character.transform.right;
+                                    characterOnDestination.transform.forward = characterOnDestination.transform.right;
                                 else if (splitLines2[0][0] == 2)
-                                    character.transform.forward = -character.transform.forward;
+                                    characterOnDestination.transform.forward = -characterOnDestination.transform.forward;
                                 else if (splitLines2[0][0] == 3)
-                                    character.transform.forward = -character.transform.right;
+                                    characterOnDestination.transform.forward = -characterOnDestination.transform.right;
                             }
                         }
                     }
@@ -342,5 +344,6 @@ public class MapManager : I_CheckClear
     public void Clear()
     {
         Map.Clear();
+        characterOnDestination = null;
     }
 }
