@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge5" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character5</avatar>
+
+        <name>브룩</name>
+
+        <text>더 이상 다가오지 마라! 돌아가라!</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character4</avatar>
+
+        <name>샌디</name>
+
+        <text>자네, 내가 누군지 모르나?</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character5</avatar>
+
+        <name>브룩</name>
+
+        <text>(당황하면서) 누구십니까?</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "3">
+
+        <avatar>Character4</avatar>
+
+        <name>샌디</name>
+
+        <text>난 마왕의 오랜 친구다. 당장 문을 열어라!</text>
+
+    </dialog>
+
+
+	<dialog seq = "4">
+
+        <avatar>Character5</avatar>
+
+        <name>브룩</name>
+
+        <text>앗! 죄송합니다! 마왕님의 친구셨군요!</text>
+
+    </dialog>		
+	
+	<dialog seq = "5">
+
+        <avatar>Character5</avatar>
+
+        <name>브룩</name>
+
+        <text>제가 안내하겠습니다.</text>
+
+    </dialog>	
+	
+</Message>

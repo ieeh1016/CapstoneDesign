@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge3" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>데이먼, 어쩌다 이렇게 된 거야?</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character3</avatar>
+
+        <name>데이먼</name>
+
+        <text>집에 돌아가다가 구멍에 빠져버렸어.</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character3</avatar>
+
+        <name>데이먼</name>
+
+        <text>너희들은 이 시간에 어디 가는 거야?</text>
+
+    </dialog>
+	
+	<dialog seq = "3">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>코니가 마왕에게 납치됐어.</text>
+
+    </dialog>	
+	
+	<dialog seq = "4">
+
+        <avatar>Character3</avatar>
+
+        <name>데이면</name>
+
+        <text>뭐? 코니가 잡혀갔다고? 나도 도와줄게!</text>
+
+    </dialog>	
+	
+</Message>

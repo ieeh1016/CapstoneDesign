@@ -380,6 +380,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 5Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 2.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\FirstStudyStageCoin.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge5EndDialog.xml" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 8.txt" />
     <None Include="Assets\Resources\BlocksEngine2\Scripts\EditorScripts\InstructionScriptTemplate.txt" />
@@ -392,13 +393,17 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 3.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 10Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 9.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge5StartDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 4Object.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge1EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge6Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 9Object.txt" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAuth.dll" />
+    <None Include="Assets\Resources\DialogScript\Challenge9StartDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 7Object.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge9EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 4Object.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge10StartDialog.xml" />
     <None Include="Assets\Resources\DialogScript\Challenge2StartDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge5.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\aaaaCoin.txt" />
@@ -416,11 +421,13 @@
     <None Include="Assets\Resources\Suriyun\README.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 6.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 1Object.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge8EndDialog.xml" />
     <None Include="Assets\Firebase\Plugins\Firebase.Auth.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 1Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge8.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 5.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\FirstStudyStage.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge4StartDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 1.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 8Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge1Object.txt" />
@@ -446,6 +453,7 @@
     <None Include="Assets\Resources\DialogScript\Challenge3StartDialog.xml" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\CharaSkin.cginc" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 3Object.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge8StartDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 2.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge9Object.txt" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
@@ -454,11 +462,13 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 4.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 9.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 2Object.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge10EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 8Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\aaaa.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge4Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 4.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 2Object.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge4EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 1Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 7.txt" />
     <None Include="Assets\Parse\Plugins\dotNet45\Unity.Compat.dll" />
@@ -467,12 +477,14 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 1.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge7Object.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
+    <None Include="Assets\Resources\DialogScript\Challenge6EndDialog.xml" />
     <None Include="Assets\SkySeries Freebie\Hdri setup.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 3.txt" />
     <None Include="Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll" />
     <None Include="Assets\Resources\DialogScript\Challenge2EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge1.txt" />
     <None Include="Assets\Downtown Game Studio\Nature Pack - Low Polly Trees &amp; Bushes\Documentation.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge7EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge10.txt" />
     <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 2Object.txt" />
@@ -483,10 +495,12 @@
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
     <None Include="Assets\AurynSky\Forest Pack\READ ME.txt" />
     <None Include="Assets\Toon_Knights\Hey.txt" />
+    <None Include="Assets\Resources\DialogScript\Challenge6StartDialog.xml" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 5Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 10.txt" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
+    <None Include="Assets\Resources\DialogScript\Challenge7StartDialog.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

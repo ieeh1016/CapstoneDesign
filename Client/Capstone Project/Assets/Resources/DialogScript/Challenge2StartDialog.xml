@@ -1,46 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Message stage = "Challenge1" state = "Start">
+<Message stage = "Challenge2" state = "Start">
 
     <dialog seq = "0">
 
-        <avatar>Character2</avatar>
+        <avatar>Character1</avatar>
 
-        <name>캐릭터이름</name>
+        <name>루크</name>
 
-        <text>여기에 대사를 입력하시오1~~~</text>
+        <text>코니, 얼른 구하러 갈게. 조금만 기다려!</text>
 
     </dialog>
 
     <dialog seq = "1">
 
-        <avatar>Character3</avatar>
+        <avatar>Character1</avatar>
 
-        <name>여기에이름2</name>
+        <name>루크</name>
 
-        <text>이 대화는 스테이지 시작 시점에 출력됩니다</text>
+        <text>엄마 얼른 다녀올게요!</text>
 
     </dialog>
 	
 	
 	<dialog seq = "2">
 
-        <avatar>Character2</avatar>
+        <avatar>Character10</avatar>
 
-        <name>여기에이름</name>
+        <name>엄마</name>
 
-        <text>밑에 복사해서 계속 대사 입력~~</text>
+        <text>잠깐만!</text>
 
     </dialog>
 
-	<dialog seq = "3">
-
-		<avatar>Character2</avatar>
-
-		<name>여기에이름</name>
-
-		<text>밑에 복사해서 계속 대사 입력1~~</text>
-
-	</dialog>
 	
 </Message>

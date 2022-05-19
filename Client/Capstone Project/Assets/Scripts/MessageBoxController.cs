@@ -153,6 +153,7 @@ public class MessageBoxController : MonoBehaviour
             }
             else
             {
+                dialog_Avatar_Image.GetComponent<RawImage>().texture = null;
                 Debug.Log($"An avatar name should contain a substring \"Character\" {avatar}");
             }
         }

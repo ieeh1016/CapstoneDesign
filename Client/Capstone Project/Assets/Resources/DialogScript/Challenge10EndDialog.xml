@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge10" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character10</avatar>
+
+        <name>엄마</name>
+
+        <text>모두 무사히 돌아왔구나! 정말 다행이다.</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>DarkLord</avatar>
+
+        <name>마왕</name>
+
+        <text>뭐야! 다 어디 갔어!</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>DarkLord</avatar>
+
+        <name>마왕</name>
+
+        <text>이 녀석들 가만 두지 않겠다!</text>
+
+    </dialog>
+	
+	<dialog seq = "3">
+
+        <avatar>System</avatar>
+
+        <name></name>
+
+        <text>To Be Continue</text>
+
+    </dialog>	
+	
+</Message>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge9" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character8</avatar>
+
+        <name>샌디</name>
+
+        <text>통키 괜찮아?</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character9</avatar>
+
+        <name>통키</name>
+
+        <text>덕분에 괜찮아. 얼른 나가고 싶어.</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>마왕에게 들키기 전에 얼른 나가자.</text>
+
+    </dialog>
+	
+</Message>

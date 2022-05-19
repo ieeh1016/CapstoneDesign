@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge5" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character5</avatar>
+
+        <name>브룩</name>
+
+        <text>멈춰라! 여긴 마왕님이 사시는 곳이다! 너흰 들어갈 수 없다!</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character5</avatar>
+
+        <name>브룩</name>
+
+        <text>다른 길로 돌아가라!</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character4</avatar>
+
+        <name>샌디</name>
+
+        <text>일단 입구로 가보세! 나한테 방법이 있네.</text>
+
+    </dialog>
+
+	
+</Message>

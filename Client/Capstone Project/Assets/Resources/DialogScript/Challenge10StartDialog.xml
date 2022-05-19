@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge10" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>얼른 돌아가자!</text>
+
+    </dialog>
+	
+	
+
+	
+</Message>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge6" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character2</avatar>
+
+        <name>브루스</name>
+
+        <text>엇 루크, 저기 계신 분이 너희 아빠 아니시니?</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>그렇네? 아빠!</text>
+
+    </dialog>
+	
+
+	
+</Message>

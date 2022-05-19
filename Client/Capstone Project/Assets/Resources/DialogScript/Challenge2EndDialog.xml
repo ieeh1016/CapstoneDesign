@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Message stage = "Challenge1" state = "End">
+<Message stage = "Challenge2" state = "End">
 
     <dialog seq = "0">
 
         <avatar>Character2</avatar>
 
-        <name>캐릭터이름</name>
+        <name>브루스</name>
 
-        <text>여기에 대사를 입력하시오1~~~</text>
+        <text>루크! 집에 간다더니 왜 여기에 있어?</text>
 
     </dialog>
 
     <dialog seq = "1">
 
-        <avatar>Character3</avatar>
+        <avatar>Character1</avatar>
 
-        <name>여기에이름2</name>
+        <name>루크</name>
 
-        <text>이 대화는 스테이지 종료 시점에 출력됩니다</text>
+        <text>브루스.. 코니가 마왕에게 잡혀갔어. 지금 당장 구하러 가야 해!</text>
 
     </dialog>
 	
@@ -27,10 +27,20 @@
 
         <avatar>Character2</avatar>
 
-        <name>여기에이름</name>
+        <name>브루스</name>
 
-        <text>밑에 복사해서 계속 대사 입력~~</text>
+        <text>뭐?! 네 여동생이 잡혀갔다고?</text>
 
     </dialog>
+	
+	<dialog seq = "3">
+
+        <avatar>Character2</avatar>
+
+        <name>브루스</name>
+
+        <text>나도 함께 갈게!</text>
+
+    </dialog>	
 	
 </Message>

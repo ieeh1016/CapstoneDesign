@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge4" state = "End">
+
+    <dialog seq = "0">
+
+        <avatar>Character4</avatar>
+
+        <name>샌디</name>
+
+        <text>여긴 마왕성으로 가는 길인데 어딜 가는가?</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>여동생이 마왕에게 잡혀가서 마왕이 사는 곳으로 갑니다.</text>
+
+    </dialog>
+	
+	
+	<dialog seq = "2">
+
+        <avatar>Character4</avatar>
+
+        <name>샌디</name>
+
+        <text>그렇군, 마침 나도 마왕에게 가는 길이었네. 같이 가세!</text>
+
+    </dialog>
+		
+	
+</Message>

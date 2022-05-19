@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Message stage = "Challenge8" state = "Start">
+
+    <dialog seq = "0">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>마왕은 어디 갔지? 저기 코니가 있다! 코니!</text>
+
+    </dialog>
+
+    <dialog seq = "1">
+
+        <avatar>Character8</avatar>
+
+        <name>코니</name>
+
+        <text>앗 오빠, 아빠! 도와줘!</text>
+
+    </dialog>
+	
+    <dialog seq = "2">
+
+        <avatar>Character1</avatar>
+
+        <name>루크</name>
+
+        <text>마왕이 오기 전에 얼른 구해서 나가자!</text>
+
+    </dialog>
+	
+
+	
+</Message>
