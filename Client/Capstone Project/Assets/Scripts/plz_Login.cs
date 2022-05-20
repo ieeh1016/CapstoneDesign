@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class plz_Login : MonoBehaviour
 {
+    /*
     // Start is called before the first frame update
     public void plzlogin()
     { 
@@ -29,4 +30,5 @@ public class plz_Login : MonoBehaviour
             a.gameObject.SetActive(true);
         }
     }
+    */
 }
