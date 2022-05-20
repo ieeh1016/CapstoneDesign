@@ -53,7 +53,7 @@
     <UnityVersion>2020.3.30f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_IfElseLeftCheck.cs" />
@@ -396,6 +396,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 9.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge5StartDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 4Object.txt" />
+    <None Include="Assets\Resources\MapGeneratingFiles\ClickStage\Reason4.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge1EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge6Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 9Object.txt" />
@@ -409,6 +410,8 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge5.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\aaaaCoin.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.TaskExtension.dll" />
+    <None Include="Assets\Resources\MapGeneratingFiles\ClickStage\Reason5.txt" />
+    <None Include="Assets\Resources\MapGeneratingFiles\ClickStage\Reason2.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 6.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge2.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 10.txt" />
@@ -423,6 +426,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 6.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 1Object.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge8EndDialog.xml" />
+    <None Include="Assets\Resources\MapGeneratingFiles\ClickStage\Reason3.txt" />
     <None Include="Assets\Firebase\Plugins\Firebase.Auth.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 1Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge8.txt" />
@@ -466,7 +470,7 @@
     <None Include="Assets\Resources\DialogScript\Challenge10EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 8Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\aaaa.txt" />
-    <None Include="Assets\Resources\MapGeneratingFiles\ClickStage\TestScene.txt" />
+    <None Include="Assets\Resources\MapGeneratingFiles\ClickStage\Reason1.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge4Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 4.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 2Object.txt" />
