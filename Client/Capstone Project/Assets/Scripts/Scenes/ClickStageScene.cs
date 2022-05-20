@@ -11,7 +11,7 @@ public class ClickStageScene : MonoBehaviour
 
     byte horizontalButtonNum = 10;
     byte verticalButtonNum = 5;
-    int buttonStartXPosition = -860;
+    int buttonStartXPosition = -847;
     int buttonStartYPosition = 384;
     int buttonInterval = 154;
     int buttonWidthHeight = 134;
