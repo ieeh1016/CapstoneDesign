@@ -23,6 +23,7 @@ public class ClickStageScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Managers.Music.SetBackGroundMusic("Casual Game Music 11");
         canvas = Managers.Resource.Instantiate("ClickStageCanvas");
 
 
