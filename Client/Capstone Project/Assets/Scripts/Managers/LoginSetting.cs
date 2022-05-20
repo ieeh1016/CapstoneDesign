@@ -23,7 +23,7 @@ public class LoginSetting
         C_Request_Name_input packet = new C_Request_Name_input();
 
         packet.Uid = Managers.User.UID;
-        packet.name = Managers.User.UID;
+        packet.name = Managers.User.Name;
         Managers.Network.Send(packet.Write());
     }
 

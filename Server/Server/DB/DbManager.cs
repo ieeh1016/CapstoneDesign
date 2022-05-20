@@ -189,7 +189,7 @@ namespace Server.DB
                 }
             }
 
-            if (remaining_Star == 0)
+            if (remaining_Star == 0 && (STAGE <10 ))
             {
                 using (MySqlConnection conn = new MySqlConnection(connectString))
                 {

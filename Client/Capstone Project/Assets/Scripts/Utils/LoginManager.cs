@@ -135,13 +135,9 @@ namespace Login_Util
 
             Managers.User.UID = Social.localUser.id;
             Managers.User.Name = Social.localUser.userName;
-            Managers.User.ChallangeStageInfo.Add(1, 0);
 
             Managers.Login.SendRequestNameInput();
-            Managers.Login.SendRequestLoadStar();
             Managers.Login.SendRequestMyPage();
-
-
         }
         
         public void Logout_State()
