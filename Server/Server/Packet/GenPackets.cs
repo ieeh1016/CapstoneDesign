@@ -15,7 +15,6 @@ public enum PacketID
 	C_Request_Challenge_Top30Rank = 6,
 	S_Challenge_Top30Rank = 7,
 	C_ChallengeUpdateStars = 8,
-
 }
 
 public interface IPacket
@@ -399,9 +398,10 @@ public class C_ChallengeUpdateStars : IPacket
 		count += sizeof(ushort);
 		Array.Copy(BitConverter.GetBytes((ushort)PacketID.C_ChallengeUpdateStars), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
+
 		ushort UIdLen = (ushort)Encoding.Unicode.GetBytes(this.UId, 0, this.UId.Length, segment.Array, segment.Offset + count + sizeof(ushort));
 		Obfuscator.stringEncoding(segment.Array, segment.Offset + count + sizeof(ushort), UIdLen);
-		Array.Copy(BitConverter.GetBytes(UIdLen), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+		Array.Copy(BitConverter.GetBytes(Obfuscator.ushortEncoding(UIdLen)), 0, segment.Array, segment.Offset + count, sizeof(ushort));
 		count += sizeof(ushort);
 		count += UIdLen;
 		segment.Array[segment.Offset + count] = Obfuscator.byteEncoding((byte)this.stageId);
