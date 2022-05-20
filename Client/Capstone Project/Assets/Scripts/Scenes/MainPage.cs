@@ -46,6 +46,14 @@ public class MainPage : MonoBehaviour
             GameObject.Find("MainCanvas").transform.Find("ChallengeStage_Select").gameObject.SetActive(true);
             StageManager.ToMain4 = false;
         }
+        else if (StageManager.ToMain5 == true)
+        {
+            GameObject.Find("MainCanvas").transform.Find("MainPageUI").gameObject.SetActive(false);
+            GameObject.Find("MainCanvas").gameObject.SetActive(true);
+            GameObject.Find("MainCanvas").transform.Find("SecondStudy_Stage_Select").gameObject.SetActive(true);
+            StageManager.ToMain5 = false;
+        }
+
     }
 
     // Update is called once per frame

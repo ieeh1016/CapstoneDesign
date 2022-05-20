@@ -39,7 +39,12 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene("MainPage");
             StageManager.ToMain4 = true;
         }
-        
+        else if (StageManager.SecondStudy == true)
+        {
+            Managers.Clear();
+            SceneManager.LoadScene("MainPage");
+            StageManager.ToMain5 = true;
+        }
 
 
     }
@@ -111,7 +116,6 @@ public class ChangeScene : MonoBehaviour
         }
     }
     
-
 
 
 
@@ -322,5 +326,29 @@ public class ChangeScene : MonoBehaviour
         LoadingSceneController.LoadScene("Challenge10");
     }
 
-
+    public void MoveToSecondStudy_1()
+    {
+        Managers.Clear();
+        LoadingSceneController.LoadScene("Reason1");
+    }
+    public void MoveToSecondStudy_2()
+    {
+        Managers.Clear();
+        LoadingSceneController.LoadScene("Reason2");
+    }
+    public void MoveToSecondStudy_3()
+    {
+        Managers.Clear();
+        LoadingSceneController.LoadScene("Reason3");
+    }
+    public void MoveToSecondStudy_4()
+    {
+        Managers.Clear();
+        LoadingSceneController.LoadScene("Reason4");
+    }
+    public void MoveToSecondStudy_5()
+    {
+        Managers.Clear();
+        LoadingSceneController.LoadScene("Reason5");
+    }
 }

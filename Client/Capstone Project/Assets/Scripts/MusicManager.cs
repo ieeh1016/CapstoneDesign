@@ -79,6 +79,7 @@ public class MusicManager
     public void SetBackGroundMusic(string bgmName)
     {
         audioSource.clip = Resources.Load<AudioClip>($"Casual Music Pack/Music Loops/{bgmName}");
+        audioSource.Play();
     }
 
     

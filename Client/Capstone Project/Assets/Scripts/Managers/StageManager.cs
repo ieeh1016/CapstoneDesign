@@ -11,11 +11,14 @@ public class StageManager
     public static bool ToMain2 = false;
     public static bool ToMain3 = false;
     public static bool ToMain4 = false;
+    public static bool ToMain5 = false;
+
 
     public static bool Basic = false;
     public static bool Codition = false;
     public static bool Loop = false;
     public static bool Challenge = false;
+    public static bool SecondStudy = false;
 
 
     List<I_CheckClear> _incompletedConditionList = new List<I_CheckClear>(); // 별 획득 조건 리스트 - 리스트에 추가된 클래스들의 CheckClear() 메소드를 통해 조건 만족했는지 체크
