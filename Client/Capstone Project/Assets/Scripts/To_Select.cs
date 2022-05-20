@@ -22,6 +22,12 @@ public class To_Select : MonoBehaviour
     {
         StageManager.Challenge = true;
     }
+
+    public void SecondStudy_Stage_Click()
+    {
+        StageManager.SecondStudy = true;
+    }
+
     public void Basic_Stage_Click_false()
     {
         StageManager.Basic = false;
@@ -39,5 +45,10 @@ public class To_Select : MonoBehaviour
     {
         StageManager.Challenge = false;
     }
+    public void SecondStudy_Stage_Click_false()
+    {
+        StageManager.SecondStudy = false;
+    }
+
 
 }
