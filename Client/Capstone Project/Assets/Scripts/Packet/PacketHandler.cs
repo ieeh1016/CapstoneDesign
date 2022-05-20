@@ -3,6 +3,7 @@ using ServerCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 using UnityEngine;
 
 class PacketHandler
@@ -40,7 +41,7 @@ class PacketHandler
         Managers.User.SetChallengeTop30(pkt);
 
         Managers.User.RankPacketArrival = true;
-
+        Debug.Log($"S_Challenge_Top30RankHandler 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
         session.Disconnect();
         //UIHandle.Invoke();
         //GameObject.Find("RankUI").GetComponent<RankUI>().SetUI();

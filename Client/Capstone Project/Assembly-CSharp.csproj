@@ -474,6 +474,7 @@
     <None Include="Assets\Resources\MapGeneratingFiles\ClickStage\Reason1.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge4Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 4.txt" />
+    <None Include="Assets\Resources\MapGeneratingFiles\Challenge2CharacterSetting.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 2Object.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge4EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 1Object.txt" />
