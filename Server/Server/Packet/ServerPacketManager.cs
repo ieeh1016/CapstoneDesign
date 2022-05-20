@@ -16,13 +16,11 @@ public class PacketManager
 
 	Dictionary<ushort, Func<PacketSession, ArraySegment<byte>, IPacket>> _makeFunc = new Dictionary<ushort, Func<PacketSession, ArraySegment<byte>, IPacket>>();
 	Dictionary<ushort, Action<PacketSession, IPacket>> _handler = new Dictionary<ushort, Action<PacketSession, IPacket>>();
-		
+
 	public void Register()
 	{
 		_makeFunc.Add((ushort)PacketID.C_Request_Name_input, MakePacket<C_Request_Name_input>);
 		_handler.Add((ushort)PacketID.C_Request_Name_input, PacketHandler.C_Request_Name_inputHandler);
-		_makeFunc.Add((ushort)PacketID.C_Request_Load_Star, MakePacket<C_Request_Load_Star>);
-		_handler.Add((ushort)PacketID.C_Request_Load_Star, PacketHandler.C_Request_Load_Star_Handler);
 		_makeFunc.Add((ushort)PacketID.C_Request_Challenge_MyPage, MakePacket<C_Request_Challenge_MyPage>);
 		_handler.Add((ushort)PacketID.C_Request_Challenge_MyPage, PacketHandler.C_Request_Challenge_MyPageHandler);
 		_makeFunc.Add((ushort)PacketID.C_Request_Challenge_Top30Rank, MakePacket<C_Request_Challenge_Top30Rank>);
