@@ -12,15 +12,8 @@ class PacketHandler
     {
         C_Request_Name_input pkt = packet as C_Request_Name_input;
         ClientSession clientSession = session as ClientSession;
-        session.Disconnect();
-    }
-
-    public static void C_Request_Load_Star_Handler(PacketSession session, IPacket packet) //
-    {
-        C_Request_Load_Star pkt = packet as C_Request_Load_Star;
-        ClientSession clientSession = session as ClientSession;
         S_Challenge_Load_Star s_pkt = new S_Challenge_Load_Star();
-        Dictionary<byte, byte> star_Dic = Server.DB.DbManager.Load_star(pkt.UId);
+        Dictionary<byte, byte> star_Dic = Server.DB.DbManager.user_Name_Input(pkt.Uid, pkt.name);
         foreach (KeyValuePair<byte, byte> items in star_Dic)
         {
             s_pkt.stageStars.Add(new S_Challenge_Load_Star.StageStar()
@@ -31,6 +24,8 @@ class PacketHandler
         }
         clientSession.Send(s_pkt.Write());
         session.Disconnect();
+
+        Console.WriteLine("전송완료");
     }
 
     public static void C_Request_Challenge_MyPageHandler(PacketSession session, IPacket packet)

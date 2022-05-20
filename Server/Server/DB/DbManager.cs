@@ -20,60 +20,73 @@ namespace Server.DB
         static private string DB_IP = "database-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
         static private string DB_Port = "3306";
         static string DB_TARGET = "DB_Test";
-        static string DB_UID = "admin";
-        static string DB_PWD = "rudrlzjarhd1541";
+
+        static string RR_UID = "Using_Select";
+        static string RR_PWD = "vorlzjarhk";
+
+        static string Init_UID = "Using_init";
+        static string Init_PWD = "vorlzjarhk123";
+
         static string User_DB_Table = "user_data";
         static string Challenge_DB_Table = "challenge_data";
 
-        public static byte user_Name_Input(String name, String Uid)
+        public class Data_Structure
+        {
+            public string name;
+            public int ranking;
+            public byte TotalStars;
+        }
+
+        public static Dictionary<byte, byte> user_Name_Input(String Uid, String name)
         {
             byte check;
-            byte reply = 1;
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
+            Dictionary<byte, byte> star_Dic = new Dictionary<byte, byte>();
+
+            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
             string sql = String.Format("select EXISTS (select Uid FROM {0} where UID = '{1}' limit 1) as success", User_DB_Table, Uid);
             using (conn = new MySqlConnection(connectString))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 check = Convert.ToByte(cmd.ExecuteScalar());
-                if (check == 0) // 첫방문
+            }
+
+            if (check == 0) // 초기방문 세팅
+            {
+                connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, Init_UID, Init_PWD);
+                using (conn = new MySqlConnection(connectString))
                 {
+                    conn.Open();
+
                     sql = String.Format("insert into {0} (Uid, name) values ('{1}', '{2}')", User_DB_Table, Uid, name);
                     cmd = new MySqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
                 }
-                if (check == 1) { }
-            }
-            return reply;
-        }
 
-
-        public static Dictionary<byte, byte> Load_star(String UID)
-        {
-            byte check;
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
-            String sql = String.Format("select EXISTS (select Uid FROM {0} where UID = '{1}' limit 1) as success", Challenge_DB_Table, UID);
-            Dictionary<byte, byte> star_Dic = new Dictionary<byte, byte>();
-            using (conn = new MySqlConnection(connectString))
-            {
-                conn.Open();
-
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                check = Convert.ToByte(cmd.ExecuteScalar());
-
-                if (check == 0) // 첫방문
+                using (conn = new MySqlConnection(connectString))
                 {
-                    sql = String.Format("insert into {0} (Uid, Stage, Star) values ('{1}', 1, 0)", Challenge_DB_Table, UID);
+                    conn.Open();
+
+                    sql = String.Format("insert into {0} (Uid, challenge_Stage, Star) values ('{1}', 1, 0)", Challenge_DB_Table, Uid);
                     cmd = new MySqlCommand(sql, conn);
                     star_Dic.Add(1, 0);
+                    cmd.ExecuteNonQuery();
                 }
-                if (check == 1)
-                { // 데이터 존재
-                    sql = String.Format("Select Stage, Star from {0} where Uid ='{1}' order by Stage", Challenge_DB_Table, UID);
+            }
+
+            else if (check == 1) // 기존 데이터가 있을때
+            {
+                connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
+                using (conn = new MySqlConnection(connectString))
+                {
+                    conn.Open();
+
+                    sql = String.Format("Select challenge_Stage, Star from {0} where Uid ='{1}' order by challenge_Stage", Challenge_DB_Table, Uid);
                     cmd = new MySqlCommand(sql, conn);
                     MySqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        star_Dic.Add(Convert.ToByte(reader["Stage"]), Convert.ToByte(reader["Star"]));
+                        star_Dic.Add(Convert.ToByte(reader["challenge_Stage"]), Convert.ToByte(reader["Star"]));
                     }
                 }
             }
@@ -84,7 +97,7 @@ namespace Server.DB
         {
             Data_Structure data_set = new Data_Structure();
 
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
+            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
                     "from(Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC) AS ranking from {0} INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table " +
                         "WHERE Rank_Table.Uid = '{2}'", Challenge_DB_Table, User_DB_Table, UID);
@@ -104,10 +117,9 @@ namespace Server.DB
             return data_set;
         }
 
-
         public static List<S_Challenge_Top30Rank.Rank> Study_ChallengeTop30(List<S_Challenge_Top30Rank.Rank> list)
         {
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
+            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
                     "from (Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC) AS ranking from {0} " +
                     "INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table ORDER BY Rank_Table.ranking Asc limit 30", Challenge_DB_Table, User_DB_Table);
@@ -142,35 +154,52 @@ namespace Server.DB
 
         public static void challenge_UpdateStar(String UID, byte STAGE, byte Star)
         {
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, DB_UID, DB_PWD);
-            string sql = String.Format("Select Star from {0} where Uid = '{1}' AND STAGE = {2}", Challenge_DB_Table, UID, STAGE);
+            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
+            string sql = String.Format("Select Star from {0} where Uid = '{1}' AND challenge_Stage = {2}", Challenge_DB_Table, UID, STAGE);
             int remaining_Star;
-
             using (MySqlConnection conn = new MySqlConnection(connectString))
             {
                 conn.Open();
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 remaining_Star = Convert.ToInt32(cmd.ExecuteScalar());
-                if (remaining_Star < Star)
+            }
+            connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, Init_UID, Init_PWD);
+
+            if (remaining_Star < Star)
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectString))
                 {
-                    sql = String.Format("Update {0} Set Star ={1} where Uid ='{2}' AND STAGE = {3}", Challenge_DB_Table, Star, UID, STAGE);
+                    conn.Open();
+
+                    sql = String.Format("Update {0} Set Star ={1} where Uid ='{2}' AND challenge_Stage = {3}", Challenge_DB_Table, Star, UID, STAGE);
                     cmd = new MySqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    if (remaining_Star == 0)
-                    {
-                        sql = String.Format("Insert Into {0}  (UID, Stage, Star) values ('{1}', {2}, {3})", Challenge_DB_Table, UID, (STAGE + 1), 0);
-                        cmd = new MySqlCommand(sql, conn);
-                        cmd.ExecuteNonQuery();
-                    }
                 }
             }
-        }
 
-        public class Data_Structure
-        {
-            public string name;
-            public int ranking;
-            public byte TotalStars;
+            if (remaining_Star < Star)
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectString))
+                {
+                    conn.Open();
+
+                    sql = String.Format("Update {0} Set Star ={1} where Uid ='{2}' AND challenge_Stage = {3}", Challenge_DB_Table, Star, UID, STAGE);
+                    cmd = new MySqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            if (remaining_Star == 0)
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectString))
+                {
+                    conn.Open();
+
+                    sql = String.Format("Insert Into {0}  (UID, challenge_Stage, Star) values ('{1}', {2}, {3})", Challenge_DB_Table, UID, (STAGE + 1), 0);
+                    cmd = new MySqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
