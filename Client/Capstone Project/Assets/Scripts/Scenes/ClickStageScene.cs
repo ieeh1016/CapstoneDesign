@@ -30,7 +30,7 @@ public class ClickStageScene : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
 
         // 코드 블록 이미지 로딩
-        canvas.transform.Find("CodeBlockImage").GetComponent<Image>().sprite = Resources.Load<Image>($"MapGeneratingFiles/Image/{sceneName}CodeBlock").sprite;
+        canvas.transform.Find("CodeBlockImage").GetComponent<Image>().sprite = Resources.Load<Image>($"MapGeneratingFiles/ClickStage/Image/{sceneName}CodeBlock").sprite;
 
         //codeBlockImage = Managers.Resource.Instantiate($"MapGeneratingFiles/ClickStage/{sceneName}CodeBlock");
         //codeBlockImage.GetOrAddComponent<RectTransform>().sizeDelta = new Vector2()
@@ -58,7 +58,7 @@ public class ClickStageScene : MonoBehaviour
                 {
                     obj = Managers.Resource.Instantiate("ClickStageCharacterImage", canvas.transform);
                     obj.GetOrAddComponent<RectTransform>().sizeDelta = new Vector2(buttonWidthHeight, buttonWidthHeight);
-                    obj.GetComponent<Image>().sprite = Resources.Load<Image>($"MapGeneratingFiles/Image/{Managers.User.Character}").sprite;
+                    obj.GetComponent<Image>().sprite = Resources.Load<Image>($"MapGeneratingFiles/ClickStage/Image/{Managers.User.Character}").sprite;
                 }
                 else
                 {
