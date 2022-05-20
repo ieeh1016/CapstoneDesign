@@ -186,21 +186,21 @@ public class MapManager : I_CheckClear
                             if (stageNumber > 1 && stageNumber <= 10) // 2~10 스테이지에서만 캐릭터 올려 놓는다.
                             {
                                 TextAsset characterSetting = Resources.Load<TextAsset>($"MapGeneratingFiles/{sceneName}CharacterSetting");
-                                string characterStr = asset.text;
-                                string[] splitLines2 = str.Split('\n');
+                                string characterStr = characterSetting.text;
+                                string[] splitLines2 = characterStr.Split('\n');
                                 int lines2 = splitLines2.Length;
 
-                                for (int j = 0; j < lines; j++)
-                                    splitLines[j] = splitLines[j].Trim('\r');
+                                for (int j = 0; j < lines2; j++)
+                                    splitLines2[j] = splitLines2[j].Trim('\r');
 
                                 characterOnDestination = Managers.Resource.Instantiate($"Character{stageNumber}", go.transform);
                                 characterOnDestination.transform.position = block.transform.position + new Vector3(0, characterStartHeight, 0);
 
-                                if (splitLines2[0][0] == 1)
+                                if (splitLines2[0][0] == '1')
                                     characterOnDestination.transform.forward = characterOnDestination.transform.right;
-                                else if (splitLines2[0][0] == 2)
+                                else if (splitLines2[0][0] == '2')
                                     characterOnDestination.transform.forward = -characterOnDestination.transform.forward;
-                                else if (splitLines2[0][0] == 3)
+                                else if (splitLines2[0][0] == '3')
                                     characterOnDestination.transform.forward = -characterOnDestination.transform.right;
                             }
                         }
