@@ -9,10 +9,10 @@ public class ButtonToSendPacket : MonoBehaviour
     void Start()
     {
         Button btn = gameObject.GetComponent<Button>();
-        if (gameObject.name.Contains("Rank"))
-            btn.onClick.AddListener(GameObject.Find("@PacketEvent").GetComponent<PacketEvent>().SendRequestChallengeTop30);
-        else if(gameObject.name.Contains("MyPage"))
-            btn.onClick.AddListener(GameObject.Find("@PacketEvent").GetComponent<PacketEvent>().SendRequestMyPage);
+        //if (gameObject.name.Contains("Rank"))
+        //    btn.onClick.AddListener(GameObject.Find("@PacketEvent").GetComponent<PacketEvent>().SendRequestChallengeTop30);
+        //else if(gameObject.name.Contains("MyPage"))
+        //    btn.onClick.AddListener(GameObject.Find("@PacketEvent").GetComponent<PacketEvent>().SendRequestMyPage);
     }
 
     // Update is called once per frame

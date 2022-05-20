@@ -23,7 +23,7 @@ class PacketHandler
             });
         }
         clientSession.Send(s_pkt.Write());
-        session.Disconnect();
+        //session.Disconnect();
 
         Console.WriteLine("전송완료");
     }
@@ -40,7 +40,7 @@ class PacketHandler
         s_pkt.TotalStars = data_set.TotalStars;
 
         clientSession.Send(s_pkt.Write());
-        session.Disconnect();
+        //session.Disconnect();
     }
 
     public static void C_Request_Challenge_Top30RankHandler(PacketSession session, IPacket packet) //
@@ -53,7 +53,7 @@ class PacketHandler
         s_pkt.ranks = Server.DB.DbManager.Study_ChallengeTop30(top_30);
 
         clientSession.Send(s_pkt.Write());
-        session.Disconnect();
+        //session.Disconnect();
     }
 
     public static void C_ChallengeUpdateStarsHandler(PacketSession session, IPacket packet) //
@@ -61,6 +61,6 @@ class PacketHandler
         C_ChallengeUpdateStars pkt = packet as C_ChallengeUpdateStars;
         ClientSession clientSession = session as ClientSession;
         Server.DB.DbManager.challenge_UpdateStar(pkt.UId, pkt.stageId, pkt.numberOfStars);
-        session.Disconnect();
+        //session.Disconnect();
     }
 }

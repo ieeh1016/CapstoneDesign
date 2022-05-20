@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class NetworkManager
 {
+	bool connected = false;
+
 	ServerSession _session = new ServerSession();
 	string host;
 	IPHostEntry ipHost;
@@ -16,9 +18,19 @@ public class NetworkManager
 
 	Connector connector;
 
+	public bool Connected
+    {
+		get { return connected; }
+		set { connected = value; }
+    }
+
 	public void Send(ArraySegment<byte> sendBuff)
 	{
 		ConnectToServer();
+		while (connected == false)
+        {
+			// busy wait
+        }
 		_session.Send(sendBuff);
 	}
 
