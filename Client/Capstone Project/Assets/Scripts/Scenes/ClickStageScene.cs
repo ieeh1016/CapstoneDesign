@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ClickStageScene : MonoBehaviour
 {
     GameObject canvas;
+    GameObject codeBlockImage;
 
     byte horizontalButtonNum = 10;
     byte verticalButtonNum = 5;
@@ -14,6 +15,8 @@ public class ClickStageScene : MonoBehaviour
     int buttonStartYPosition = 384;
     int buttonInterval = 154;
     int buttonWidthHeight = 134;
+    int imageStartXPosition = 0;
+    int imageStartYPosition = -465;
 
     Dictionary<GameObject, bool> buttonWithTrueFalse = new Dictionary<GameObject, bool>();
 
@@ -22,7 +25,16 @@ public class ClickStageScene : MonoBehaviour
     {
         canvas = Managers.Resource.Instantiate("ClickStageCanvas");
 
+        
+
         string sceneName = SceneManager.GetActiveScene().name;
+
+        // 코드 블록 이미지 로딩
+        canvas.transform.Find("CodeBlockImage").GetComponent<Image>().sprite = Resources.Load<Image>($"MapGeneratingFiles/Image/{sceneName}CodeBlock").sprite;
+
+        //codeBlockImage = Managers.Resource.Instantiate($"MapGeneratingFiles/ClickStage/{sceneName}CodeBlock");
+        //codeBlockImage.GetOrAddComponent<RectTransform>().sizeDelta = new Vector2()
+
         TextAsset asset = Resources.Load<TextAsset>($"MapGeneratingFiles/ClickStage/{sceneName}");
         string str = asset.text;
         string[] splitLines = str.Split('\n');
@@ -42,10 +54,11 @@ public class ClickStageScene : MonoBehaviour
             {
                 GameObject obj;
 
-                if (splitLines[i][j] == 'S')
+                if (splitLines[i][j] == 'S') // 캐릭터 이미지 로드
                 {
-                    obj = Managers.Resource.Instantiate("ClickStageCharacter", canvas.transform);
+                    obj = Managers.Resource.Instantiate("ClickStageCharacterImage", canvas.transform);
                     obj.GetOrAddComponent<RectTransform>().sizeDelta = new Vector2(buttonWidthHeight, buttonWidthHeight);
+                    obj.GetComponent<Image>().sprite = Resources.Load<Image>($"MapGeneratingFiles/Image/{Managers.User.Character}").sprite;
                 }
                 else
                 {
@@ -53,9 +66,9 @@ public class ClickStageScene : MonoBehaviour
 
                     Button btn = obj.GetOrAddComponent<Button>();
 
-                    if (splitLines[i][j] == '0')
+                    if (splitLines[i][j] == '0') // 실패 버튼
                         btn.onClick.AddListener(Failed);
-                    else
+                    else // 성공 버튼
                         btn.onClick.AddListener(Success);
                 }
 
@@ -73,10 +86,12 @@ public class ClickStageScene : MonoBehaviour
     void Success()
     {
         Debug.Log("Success");
+        Managers.Stage.HandleSuccess();
     }
 
     void Failed()
     {
         Debug.Log("Failed");
+        Managers.Stage.HandleFailed();
     }
 }
