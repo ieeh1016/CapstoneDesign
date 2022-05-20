@@ -8,8 +8,9 @@ public class MainPage : MonoBehaviour
 
     //public AudioSource audioSourceEffects;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        PacketEvent.Init();
         Managers.Music.SetBackGroundMusic("Casual Game Music 05");
         Managers.Music.MusicPlayer.Play();
         //audioSourceEffects = Managers.Music.GetSoundEffect("Pop(1)");

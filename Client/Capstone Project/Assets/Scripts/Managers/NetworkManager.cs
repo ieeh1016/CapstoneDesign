@@ -18,6 +18,7 @@ public class NetworkManager
 
 	public void Send(ArraySegment<byte> sendBuff)
 	{
+		ConnectToServer();
 		_session.Send(sendBuff);
 	}
 
@@ -33,13 +34,13 @@ public class NetworkManager
 		string host = Dns.GetHostName();
 		IPHostEntry ipHost = Dns.GetHostEntry(host);
 		IPAddress ipAddr = ipHost.AddressList[0];
-		IPEndPoint endPoint = new IPEndPoint(ipAddr, 7777);
+		endPoint = new IPEndPoint(ipAddr, 7777);
 
 		connector = new Connector();
 
-		connector.Connect(endPoint,
-			() => { return _session; },
-			1);	
+		//connector.Connect(endPoint,
+		//	() => { return _session; },
+		//	1);	
 	}
 
 	public void ConnectToServer()
