@@ -8,12 +8,12 @@ public class CharaterSelect : MonoBehaviour
 {
     [SerializeField]
     CharacterSelectBtns[] _btns;
-    int _progress;
+    int _characterProgress;
 
 
     private void Start()
     {
-        _progress = MaxProgress(Managers.User.ChallangeStageInfo);
+        _characterProgress = GetCharProgress(Managers.User.ChallangeStageInfo);
 
         _btns = gameObject.GetComponentsInChildren<CharacterSelectBtns>();
 
@@ -28,15 +28,17 @@ public class CharaterSelect : MonoBehaviour
 
     private void OnEnable()
     {
+        _characterProgress = GetCharProgress(Managers.User.ChallangeStageInfo);
+        
         SetBtnsState();
 
         //if(Managers.User.Name != null)
         //    SetBtnsState(Managers.User.ChallengeProgress);
     }
 
-    int MaxProgress(Dictionary<ushort, byte> dict)
+    int GetCharProgress(Dictionary<ushort, byte> dict)
     {
-        
+
         if (dict.Count == 0)
         {
             //Debug.Log($"max: {1}");
@@ -45,7 +47,7 @@ public class CharaterSelect : MonoBehaviour
         }
 
 
-        var max = dict.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
+        var max = dict.Keys.Max();
         //Debug.Log($"max: {max}");
 
         return max;
@@ -75,7 +77,7 @@ public class CharaterSelect : MonoBehaviour
             {
                 num = btn.gameObject.name.Substring(3);
 
-                if (_progress >= int.Parse(num))
+                if (_characterProgress >= int.Parse(num))
                 {
                     if (btn.transform.parent.name.Equals(Managers.User.Character))
                         btn.CharacterSelectBtnState(Define.CharBtnState.Chosen);
