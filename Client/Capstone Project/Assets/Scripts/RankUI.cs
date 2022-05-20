@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class RankUI : MonoBehaviour
 {
     float waitTime = 0;
+    byte rankNum = 30;
     public IEnumerator WaitForPacket()
     {
         yield return new WaitForSeconds(2.0f);
@@ -21,24 +22,29 @@ public class RankUI : MonoBehaviour
         Managers.User.RankPacketArrival = false; // 패킷이 도착할 때까지 대기하기 위한 변수
         Managers.Login.LoadTop30();
         Debug.Log($"RankUI 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
-        while (Managers.User.RankPacketArrival == false) // 서버로부터 패킷이 도착할 때까지 대기
-        {
-            Debug.Log($"While문 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
-            // busy wait for rank packet
-            waitTime += Time.deltaTime;
-            if (waitTime >= 10)
-            {
-                waitTime = 0;
-                return;
-            }
-        }
+        //while (Managers.User.RankPacketArrival == false) // 서버로부터 패킷이 도착할 때까지 대기
+        //{
+        //    Debug.Log($"While문 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
+        //    // busy wait for rank packet
+        //    waitTime += Time.deltaTime;
+        //    if (waitTime >= 10)
+        //    {
+        //        waitTime = 0;
+        //        return;
+        //    }
+        //}
 
         //StartCoroutine("WaitForPacket");
 
+    }
+
+    // Start is called before the first frame update
+    public void SetUI()
+    {
         Debug.Log("SetUI 블렸엉라ㅓ");
 
         Transform rank = gameObject.transform.Find("Rank");
-        for (int i = 1; i <= 3; i++)
+        for (int i = 1; i <= rankNum; i++)
         {
             Transform ranki = rank.Find("Scroll View").Find("Viewport").Find("Content").Find($"Rank{i}");
             Text name = ranki.Find("Name").gameObject.GetComponent<Text>();
@@ -55,14 +61,14 @@ public class RankUI : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    public void SetUI()
+    private void Update()
     {
-
-        
+        if (Managers.User.RankPacketArrival == true)
+        {
+            SetUI();
+            Managers.User.RankPacketArrival = false;
+        }
     }
-
-
 
 
     // Update is called once per frame
