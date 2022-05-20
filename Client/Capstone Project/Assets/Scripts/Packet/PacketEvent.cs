@@ -4,20 +4,37 @@ using UnityEngine;
 
 public class PacketEvent : MonoBehaviour
 {
+    static PacketEvent s_instance;
+
+    public static PacketEvent Instance
+    {
+        get
+        {
+            Init();
+            return s_instance;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        GameObject root = GameObject.Find("@PacketEvent");
-        if (root == null)
-        {
-            root = new GameObject() { name = "@PacketEvent" };
-            root.AddComponent<PacketEvent>();
 
-        }
-        
-        DontDestroyOnLoad(root);
     }
 
+    public static void Init()
+    {
+        if (s_instance == null)
+        {
+            GameObject root = GameObject.Find("@PacketEvent");
+            if (root == null)
+            {
+                root = new GameObject() { name = "@PacketEvent" };
+                root.AddComponent<PacketEvent>();
+
+            }
+
+            DontDestroyOnLoad(root);
+        }
+    }
     // Update is called once per frame
     void Update()
     {

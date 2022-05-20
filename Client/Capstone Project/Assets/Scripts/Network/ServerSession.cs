@@ -12,13 +12,13 @@ namespace DummyClient
 		public override void OnConnected(EndPoint endPoint)
 		{
 			Debug.Log($"OnConnected : {endPoint}");
-			Console.WriteLine($"OnConnected : {endPoint}");			
+			//Console.WriteLine($"OnConnected : {endPoint}");			
 		}
 
 		public override void OnDisconnected(EndPoint endPoint)
 		{
 			Debug.Log($"OnDisconnected : {endPoint}");
-			Console.WriteLine($"OnDisconnected : {endPoint}");
+			//Console.WriteLine($"OnDisconnected : {endPoint}");
 		}
 
 		public override void OnRecvPacket(ArraySegment<byte> buffer)
