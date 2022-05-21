@@ -60,9 +60,10 @@ public class ClickStageScene : MonoBehaviour
                 {
                     obj = Managers.Resource.Instantiate("ClickStageCharacterImage", canvas.transform);
                     obj.GetOrAddComponent<RectTransform>().sizeDelta = new Vector2(buttonWidthHeight, buttonWidthHeight);
-                    obj.GetComponent<Image>().sprite = Resources.Load<Sprite>($"MapGeneratingFiles/ClickStage/Image/{Managers.User.Character}") as Sprite;
+                    obj.GetComponent<Image>().sprite = Resources.Load<Sprite>($"MapGeneratingFiles/ClickStage/Image/Character") as Sprite;
+                    //{ Managers.User.Character}
                 }
-
+                
                 else
                 {
                     obj = Managers.Resource.Instantiate("ClickStageButton", canvas.transform);
