@@ -23,9 +23,6 @@ class PacketHandler
             });
         }
         clientSession.Send(s_pkt.Write());
-        //session.Disconnect();
-
-        Console.WriteLine("전송완료");
     }
 
     public static void C_Request_Challenge_MyPageHandler(PacketSession session, IPacket packet)
@@ -40,6 +37,7 @@ class PacketHandler
         s_pkt.TotalStars = data_set.TotalStars;
 
         clientSession.Send(s_pkt.Write());
+
         //session.Disconnect();
     }
 
@@ -60,7 +58,16 @@ class PacketHandler
     {
         C_ChallengeUpdateStars pkt = packet as C_ChallengeUpdateStars;
         ClientSession clientSession = session as ClientSession;
-        Server.DB.DbManager.challenge_UpdateStar(pkt.UId, pkt.stageId, pkt.numberOfStars);
+        if (!CheckingSpecialText(pkt.UId) && pkt.stageId<= 10 && 1 <= pkt.stageId && pkt.numberOfStars <=3 && pkt.numberOfStars >= 1)
+        {
+            Server.DB.DbManager.challenge_UpdateStar(pkt.UId, pkt.stageId, pkt.numberOfStars);
+        }
         //session.Disconnect();
+    }
+    public static bool CheckingSpecialText(string word)
+    {
+        string str = @"[~!@\#$%^&*\()\=+|\\/:;?""<>']";
+        System.Text.RegularExpressions.Regex rex = new System.Text.RegularExpressions.Regex(str);
+        return rex.IsMatch(word);
     }
 }

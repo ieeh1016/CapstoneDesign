@@ -4,9 +4,6 @@
 		<String name="name"/>
 		<String name="Uid"/>
 	</packet>
-	<packet name="C_Request_Load_Star">
-		<String name ="UId"/>
-	</packet>
 	<packet name="S_Challenge_Load_Star">
 		<list name="StageStar">
 			<byte name="stageId"/>
