@@ -10,6 +10,7 @@ class PacketHandler
 {
     public static void C_Request_Name_inputHandler(PacketSession session, IPacket packet) //
     {
+        Console.WriteLine("C_Request_Name_input arrived");
         C_Request_Name_input pkt = packet as C_Request_Name_input;
         ClientSession clientSession = session as ClientSession;
         S_Challenge_Load_Star s_pkt = new S_Challenge_Load_Star();
@@ -27,6 +28,7 @@ class PacketHandler
 
     public static void C_Request_Challenge_MyPageHandler(PacketSession session, IPacket packet)
     {
+        Console.WriteLine("C_Request_Challenge_MyPage arrived");
         C_Request_Challenge_MyPage pkt = packet as C_Request_Challenge_MyPage;
         ClientSession clientSession = session as ClientSession;
         S_Challenge_MyPage s_pkt = new S_Challenge_MyPage();
@@ -56,6 +58,7 @@ class PacketHandler
 
     public static void C_ChallengeUpdateStarsHandler(PacketSession session, IPacket packet) //
     {
+        Console.WriteLine("C_ChallengeUpdateStars arrived");
         C_ChallengeUpdateStars pkt = packet as C_ChallengeUpdateStars;
         ClientSession clientSession = session as ClientSession;
         if (!CheckingSpecialText(pkt.UId) && pkt.stageId<= 10 && 1 <= pkt.stageId && pkt.numberOfStars <=3 && pkt.numberOfStars >= 1)
