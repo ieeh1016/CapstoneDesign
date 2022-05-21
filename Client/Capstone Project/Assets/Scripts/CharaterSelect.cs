@@ -39,7 +39,7 @@ public class CharaterSelect : MonoBehaviour
     int GetCharProgress(Dictionary<ushort, byte> dict)
     {
 
-        if (dict.Count == 0)
+        if (dict.Count <= 1)
         {
             //Debug.Log($"max: {1}");
 
@@ -50,7 +50,7 @@ public class CharaterSelect : MonoBehaviour
         var max = dict.Keys.Max();
         //Debug.Log($"max: {max}");
 
-        return max;
+        return max - 1;
     }
 
 

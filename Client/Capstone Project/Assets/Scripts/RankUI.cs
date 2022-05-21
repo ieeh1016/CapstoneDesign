@@ -59,6 +59,11 @@ public class RankUI : MonoBehaviour
 
             stars.text = ranker.totalStars.ToString();
         }
+
+        Transform myRank = rank.Find("MyRank");
+        myRank.Find("Name").GetComponent<Text>().text = Managers.User.Name;
+        myRank.Find("RankN").GetComponent<Text>().text = Managers.User.Ranking.ToString();
+        myRank.Find("starN").GetComponent<Text>().text = Managers.User.TotalStars.ToString();
     }
 
     private void Update()
