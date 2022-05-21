@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class plz_Login : MonoBehaviour
 {
-    /*
     // Start is called before the first frame update
     public void plzlogin()
     { 
@@ -17,7 +16,7 @@ public class plz_Login : MonoBehaviour
         a = a.transform.Find("Plz_Login");
 
         Transform b = GameObject.Find("MainCanvas").transform;
-        b = b.transform.Find("ChallengeStage_Select");
+        b = b.transform.Find("ChallengeChapter_Select");
         
         if (Social.localUser.authenticated)
         {
@@ -30,5 +29,4 @@ public class plz_Login : MonoBehaviour
             a.gameObject.SetActive(true);
         }
     }
-    */
 }
