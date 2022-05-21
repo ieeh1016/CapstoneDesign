@@ -18,6 +18,8 @@ public class NetworkManager
 
 	Connector connector;
 
+	float time = 0;
+
 	public bool Connected
     {
 		get { return connected; }
@@ -27,10 +29,16 @@ public class NetworkManager
 	public void Send(ArraySegment<byte> sendBuff)
 	{
 		ConnectToServer();
-		while (connected == false)
-        {
-			// busy wait
-        }
+		//while (connected == false)
+  //      {
+		//	time += Time.deltaTime;
+		//	if (time >= 3.0f)
+  //          {
+		//		time = 0;
+		//		return;
+  //          }
+		//	// busy wait
+  //      }
 		_session.Send(sendBuff);
 	}
 
