@@ -29,17 +29,17 @@ public class NetworkManager
 	public void Send(ArraySegment<byte> sendBuff)
 	{
 		ConnectToServer();
-		//while (connected == false)
-  //      {
-		//	time += Time.deltaTime;
-		//	if (time >= 3.0f)
-  //          {
-		//		time = 0;
-		//		return;
-  //          }
-		//	// busy wait
-  //      }
-		_session.Send(sendBuff);
+        while (connected == false)
+        {
+            time += Time.deltaTime;
+            if (time >= 5.0f)
+            {
+                time = 0;
+                return;
+            }
+            // busy wait
+        }
+        _session.Send(sendBuff);
 	}
 
 	public void Init()
