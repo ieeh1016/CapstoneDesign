@@ -56,7 +56,7 @@ public class NetworkManager
         //      ipAddr = ipHost.AddressList[0];
         //      endPoint = new IPEndPoint(ipAddr, 7777);
 
-        //connector = new Connector();
+        connector = new Connector();
 
         //connector.Connect(endPoint,
         //	() => { return _session; },
