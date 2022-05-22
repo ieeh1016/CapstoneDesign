@@ -72,7 +72,7 @@ public class ChangeScene : MonoBehaviour
         string sceneName = SceneManager.GetActiveScene().name;
         int sceneNameLastIndex = sceneName.Length - 1;
         int replaceNum = sceneName[sceneNameLastIndex] + 1; //basic 1
-
+        
         if ((replaceNum-48) == 10)
         {
             if (sceneName[2].Equals('s'))
@@ -105,6 +105,10 @@ public class ChangeScene : MonoBehaviour
             MoveToMain();
         }
         else if ((sceneNameLastIndex == 6) && sceneName[2].Equals('o'))
+        {
+            MoveToMain();
+        }
+        else if ((sceneNameLastIndex == 6) && sceneName[6].Equals('5'))
         {
             MoveToMain();
         }
