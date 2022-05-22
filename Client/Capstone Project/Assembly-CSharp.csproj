@@ -489,6 +489,7 @@
     <None Include="Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll" />
     <None Include="Assets\Resources\DialogScript\Challenge2EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge1.txt" />
+    <None Include="Assets\Downtown Game Studio\Nature Pack - Low Polly Trees &amp; Bushes\Documentation.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge7EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge10.txt" />
     <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
