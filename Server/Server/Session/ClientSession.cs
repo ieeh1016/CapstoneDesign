@@ -15,7 +15,7 @@ namespace Server
 		public override void OnConnected(EndPoint endPoint)
 		{
 			Console.WriteLine($"OnConnected : {endPoint}");
-            //Thread.Sleep(3000);
+            //Thread.Sleep(5000);
             //Disconnect();
         }
 

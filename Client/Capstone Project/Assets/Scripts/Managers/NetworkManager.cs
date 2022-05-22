@@ -8,6 +8,13 @@ using UnityEngine;
 
 public class NetworkManager
 {
+    public enum PacketID
+    {
+        MyName = 1,
+        MyPage = 2,
+        Load30 = 3,
+    }
+
 	bool connected = false;
 
 	ServerSession _session = new ServerSession();
@@ -18,27 +25,25 @@ public class NetworkManager
 
 	Connector connector;
 
+
 	float time = 0;
 
-	public bool Connected
-    {
-		get { return connected; }
-		set { connected = value; }
-    }
 
 	public void Send(ArraySegment<byte> sendBuff)
 	{
-		ConnectToServer();
-        while (connected == false)
-        {
-            time += Time.deltaTime;
-            if (time >= 5.0f)
-            {
-                time = 0;
-                return;
-            }
-            // busy wait
-        }
+
+        //while (connected == false)
+        //{
+        //    Debug.Log($"NetworkManager's connected:{connected}");
+        //    time += Time.deltaTime;
+        //    if (time >= 50.0f)
+        //    {
+        //        time = 0;
+        //        return;
+        //    }
+        //    // busy wait
+        //}
+        //Debug.Log($"Send:{connected}");
         _session.Send(sendBuff);
 	}
 
@@ -58,9 +63,9 @@ public class NetworkManager
 
         connector = new Connector();
 
-        //connector.Connect(endPoint,
-        //	() => { return _session; },
-        //	1);	
+        connector.Connect(endPoint,
+            () => { return _session; },
+            1);
     }
 
 	public void ConnectToServer()

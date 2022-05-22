@@ -7,18 +7,18 @@ using UnityEngine;
 
 namespace DummyClient
 {
-	class ServerSession : PacketSession
+	public class ServerSession : PacketSession
 	{
 		public override void OnConnected(EndPoint endPoint)
 		{
-			Managers.Network.Connected = true;
+			//Managers.Network.Connected = true;
 			Debug.Log($"OnConnected : {endPoint}");
 			//Console.WriteLine($"OnConnected : {endPoint}");			
 		}
 
 		public override void OnDisconnected(EndPoint endPoint)
 		{
-			Managers.Network.Connected = false;
+			//Managers.Network.Connected = false;
 			Debug.Log($"OnDisconnected : {endPoint}");
 			//Console.WriteLine($"OnDisconnected : {endPoint}");
 		}

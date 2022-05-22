@@ -65,7 +65,7 @@ class PacketHandler
         {
             Server.DB.DbManager.challenge_UpdateStar(pkt.UId, pkt.stageId, pkt.numberOfStars);
         }
-        //session.Disconnect();
+        session.Disconnect();
     }
     public static bool CheckingSpecialText(string word)
     {

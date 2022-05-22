@@ -21,7 +21,7 @@ public class RankUI : MonoBehaviour
     {
         Managers.User.RankPacketArrival = false; // 패킷이 도착할 때까지 대기하기 위한 변수
         Managers.Login.LoadTop30();
-        Debug.Log($"RankUI 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
+        
         //while (Managers.User.RankPacketArrival == false) // 서버로부터 패킷이 도착할 때까지 대기
         //{
         //    Debug.Log($"While문 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
@@ -55,7 +55,7 @@ public class RankUI : MonoBehaviour
 
             name.text = ranker.userName;
 
-            Text stars = ranki.Find("Text").gameObject.GetComponent<Text>();
+            Text stars = ranki.Find("StarN").gameObject.GetComponent<Text>();
 
             stars.text = ranker.totalStars.ToString();
         }
@@ -63,13 +63,15 @@ public class RankUI : MonoBehaviour
         Transform myRank = rank.Find("MyRank");
         myRank.Find("Name").GetComponent<Text>().text = Managers.User.Name;
         myRank.Find("RankN").GetComponent<Text>().text = Managers.User.Ranking.ToString();
-        myRank.Find("starN").GetComponent<Text>().text = Managers.User.TotalStars.ToString();
+        myRank.Find("StarN").GetComponent<Text>().text = Managers.User.TotalStars.ToString();
     }
 
     private void Update()
     {
+        Debug.Log($"RankUI 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
         if (Managers.User.RankPacketArrival == true)
         {
+            Debug.Log($"RankUI 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
             SetUI();
             Managers.User.RankPacketArrival = false;
         }
