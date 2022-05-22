@@ -12,16 +12,17 @@ class PacketHandler
 
     public static void S_Challenge_Load_StarHandler(PacketSession session, IPacket packet)
     {
+        Debug.Log("S_Challenge_Load_StarHandler called");
         S_Challenge_Load_Star pkt = packet as S_Challenge_Load_Star;
         ServerSession serverSession = session as ServerSession;
 
         Managers.User.SetChallengeInfoByPacket(pkt);
 
-        session.Disconnect();
     }
 
     public static void S_Challenge_MyPageHandler(PacketSession session, IPacket packet)
     {
+        Debug.Log("S_Challenge_MyPageHandler called");
         S_Challenge_MyPage pkt = packet as S_Challenge_MyPage;
         ServerSession serverSession = session as ServerSession;
 
@@ -29,7 +30,6 @@ class PacketHandler
         Managers.User.Ranking = pkt.ranking;
         Managers.User.TotalStars = pkt.TotalStars;
 
-        session.Disconnect();
     }
 
     public static void S_Challenge_Top30RankHandler(PacketSession session, IPacket packet)
@@ -43,7 +43,7 @@ class PacketHandler
         Managers.User.RankPacketArrival = true;
 
         Debug.Log($"S_Challenge_Top30RankHandler 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
-        session.Disconnect();
+        //serverSession.Disconnect();
         //UIHandle.Invoke();
         //GameObject.Find("RankUI").GetComponent<RankUI>().SetUI();
     }
