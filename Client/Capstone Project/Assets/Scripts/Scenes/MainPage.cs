@@ -14,7 +14,7 @@ public class MainPage : MonoBehaviour
         Managers.Music.SetBackGroundMusic("Casual Game Music 05");
         Managers.Music.MusicPlayer.Play();
 
-        Managers.Login.SendRequestNameInput();
+        //Managers.Login.SendRequestNameInput();
         //Managers.Login.SendRequestMyPage();
         //audioSourceEffects = Managers.Music.GetSoundEffect("Pop(1)");
 

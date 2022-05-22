@@ -133,8 +133,8 @@ namespace Login_Util
             ScriptTxt2 = a.GetComponent<Text>();
             ScriptTxt2.text = aa;
 
-            //Managers.User.UID = Social.localUser.id;
-            //Managers.User.Name = Social.localUser.userName;
+            Managers.User.UID = Social.localUser.id;
+            Managers.User.Name = Social.localUser.userName;
 
             Managers.Login.SendRequestNameInput();
             Managers.Login.SendRequestMyPage();
