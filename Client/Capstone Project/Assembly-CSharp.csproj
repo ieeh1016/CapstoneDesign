@@ -181,7 +181,6 @@
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidVideoClient.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\HeaderItems\BE2_BlockSectionHeader_VariableLabel.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\I_BE2_Drag.cs" />
-    <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\EffectBase.cs" />
     <Compile Include="Assets\Scripts\GoogleManager.cs" />
     <Compile Include="Assets\GooglePlayGames\BasicApi\PlayGamesClientConfiguration.cs" />
     <Compile Include="Assets\Scripts\Packet\GenPackets.cs" />
@@ -229,7 +228,6 @@
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\DragDrop\BE2_DragSelectionVariable.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Serialization\BE2_SerializableBlock.cs" />
     <Compile Include="Assets\Scripts\Scenes\ClickStageScene.cs" />
-    <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsPE.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\Block\I_BE2_BlockLayout.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Not.cs" />
     <Compile Include="Assets\Scripts\Managers\TargetObjectManager.cs" />
@@ -318,7 +316,6 @@
     <Compile Include="Assets\Scripts\Scenes\MainPage1.cs" />
     <Compile Include="Assets\Scripts\Utils\Extension.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Op_Xnor.cs" />
-    <Compile Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsNoiseTexPE.cs" />
     <Compile Include="Assets\GooglePlayGames\Platforms\Android\AndroidTokenClient.cs" />
     <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2_Horizontal\Scripts\BlockSections\BE2_HorizontalBlockSection.cs" />
@@ -338,7 +335,6 @@
     <Compile Include="Assets\Scripts\Managers\MapManager.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\UI\ContextMenu\I_BE2_UI_ContextMenu.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
-    <Compile Include="Assets\WindyBlocks\Ball\Model\Billboard.cs" />
     <Compile Include="Assets\Scripts\TypingEffect.cs" />
     <Compile Include="Assets\Scripts\BGScroller.cs" />
     <Compile Include="Assets\Resources\BlocksEngine2\Scripts\EngineCore\Instruction\BlockInstructions\BE2_Ins_If3WaysCheck.cs" />
@@ -360,13 +356,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
-    <None Include="Assets\UB\Simple2dWeatherEffects\Standard\D2Fogs.shader" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 8.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge1StartDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 10Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 6Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Basic 10.txt" />
-    <None Include="Assets\BlackBull\ReadMe.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge4.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 5Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge3Object.txt" />
@@ -420,7 +414,6 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge2.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 10.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge3EndDialog.xml" />
-    <None Include="Assets\UB\Simple2dWeatherEffects\Standard\D2FogsNoiseTex.shader" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
@@ -446,7 +439,6 @@
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 8.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge8Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition 7.txt" />
-    <None Include="Assets\WindyBlocks\TerrainDetails\Flowers\Materials\Flowers.shader" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Loop 1.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Condition Object.txt" />
@@ -455,7 +447,6 @@
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Auth.dll" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge5Object.txt" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge6CharacterSetting.txt" />
-    <None Include="Assets\WindyBlocks\Clouds\Materials\CloudRealistic.shader" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-8_8_0.dll" />
     <None Include="Assets\Resources\Suriyun\UnityChanShader\Shader\readme.txt" />
@@ -498,7 +489,6 @@
     <None Include="Assets\Parse\Plugins\dotNet45\Unity.Tasks.dll" />
     <None Include="Assets\Resources\DialogScript\Challenge2EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge1.txt" />
-    <None Include="Assets\Downtown Game Studio\Nature Pack - Low Polly Trees &amp; Bushes\Documentation.txt" />
     <None Include="Assets\Resources\DialogScript\Challenge7EndDialog.xml" />
     <None Include="Assets\Resources\MapGeneratingFiles\Challenge10.txt" />
     <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
