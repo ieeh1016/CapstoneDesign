@@ -19,7 +19,7 @@ public class RankUI : MonoBehaviour
 
     public void OnEnable()
     {
-        Managers.User.RankPacketArrival = false; // 패킷이 도착할 때까지 대기하기 위한 변수
+        //Managers.User.RankPacketArrival = false; // 패킷이 도착할 때까지 대기하기 위한 변수
         Managers.Login.LoadTop30();
         
         //while (Managers.User.RankPacketArrival == false) // 서버로부터 패킷이 도착할 때까지 대기
