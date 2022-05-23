@@ -52,10 +52,13 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
         IsActive = false;
     }
 
+
+    public bool _isStart { get; set; }
     void Start()
     {
-
-        Invoke(nameof(PopulateStack), 0.5f);
+        _isStart = true;
+        //PopulateStack();
+        Invoke(nameof(PopulateStack), 0.1f);
         //PopulateStack();
         BE2_MainEventsManager.Instance.StartListening(BE2EventTypes.OnPointerUpEnd, PopulateStack);
         BE2_MainEventsManager.Instance.StartListening(BE2EventTypes.OnStop, StopStack);
@@ -147,10 +150,12 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
 
             //모든 function 블록에 불러온 functionArea의 body를 넣어줌
             GameObject function_area_body_copy;
-            Debug.Log($"area childCount {AllInsCount(function_area_body)}");
-            Debug.Log($"block childCount {AllInsCount(function_blocks[function_blocks.Length - 1])}");
+            //Debug.Log($"area childCount {AllInsCount(function_area_body)}");
+            //Debug.Log($"block childCount {AllInsCount(function_blocks[function_blocks.Length - 1])}");
             //Debug.Log(AllChildrenCount(function_area_body) != AllChildrenCount(function_blocks[function_blocks.Length - 1]));
-            if (AllInsCount(function_area_body) != AllInsCount(function_blocks[function_blocks.Length - 1]))
+
+            //시작 버튼을 누른순간에는 fuctionAreaUpdate를 막아야함
+            if (_isStart)
             {
                 //Debug.Log($"function_blocks[0] {function_blocks[0].transform.childCount}");
                 //Debug.Log($"function_area_body {function_area_body.transform.childCount}");
@@ -180,11 +185,13 @@ public class BE2_BlocksStack : MonoBehaviour, I_BE2_BlocksStack
             }
         }
     }
+
+    /*
     int AllInsCount(GameObject g)
     {
         return g.GetComponentsInChildren<BE2_Block>().Length;
     }
-
+    */
 
 
     void PopulateStackRecursive(I_BE2_Block parentBlock)
