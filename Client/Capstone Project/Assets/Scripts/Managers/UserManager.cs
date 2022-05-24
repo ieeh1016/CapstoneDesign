@@ -6,8 +6,8 @@ using System;
 
 public class UserManager
 {
-    string UId = "TestId";
-    string name = "TestName";
+    string UId;
+    string name;
     ushort challengeProgress;
     ushort totalStars;
     int ranking;

@@ -15,7 +15,7 @@ public class NetworkManager
         Load30 = 3,
     }
 
-	bool connected = false;
+	//bool connected = false;
 
 	ServerSession _session = new ServerSession();
 	string host;
@@ -26,7 +26,7 @@ public class NetworkManager
 	Connector connector;
 
 
-	float time = 0;
+	//float time = 0;
 
 
 	public void Send(ArraySegment<byte> sendBuff)
@@ -56,10 +56,10 @@ public class NetworkManager
         ipAddr = IPAddress.Parse("3.39.181.102"); // AWS EC2 Instance의 IP 주소를 IPAdress 객체로 변환
         endPoint = new IPEndPoint(ipAddr, 7777);
 
-        //      host = Dns.GetHostName();
-        //      ipHost = Dns.GetHostEntry(host);
-        //      ipAddr = ipHost.AddressList[0];
-        //      endPoint = new IPEndPoint(ipAddr, 7777);
+        //host = Dns.GetHostName();
+        //ipHost = Dns.GetHostEntry(host);
+        //ipAddr = ipHost.AddressList[0];
+        //endPoint = new IPEndPoint(ipAddr, 7777);
 
         connector = new Connector();
 

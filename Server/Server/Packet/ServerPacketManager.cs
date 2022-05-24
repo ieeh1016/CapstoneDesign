@@ -38,15 +38,18 @@ public class PacketManager
 		count += 2;
 		ushort id = BitConverter.ToUInt16(buffer.Array, buffer.Offset + count);
 		count += 2;
-        Func<PacketSession, ArraySegment<byte>, IPacket> func = null;
-        if (_makeFunc.TryGetValue(id, out func))
-        {
-            IPacket packet = func.Invoke(session, buffer);
-            if (onRecvCallback != null)
-                onRecvCallback.Invoke(session, packet);
-            else
-                HandlePacket(session, packet);
-        }
+		if (size <= 50 && id <= 8 && id >= 1)
+		{
+			Func<PacketSession, ArraySegment<byte>, IPacket> func = null;
+			if (_makeFunc.TryGetValue(id, out func))
+			{
+				IPacket packet = func.Invoke(session, buffer);
+				if (onRecvCallback != null)
+					onRecvCallback.Invoke(session, packet);
+				else
+					HandlePacket(session, packet);
+			}
+		}
 	}
 
 	T MakePacket<T>(PacketSession session, ArraySegment<byte> buffer) where T : IPacket, new()
