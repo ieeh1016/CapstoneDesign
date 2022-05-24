@@ -56,7 +56,6 @@ public class MainPage : MonoBehaviour
             GameObject.Find("MainCanvas").transform.Find("SecondStudy_Stage_Select").gameObject.SetActive(true);
             StageManager.ToMain5 = false;
         }
-
     }
 
     // Update is called once per frame
