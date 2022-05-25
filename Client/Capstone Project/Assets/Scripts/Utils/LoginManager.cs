@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using Firebase.Auth;
 
 namespace Login_Util
 {
