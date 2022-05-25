@@ -79,10 +79,7 @@ public class StageManager
                     stars = (byte)currentCount;
                     Managers.User.ChallangeStageInfo.Remove(challengeNum);
                     Managers.User.ChallangeStageInfo.Add(challengeNum, stars);
-                    if(challengeNum < 10)
-                    {
-                        Managers.User.ChallangeStageInfo.Add((ushort)(challengeNum + 1), 0);
-                    }
+                    Managers.User.ChallangeStageInfo.Add((ushort)(challengeNum + 1), 0);
                     Managers.User.TotalStars += (ushort)currentCount;
 
                     C_ChallengeUpdateStars pkt = new C_ChallengeUpdateStars();

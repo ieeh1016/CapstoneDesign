@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Firebase.Auth;
 using System;
 
 public class UserManager
 {
-    string UId;
-    string name;
+    string UId = "TestId";
+    string name = "TestName";
     ushort challengeProgress;
     ushort totalStars;
     int ranking;
