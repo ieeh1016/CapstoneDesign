@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using Firebase.Auth;
 
 namespace Login_Util
 {
@@ -110,9 +111,6 @@ namespace Login_Util
 
         public void Login_State()
         {
-            Managers.User.UID = Social.localUser.id;
-            Managers.User.Name = Social.localUser.userName;
-
             Btn_MyPage_Login.SetActive(true);
             Btn_MyPage_Logout.SetActive(false);
             Btn_Login.SetActive(false);
@@ -134,6 +132,9 @@ namespace Login_Util
 
             ScriptTxt2 = a.GetComponent<Text>();
             ScriptTxt2.text = aa;
+
+            Managers.User.UID = Social.localUser.id;
+            Managers.User.Name = Social.localUser.userName;
 
             Managers.Login.SendRequestNameInput();
             Managers.Login.SendRequestMyPage();
