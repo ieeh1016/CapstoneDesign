@@ -57,6 +57,13 @@ public class MainPage : MonoBehaviour
             StageManager.ToMain5 = false;
         }
 
+
+        byte value = 0;
+        if (Managers.User.ChallangeStageInfo.TryGetValue(1, out value) == false)
+        {
+            Managers.User.ChallangeStageInfo.Add(1, value);
+        }
+
     }
 
     // Update is called once per frame
