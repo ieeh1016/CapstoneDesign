@@ -69,7 +69,7 @@ public class RankUI : MonoBehaviour
     private void Update()
     {
         Debug.Log($"RankUI 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
-        if (Managers.User.RankPacketArrival == true)
+        if (Managers.User.RankPacketArrival == true || Managers.User.ChallangeStageInfo.Count != 0)
         {
             Debug.Log($"RankUI 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
             SetUI();
