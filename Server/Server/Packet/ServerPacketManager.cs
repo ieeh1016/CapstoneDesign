@@ -38,7 +38,7 @@ public class PacketManager
 		count += 2;
 		ushort id = BitConverter.ToUInt16(buffer.Array, buffer.Offset + count);
 		count += 2;
-		if (size <= 50 && id <= 8 && id >= 1)
+		if (size <= 100 && id <= 8 && id >= 1)
 		{
 			Func<PacketSession, ArraySegment<byte>, IPacket> func = null;
 			if (_makeFunc.TryGetValue(id, out func))

@@ -13,6 +13,8 @@ public class UserManager
     int ranking;
     string selectedChracter = "Character";
     bool rankPacketArrival = false;
+    bool myPagePacketArrival = false;
+    bool loadStarPacketArrival = false;
 
     Dictionary<ushort, byte> _challengeStageInfo = new Dictionary<ushort, byte>();
     Dictionary<int, ChallengeRankerInfo> _challengeTop30 = new Dictionary<int, ChallengeRankerInfo>();
@@ -59,6 +61,18 @@ public class UserManager
         set { rankPacketArrival = value; }
     }
 
+    public bool MyPagePacketArrival
+    {
+        get { return myPagePacketArrival; }
+        set { myPagePacketArrival = value; }
+    }
+
+    public bool LoadStartPacketArrival
+    {
+        get { return loadStarPacketArrival; }
+        set { loadStarPacketArrival = value; }
+    }
+
     public Dictionary<ushort, byte> ChallangeStageInfo
     {
         get { return _challengeStageInfo; }
@@ -72,8 +86,13 @@ public class UserManager
 
     public void SetChallengeInfoByPacket(S_Challenge_Load_Star packet)
     {
+        byte acquiredStar;
         foreach (S_Challenge_Load_Star.StageStar s in packet.stageStars)
         {
+            if (_challengeStageInfo.TryGetValue(s.stageId, out acquiredStar))
+            {
+                _challengeStageInfo.Remove(s.stageId);
+            }
             _challengeStageInfo.Add(s.stageId, s.numberOfStars);
         }
     }

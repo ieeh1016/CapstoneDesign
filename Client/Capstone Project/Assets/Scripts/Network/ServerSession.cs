@@ -25,6 +25,7 @@ namespace DummyClient
 
 		public override void OnRecvPacket(ArraySegment<byte> buffer)
 		{
+			Debug.Log("OnRecvPacket 호출됨");
 			PacketManager.Instance.OnRecvPacket(this, buffer);
 		}
 
