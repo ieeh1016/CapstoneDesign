@@ -135,7 +135,6 @@ namespace Login_Util
 
             Managers.User.UID = Social.localUser.id;
             Managers.User.Name = Social.localUser.userName;
-
             Managers.Login.SendRequestNameInput();
             Managers.Login.SendRequestMyPage();
         }

@@ -18,6 +18,7 @@ class PacketHandler
 
         Managers.User.SetChallengeInfoByPacket(pkt);
 
+        Managers.User.LoadStartPacketArrival = true;
     }
 
     public static void S_Challenge_MyPageHandler(PacketSession session, IPacket packet)
@@ -30,6 +31,7 @@ class PacketHandler
         Managers.User.Ranking = pkt.ranking;
         Managers.User.TotalStars = pkt.TotalStars;
 
+        Managers.User.MyPagePacketArrival = true;
     }
 
     public static void S_Challenge_Top30RankHandler(PacketSession session, IPacket packet)

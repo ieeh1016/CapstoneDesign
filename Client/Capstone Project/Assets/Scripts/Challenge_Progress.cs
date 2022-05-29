@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class Challenge_Progress : MonoBehaviour
 {
     
-    void Start()
+    void Awake()
     {
+
         Transform _challenge = GameObject.Find("ChallengeStage_Select").transform;
         byte a = 0;
 

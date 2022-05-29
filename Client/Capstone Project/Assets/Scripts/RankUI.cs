@@ -41,7 +41,6 @@ public class RankUI : MonoBehaviour
     // Start is called before the first frame update
     public void SetUI()
     {
-        Debug.Log("SetUI ºí·È¾û¶ó¤Ã");
 
         Transform rank = gameObject.transform.Find("Rank");
         for (int i = 1; i <= rankNum; i++)
@@ -68,10 +67,8 @@ public class RankUI : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"RankUI ¿¡¼­ÀÇ RankPacketArriavl: {Managers.User.RankPacketArrival}");
         if (Managers.User.RankPacketArrival == true || Managers.User.ChallangeStageInfo.Count != 0)
         {
-            Debug.Log($"RankUI ¿¡¼­ÀÇ RankPacketArriavl: {Managers.User.RankPacketArrival}");
             SetUI();
             Managers.User.RankPacketArrival = false;
         }

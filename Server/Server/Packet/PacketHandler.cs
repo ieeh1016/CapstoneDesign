@@ -34,13 +34,16 @@ class PacketHandler
     public static void C_Request_Challenge_MyPageHandler(PacketSession session, IPacket packet)
     {
         Console.WriteLine("C_Request_Challenge_MyPage arrived");
+
+        string name;
         C_Request_Challenge_MyPage pkt = packet as C_Request_Challenge_MyPage;
         ClientSession clientSession = session as ClientSession;
-        if(!CheckingSpecialText(pkt.UId))
+        if (!CheckingSpecialText(pkt.UId))
         {
             S_Challenge_MyPage s_pkt = new S_Challenge_MyPage();
             Data_Structure data_set = Server.DB.DbManager.Challenge_MyPage(pkt.UId);
 
+            name = data_set.name;
             s_pkt.name = data_set.name;
             s_pkt.ranking = data_set.ranking;
             s_pkt.TotalStars = data_set.TotalStars;
@@ -48,7 +51,10 @@ class PacketHandler
             clientSession.Send(s_pkt.Write());
         }
         else
+        {
             clientSession.Disconnect();
+            return;
+        }
 
         //session.Disconnect();
     }

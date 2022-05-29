@@ -31,6 +31,7 @@ public class Managers : MonoBehaviour
     MapObjectManager _mapObject = new MapObjectManager();
     UserManager _user = new UserManager();
     NetworkManager _netWork = new NetworkManager();
+    SessionManager _session = new SessionManager();
     LoginSetting _loginSetting = new LoginSetting();
     MessageBoxManager _messageBox = new MessageBoxManager();
 
@@ -51,6 +52,7 @@ public class Managers : MonoBehaviour
 
     public static UserManager User { get { return Instance._user; } }
     public static NetworkManager Network { get { return Instance._netWork; } }
+    public static SessionManager Session { get { return Instance._session; } }
     public static LoginSetting Login { get { return Instance._loginSetting; } }
     public static MapObjectManager MapObject { get { return Instance._mapObject; } }
     public static MessageBoxManager MessageBox { get { return Instance._messageBox; } }
@@ -65,7 +67,7 @@ public class Managers : MonoBehaviour
     void Update()
     {
         _input.OnUpdate();
-        _netWork.Update();
+        //_netWork.Update();
     }
     static void Init()
     {
