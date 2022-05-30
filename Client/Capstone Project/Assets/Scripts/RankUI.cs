@@ -14,29 +14,10 @@ public class RankUI : MonoBehaviour
 
     void Start()
     {
-        
-    }
-
-    public void OnEnable()
-    {
-        //Managers.User.RankPacketArrival = false; // 패킷이 도착할 때까지 대기하기 위한 변수
+        Managers.Network.RankPacketArrival = false;
         Managers.Login.LoadTop30();
-        
-        //while (Managers.User.RankPacketArrival == false) // 서버로부터 패킷이 도착할 때까지 대기
-        //{
-        //    Debug.Log($"While문 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
-        //    // busy wait for rank packet
-        //    waitTime += Time.deltaTime;
-        //    if (waitTime >= 10)
-        //    {
-        //        waitTime = 0;
-        //        return;
-        //    }
-        //}
-
-        //StartCoroutine("WaitForPacket");
-
     }
+
 
     // Start is called before the first frame update
     public void SetUI()
@@ -67,10 +48,9 @@ public class RankUI : MonoBehaviour
 
     private void Update()
     {
-        if (Managers.User.RankPacketArrival == true || Managers.User.ChallangeStageInfo.Count != 0)
+        if (Managers.Network.RankPacketArrival == true || Managers.User.ChallangeStageInfo.Count != 0)
         {
             SetUI();
-            Managers.User.RankPacketArrival = false;
         }
     }
 

@@ -18,7 +18,8 @@ class PacketHandler
 
         Managers.User.SetChallengeInfoByPacket(pkt);
 
-        Managers.User.LoadStartPacketArrival = true;
+        Managers.Network.LoadStarPacketArrival = true;
+        
     }
 
     public static void S_Challenge_MyPageHandler(PacketSession session, IPacket packet)
@@ -31,7 +32,8 @@ class PacketHandler
         Managers.User.Ranking = pkt.ranking;
         Managers.User.TotalStars = pkt.TotalStars;
 
-        Managers.User.MyPagePacketArrival = true;
+        Managers.Network.MyPagePacketArrival = true;
+
     }
 
     public static void S_Challenge_Top30RankHandler(PacketSession session, IPacket packet)
@@ -42,10 +44,10 @@ class PacketHandler
 
         Managers.User.SetChallengeTop30(pkt);
 
-        Managers.User.RankPacketArrival = true;
+        Managers.Network.RankPacketArrival = true;
 
-        Debug.Log($"S_Challenge_Top30RankHandler 에서의 RankPacketArriavl: {Managers.User.RankPacketArrival}");
-        //serverSession.Disconnect();
+        Debug.Log($"S_Challenge_Top30RankHandler 에서의 RankPacketArrival: {Managers.Network.RankPacketArrival}");
+
         //UIHandle.Invoke();
         //GameObject.Find("RankUI").GetComponent<RankUI>().SetUI();
     }
