@@ -15,7 +15,6 @@ public class NetworkManager
         Load30 = 3,
     }
 
-	bool connected = false;
 
 	ServerSession _session = new ServerSession();
 	string host;
@@ -25,25 +24,41 @@ public class NetworkManager
 
 	Connector connector;
 
+    bool rankPacketArrival = true;
+    bool myPagePacketArrival = true;
+    bool loadStarPacketArrival = true;
+    bool waitForPacketToReconnect = false;
+    bool connectedToServer = false;
 
-	float time = 0;
+    float time = 0;
+
+    public bool RankPacketArrival
+    {
+        get { return rankPacketArrival; }
+        set { rankPacketArrival = value; }
+    }
+
+    public bool MyPagePacketArrival
+    {
+        get { return myPagePacketArrival; }
+        set { myPagePacketArrival = value; }
+    }
+
+    public bool LoadStarPacketArrival
+    {
+        get { return loadStarPacketArrival; }
+        set { loadStarPacketArrival = value; }
+    }
+
+    public bool Connected
+    {
+        get { return connectedToServer; }
+        set { connectedToServer = value; }
+    }
 
 
-	public void Send(ArraySegment<byte> sendBuff)
+    public void Send(ArraySegment<byte> sendBuff)
 	{
-
-        //while (connected == false)
-        //{
-        //    Debug.Log($"NetworkManager's connected:{connected}");
-        //    time += Time.deltaTime;
-        //    if (time >= 50.0f)
-        //    {
-        //        time = 0;
-        //        return;
-        //    }
-        //    // busy wait
-        //}
-        //Debug.Log($"Send:{connected}");
         _session.Send(sendBuff);
 	}
 
@@ -68,18 +83,51 @@ public class NetworkManager
             1);
     }
 
-	public void ConnectToServer()
+    public void ConnectToServer() // Stateless 서버를 위한 메소드
     {
-		connector.Connect(endPoint,
-			() => { return _session; },
-			1);
+        Connected = false;
+
+        _session = new ServerSession();
+
+        connector.Connect(endPoint,
+            () => { return _session; },
+            1);
+    }
+
+	public void TryReConnectToServer() // Stateful 서버를 위한 메소드
+    {
+
+        if (rankPacketArrival && myPagePacketArrival && loadStarPacketArrival)
+        {
+            _session.Disconnect();
+            _session = new ServerSession();
+
+            connector.Connect(endPoint,
+            () => { return _session; },
+            1);
+
+            waitForPacketToReconnect = false;
+        }
+        else
+        {
+            waitForPacketToReconnect = true;
+        }
+		
 	}
 
-    public void Update()
+    public void OnUpdate()
 	{
-		List<IPacket> list = PacketQueue.Instance.PopAll();
-		foreach (IPacket packet in list)
-			PacketManager.Instance.HandlePacket(_session, packet);
+        if (waitForPacketToReconnect)
+            TryReConnectToServer();
+        else
+        {
+            time += Time.deltaTime;
+            if (time > 300f)
+            {
+                time = 0;
+                TryReConnectToServer();
+            }
+        }
 	}
 
 

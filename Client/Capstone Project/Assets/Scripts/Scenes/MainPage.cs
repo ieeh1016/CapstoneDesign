@@ -63,7 +63,7 @@ public class MainPage : MonoBehaviour
         {
             Managers.User.ChallangeStageInfo.Add(1, value);
         }
-        
+
     }
 
     // Update is called once per frame
