@@ -18,7 +18,7 @@ namespace Server.DB
 
         //추후 정적으로 바꿈
         static private string DB_IP = "database-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
-        static private string RRDB_IP = "database-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
+        static private string RRDB_IP = "rr-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
 
         static private string DB_Port = "3306";
         static string DB_TARGET = "DB_Test";
@@ -128,7 +128,7 @@ namespace Server.DB
 
             string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", RRDB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
-                    "from(Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC) AS ranking from {0} INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table " +
+                    "from(Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC, NAME asc) AS ranking from {0} INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table " +
                         "WHERE Rank_Table.Uid = '{2}'", Challenge_DB_Table, User_DB_Table, UID);
             using (conn = new MySqlConnection(connectString))
             {
