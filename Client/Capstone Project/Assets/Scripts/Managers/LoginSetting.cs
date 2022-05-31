@@ -24,7 +24,8 @@ public class LoginSetting
 
         packet.Uid = Managers.User.UID;
         packet.name = Managers.User.Name;
-        Managers.Network.Send(packet.Write());
+
+        Managers.Network.ConnectAndSend(packet.Write(), true);
     }
 
     public void SendRequestLoadStar()
@@ -33,7 +34,8 @@ public class LoginSetting
 
         packet.UId = Managers.User.UID;
 
-        Managers.Network.Send(packet.Write());
+
+        Managers.Network.ConnectAndSend(packet.Write(), true);
     }
 
     public void SendRequestMyPage()
@@ -42,13 +44,13 @@ public class LoginSetting
 
         packet.UId = Managers.User.UID;
 
-        Managers.Network.Send(packet.Write());
+        Managers.Network.ConnectAndSend(packet.Write(), true);
     }
 
     public void LoadTop30()
     {
         C_Request_Challenge_Top30Rank packet = new C_Request_Challenge_Top30Rank();
 
-        Managers.Network.Send(packet.Write());
+        Managers.Network.ConnectAndSend(packet.Write(), true);
     }
 }

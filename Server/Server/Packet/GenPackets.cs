@@ -33,19 +33,30 @@ public class C_Request_Name_input : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
-		Console.WriteLine($"C_Request_Name_input: {segment}");
+		Console.WriteLine("--난독화 된 패킷--");
+		for (int i = segment.Offset; i < segment.Offset + segment.Count; i++)
+			Console.Write($"{segment.Array[i]}");
+		Console.WriteLine(" ");
+		Console.WriteLine("------------------");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
+		Console.WriteLine(" ");
+		Console.WriteLine("--해독된 패킷--");
 		ushort nameLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
 		count += sizeof(ushort);
 		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, nameLen);
 		this.name = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, nameLen);
+		Console.Write($"{this.name}");
 		count += nameLen;
 		ushort UidLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
+		Console.Write($"{UidLen}");
 		count += sizeof(ushort);
 		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, UidLen);
 		this.Uid = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UidLen);
+		Console.Write($"{this.Uid}");
+		Console.WriteLine(" ");
+		Console.WriteLine("---------------");
 		count += UidLen;
 	}
 
@@ -81,14 +92,24 @@ public class C_Request_Load_Star : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
-		Console.WriteLine($"C_Request_Load_Star: {segment}");
+		Console.WriteLine("--난독화 된 패킷--");
+		for (int i = segment.Offset; i < segment.Offset + segment.Count; i++)
+			Console.Write($"{segment.Array[i]}");
+		Console.WriteLine(" ");
+		Console.WriteLine("------------------");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
+		Console.WriteLine(" ");
+		Console.WriteLine("--해독된 패킷--");
 		ushort UIdLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
+		Console.Write($"{UIdLen}");
 		count += sizeof(ushort);
 		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, UIdLen);
 		this.UId = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UIdLen);
+		Console.Write($"{this.UId}");
+		Console.WriteLine(" ");
+		Console.WriteLine("---------------");
 		count += UIdLen;
 	}
 
@@ -184,14 +205,24 @@ public class C_Request_Challenge_MyPage : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
-		Console.WriteLine($"C_Request_Challenge_MyPage: {segment}");
+		Console.WriteLine("--난독화 된 패킷--");
+		for (int i = segment.Offset; i < segment.Offset + segment.Count; i++)
+			Console.Write($"{segment.Array[i]}");
+		Console.WriteLine(" ");
+		Console.WriteLine("------------------");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
+		Console.WriteLine(" ");
+		Console.WriteLine("--해독된 패킷--");
 		ushort UIdLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
+		Console.Write($"{UIdLen}");
 		count += sizeof(ushort);
 		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, UIdLen);
 		this.UId = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UIdLen);
+		Console.Write($"{this.UId}");
+		Console.WriteLine(" ");
+		Console.WriteLine("---------------");
 		count += UIdLen;
 	}
 
@@ -271,7 +302,11 @@ public class C_Request_Challenge_Top30Rank : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
-		Console.WriteLine($"C_Request_Challenge_Top30Rank: {segment}");
+		Console.WriteLine("--난독화 된 패킷--");
+		for (int i = segment.Offset; i < segment.Offset + segment.Count; i++)
+			Console.Write($"{segment.Array[i]}");
+		Console.WriteLine(" ");
+		Console.WriteLine("------------------");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
@@ -380,18 +415,30 @@ public class C_ChallengeUpdateStars : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
-		Console.WriteLine($"C_ChallengeUpdateStars: {segment}");
+		Console.WriteLine("--난독화 된 패킷--");
+		for (int i = segment.Offset; i < segment.Offset + segment.Count; i++)
+			Console.Write($"{segment.Array[i]}");
+		Console.WriteLine(" ");
+		Console.WriteLine("------------------");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
+		Console.WriteLine(" ");
+		Console.WriteLine("--해독된 패킷--");
 		ushort UIdLen = Obfuscator.ushortDecoding(BitConverter.ToUInt16(segment.Array, segment.Offset + count));
+		Console.Write($"{UIdLen}");
 		count += sizeof(ushort);
 		Obfuscator.stringDecoding(segment.Array, segment.Offset + count, UIdLen);
 		this.UId = Encoding.Unicode.GetString(segment.Array, segment.Offset + count, UIdLen);
+		Console.Write($"{this.UId}");
 		count += UIdLen;
 		this.stageId = Obfuscator.byteDecoding((byte)segment.Array[segment.Offset + count]);
+		Console.Write($"{this.stageId}");
 		count += sizeof(byte);
 		this.numberOfStars = Obfuscator.byteDecoding((byte)segment.Array[segment.Offset + count]);
+		Console.Write($"{this.numberOfStars}");
+		Console.WriteLine(" ");
+		Console.WriteLine("---------------");
 		count += sizeof(byte);
 	}
 

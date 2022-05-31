@@ -136,10 +136,9 @@ namespace Login_Util
             Managers.User.UID = Social.localUser.id;
             Managers.User.Name = Social.localUser.userName;
 
-            Managers.Network.LoadStarPacketArrival = false; // 패킷 도착 확인 위한 변수 설정
+            
             Managers.Login.SendRequestNameInput();
 
-            Managers.Network.MyPagePacketArrival = false; // 패킷 도착 확인 위한 변수 설정
             Managers.Login.SendRequestMyPage();
         }
         

@@ -24,14 +24,35 @@ public class NetworkManager
 
 	Connector connector;
 
+    byte waitingForConnect = 0;
+    byte numOfWaitingPacket = 0;
+
     bool rankPacketArrival = false;
     bool myPagePacketArrival = false;
     bool loadStarPacketArrival = false;
     bool waitForPacketToReconnect = false;
     bool connectedToServer = false;
-    bool waitForPacket = false;
+
+    public Action ConnectAction;
+    public Action<ArraySegment<byte>> SendAction;
+
+    
+    Queue<ArraySegment<byte>> sendingPendingList = new Queue<ArraySegment<byte>>();
+
 
     float time = 0;
+
+    public byte NumOfWaitingConnection
+    {
+        get { return waitingForConnect; }
+        set { waitingForConnect = value; }
+    }
+
+    public byte NumOfWaitingPacket
+    {
+        get { return numOfWaitingPacket; }
+        set { numOfWaitingPacket = value; }
+    }
 
     public bool RankPacketArrival
     {
@@ -57,9 +78,27 @@ public class NetworkManager
         set { connectedToServer = value; }
     }
 
+    public Queue<ArraySegment<byte>> SendingPendingList
+    {
+        get { return sendingPendingList; }
+        set { sendingPendingList = value; }
+    }
+
+    public void ConnectAndSend(ArraySegment<byte> sendBuff, bool waitForResponse = false)
+    {
+        if (numOfWaitingPacket == 0 || sendingPendingList.Count == 0) // 전송 대기를 하고 있는 패킷이 없다면 소켓 연결
+            ConnectToServer();
+
+        sendingPendingList.Enqueue(sendBuff); // pendingList에 패킷을 넣어놓고 연결이 완료되었을 시 전송한다.
+
+        if (waitForResponse) // Response를 기다려야 하는 연결이라면 numofWaitingPacket + 1 을 함으로써 소켓 연결 유지한다
+            numOfWaitingPacket++;
+    }
+
 
     public void Send(ArraySegment<byte> sendBuff)
 	{
+
         _session.Send(sendBuff);
 	}
 
@@ -79,17 +118,16 @@ public class NetworkManager
 
         connector = new Connector();
 
-        connector.Connect(endPoint,
-            () => { return _session; },
-            1);
+        ConnectAction += ConnectToServer;
+        SendAction += Send; // Stateless 전송 위해 SendAction에 등록 후 Connect가 완료되면 Send;
+
+        //connector.Connect(endPoint,
+        //    () => { return _session; },
+        //    1);
     }
 
     public void ConnectToServer() // Stateless 서버를 위한 메소드
     {
-        while (waitForPacket)
-        {
-            // busy wait
-        }
 
         Connected = false;
 
