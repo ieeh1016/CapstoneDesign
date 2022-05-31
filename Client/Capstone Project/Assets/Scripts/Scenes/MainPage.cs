@@ -63,11 +63,6 @@ public class MainPage : MonoBehaviour
         {
             Managers.User.ChallangeStageInfo.Add(1, value);
         }
-        Managers.User.Name = "TestName";
-        Managers.User.UID = "TestId";
-
-        Managers.Login.SendRequestNameInput();
-        Managers.Login.SendRequestMyPage();
     }
 
     // Update is called once per frame
