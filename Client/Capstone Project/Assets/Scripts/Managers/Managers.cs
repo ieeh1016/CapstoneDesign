@@ -67,7 +67,7 @@ public class Managers : MonoBehaviour
     void Update()
     {
         _input.OnUpdate();
-        _netWork.OnUpdate();
+        //_netWork.OnUpdate();
     }
     static void Init()
     {

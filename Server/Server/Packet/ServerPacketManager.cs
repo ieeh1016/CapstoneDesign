@@ -61,6 +61,7 @@ public class PacketManager
 
 	public void HandlePacket(PacketSession session, IPacket packet)
 	{
+		Console.WriteLine($"Packet's id: {packet.Protocol}");
 		Action<PacketSession, IPacket> action = null;
 		if (_handler.TryGetValue(packet.Protocol, out action))
 			action.Invoke(session, packet);

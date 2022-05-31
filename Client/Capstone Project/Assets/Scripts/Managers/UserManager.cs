@@ -55,24 +55,6 @@ public class UserManager
         set { selectedChracter = value; }
     }
 
-    public bool RankPacketArrival
-    {
-        get { return rankPacketArrival; }
-        set { rankPacketArrival = value; }
-    }
-
-    public bool MyPagePacketArrival
-    {
-        get { return myPagePacketArrival; }
-        set { myPagePacketArrival = value; }
-    }
-
-    public bool LoadStartPacketArrival
-    {
-        get { return loadStarPacketArrival; }
-        set { loadStarPacketArrival = value; }
-    }
-
     public Dictionary<ushort, byte> ChallangeStageInfo
     {
         get { return _challengeStageInfo; }

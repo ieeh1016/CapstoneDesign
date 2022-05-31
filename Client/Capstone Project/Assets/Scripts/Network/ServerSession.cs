@@ -13,6 +13,11 @@ namespace DummyClient
 		{
 			Managers.Network.Connected = true;
 			Debug.Log($"OnConnected : {endPoint}");
+
+			if (Managers.Network.SendingPendingList.Count != 0) // Connect가 되면 패킷 하나를 보낸다.
+            {
+				Managers.Network.SendAction.Invoke(Managers.Network.SendingPendingList.Dequeue());
+            }
 			//Console.WriteLine($"OnConnected : {endPoint}");			
 		}
 
@@ -20,6 +25,11 @@ namespace DummyClient
 		{
 			Managers.Network.Connected = false;
 			Debug.Log($"OnDisconnected : {endPoint}");
+
+			if (Managers.Network.SendingPendingList.Count != 0)
+            {
+				Managers.Network.ConnectAction.Invoke(); // 만약 전송을 대기하는 패킷이 있다면 Connect
+            }
 			//Console.WriteLine($"OnDisconnected : {endPoint}");
 		}
 
