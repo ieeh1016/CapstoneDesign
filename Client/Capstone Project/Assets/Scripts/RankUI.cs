@@ -7,6 +7,7 @@ public class RankUI : MonoBehaviour
 {
     float waitTime = 0;
     byte rankNum = 30;
+    bool set = false;
     public IEnumerator WaitForPacket()
     {
         yield return new WaitForSeconds(2.0f);
@@ -14,8 +15,11 @@ public class RankUI : MonoBehaviour
 
     void Start()
     {
-        Managers.Network.RankPacketArrival = false;
-        Managers.Login.LoadTop30();
+        if (Managers.Network.RankPacketArrival == false)
+        {
+            Managers.Login.LoadTop30();
+        }
+        
     }
 
 
@@ -44,6 +48,7 @@ public class RankUI : MonoBehaviour
         myRank.Find("Name").GetComponent<Text>().text = Managers.User.Name;
         myRank.Find("RankN").GetComponent<Text>().text = Managers.User.Ranking.ToString();
         myRank.Find("StarN").GetComponent<Text>().text = Managers.User.TotalStars.ToString();
+
     }
 
     private void Update()

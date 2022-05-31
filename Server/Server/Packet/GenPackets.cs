@@ -33,6 +33,7 @@ public class C_Request_Name_input : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
+		Console.WriteLine($"C_Request_Name_input: {segment}");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
@@ -80,6 +81,7 @@ public class C_Request_Load_Star : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
+		Console.WriteLine($"C_Request_Load_Star: {segment}");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
@@ -182,6 +184,7 @@ public class C_Request_Challenge_MyPage : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
+		Console.WriteLine($"C_Request_Challenge_MyPage: {segment}");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
@@ -268,6 +271,7 @@ public class C_Request_Challenge_Top30Rank : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
+		Console.WriteLine($"C_Request_Challenge_Top30Rank: {segment}");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);
@@ -376,6 +380,7 @@ public class C_ChallengeUpdateStars : IPacket
 
 	public void Read(ArraySegment<byte> segment)
 	{
+		Console.WriteLine($"C_ChallengeUpdateStars: {segment}");
 		ushort count = 0;
 		count += sizeof(ushort);
 		count += sizeof(ushort);

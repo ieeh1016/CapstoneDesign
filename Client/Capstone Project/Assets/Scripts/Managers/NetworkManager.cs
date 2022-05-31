@@ -24,11 +24,12 @@ public class NetworkManager
 
 	Connector connector;
 
-    bool rankPacketArrival = true;
-    bool myPagePacketArrival = true;
-    bool loadStarPacketArrival = true;
+    bool rankPacketArrival = false;
+    bool myPagePacketArrival = false;
+    bool loadStarPacketArrival = false;
     bool waitForPacketToReconnect = false;
     bool connectedToServer = false;
+    bool waitForPacket = false;
 
     float time = 0;
 
@@ -85,6 +86,11 @@ public class NetworkManager
 
     public void ConnectToServer() // Stateless 서버를 위한 메소드
     {
+        while (waitForPacket)
+        {
+            // busy wait
+        }
+
         Connected = false;
 
         _session = new ServerSession();
