@@ -13,11 +13,6 @@ public class MyPage : MonoBehaviour
         //Managers.User.MyPagePacketArrival = false;
 
 
-        while (Managers.Network.MyPagePacketArrival == false)
-        {
-            // busy waiting
-        }
-
         star_count = Managers.User.TotalStars;
         ScriptTxt = gameObject.transform.Find("MyPage").Find("My Star").Find("Star").GetComponent<Text>();
         string str = star_count.ToString();

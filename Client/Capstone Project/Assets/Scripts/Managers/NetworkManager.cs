@@ -108,11 +108,11 @@ public class NetworkManager
 
         host = Dns.GetHostName();
         ipHost = Dns.GetHostEntry(host);
-        ipAddr = IPAddress.Parse("3.39.181.102"); // AWS EC2 Instance의 IP 주소를 IPAdress 객체로 변환
+        ipAddr = IPAddress.Parse("3.37.57.128"); //
         endPoint = new IPEndPoint(ipAddr, 7777);
 
         //host = Dns.GetHostName();
-        //ipHost = Dns.GetHostEntry(host);
+        //ipHost = Dns.GetHostEntry("NLB-CodingIsland-9cfc1fd3f5aa14cc.elb.ap-northeast-2.amazonaws.com");
         //ipAddr = ipHost.AddressList[0];
         //endPoint = new IPEndPoint(ipAddr, 7777);
 

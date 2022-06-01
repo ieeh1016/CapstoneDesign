@@ -18,6 +18,8 @@ namespace Server.DB
 
         //추후 정적으로 바꿈
         static private string DB_IP = "database-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
+        static private string RRDB_IP = "rr-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
+
         static private string DB_Port = "3306";
         static string DB_TARGET = "DB_Test";
 
@@ -42,7 +44,7 @@ namespace Server.DB
             byte check;
             Dictionary<byte, byte> star_Dic = new Dictionary<byte, byte>();
 
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
+            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", RRDB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
             string sql = String.Format("select EXISTS (select Uid FROM {0} where UID = '{1}' limit 1) as success", User_DB_Table, Uid);
             using (conn = new MySqlConnection(connectString))
             {
@@ -76,7 +78,34 @@ namespace Server.DB
 
             else if (check == 1) // 기존 데이터가 있을때
             {
-                connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
+                string existing_name = "";
+
+                connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", RRDB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
+                sql = String.Format("select name from {0} where uid = '{1}'", User_DB_Table, Uid);
+                using (conn = new MySqlConnection(connectString))
+                {
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        existing_name = Convert.ToString(reader["name"]);
+                    }
+                }
+
+                if (!(name.Equals(existing_name)))
+                {
+                    connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, Init_UID, Init_PWD);
+                    sql = String.Format("Update {0} set name = '{1}' where uid = '{2}'", User_DB_Table, name, Uid);
+                    using (conn = new MySqlConnection(connectString))
+                    {
+                        conn.Open();
+                        MySqlCommand cmd = new MySqlCommand(sql, conn);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", RRDB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
                 using (conn = new MySqlConnection(connectString))
                 {
                     conn.Open();
@@ -97,9 +126,9 @@ namespace Server.DB
         {
             Data_Structure data_set = new Data_Structure();
 
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
+            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", RRDB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
-                    "from(Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC) AS ranking from {0} INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table " +
+                    "from(Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC, NAME asc) AS ranking from {0} INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table " +
                         "WHERE Rank_Table.Uid = '{2}'", Challenge_DB_Table, User_DB_Table, UID);
             using (conn = new MySqlConnection(connectString))
             {
@@ -119,10 +148,10 @@ namespace Server.DB
 
         public static List<S_Challenge_Top30Rank.Rank> Study_ChallengeTop30(List<S_Challenge_Top30Rank.Rank> list)
         {
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
+            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", RRDB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
             string sql = String.Format("Select name, Rank_Table.ranking, totalStars " +
                     "from (Select {0}.Uid, NAME, SUM(Star) as totalStars, ROW_NUMBER() OVER (ORDER BY SUM(Star) DESC) AS ranking from {0} " +
-                    "INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table ORDER BY Rank_Table.ranking Asc limit 30", Challenge_DB_Table, User_DB_Table);
+                    "INNER JOIN {1} ON {0}.Uid = {1}.Uid group by {0}.Uid) Rank_Table ORDER BY Rank_Table.ranking,name Asc limit 30", Challenge_DB_Table, User_DB_Table);
 
             using (conn = new MySqlConnection(connectString))
             {
@@ -154,7 +183,7 @@ namespace Server.DB
 
         public static void challenge_UpdateStar(String UID, byte STAGE, byte Star)
         {
-            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", DB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
+            string connectString = string.Format("Server={0};Port={1};Database={2};Uid ={3};Pwd={4};", RRDB_IP, DB_Port, DB_TARGET, RR_UID, RR_PWD);
             string sql = String.Format("Select Star from {0} where Uid = '{1}' AND challenge_Stage = {2}", Challenge_DB_Table, UID, STAGE);
             int remaining_Star;
             using (MySqlConnection conn = new MySqlConnection(connectString))
@@ -189,7 +218,7 @@ namespace Server.DB
                 }
             }
 
-            if (remaining_Star == 0 && (STAGE <10 ))
+            if (remaining_Star == 0 && (STAGE < 10))
             {
                 using (MySqlConnection conn = new MySqlConnection(connectString))
                 {
