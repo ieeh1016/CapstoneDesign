@@ -18,7 +18,7 @@ namespace Server.DB
 
         //추후 정적으로 바꿈
         static private string DB_IP = "database-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
-        static private string RRDB_IP = "rr-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
+        static private string RRDB_IP = "database-codingisland.c37r4fnqfff9.ap-northeast-2.rds.amazonaws.com";
 
         static private string DB_Port = "3306";
         static string DB_TARGET = "DB_Test";
