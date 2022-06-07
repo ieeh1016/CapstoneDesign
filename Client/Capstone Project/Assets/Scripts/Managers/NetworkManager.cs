@@ -108,7 +108,7 @@ public class NetworkManager
 
         host = Dns.GetHostName();
         ipHost = Dns.GetHostEntry(host);
-        ipAddr = IPAddress.Parse("3.37.57.128"); //
+        ipAddr = IPAddress.Parse("3.39.181.102"); //
         endPoint = new IPEndPoint(ipAddr, 7777);
 
         //host = Dns.GetHostName();
