@@ -87,7 +87,7 @@ public class StageManager
                     pkt.stageId = challengeNum;
                     pkt.numberOfStars = stars;
 
-                    Managers.Network.ConnectAndSend(pkt.Write(), false);
+                    //Managers.Network.ConnectAndSend(pkt.Write(), false);
                 }
             }
             else
