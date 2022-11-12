@@ -18,39 +18,39 @@ public class LoginSetting
     //    DontDestroyOnLoad(root);
     //}
 
-    public void SendRequestNameInput()
-    {
-        C_Request_Name_input packet = new C_Request_Name_input();
+    //public void SendRequestNameInput()
+    //{
+    //    C_Request_Name_input packet = new C_Request_Name_input();
 
-        packet.Uid = Managers.User.UID;
-        packet.name = Managers.User.Name;
+    //    packet.Uid = Managers.User.UID;
+    //    packet.name = Managers.User.Name;
 
-        Managers.Network.ConnectAndSend(packet.Write(), true);
-    }
+    //    Managers.Network.ConnectAndSend(packet.Write(), true);
+    //}
 
-    public void SendRequestLoadStar()
-    {
-        C_Request_Load_Star packet = new C_Request_Load_Star();
+    //public void SendRequestLoadStar()
+    //{
+    //    C_Request_Load_Star packet = new C_Request_Load_Star();
 
-        packet.UId = Managers.User.UID;
+    //    packet.UId = Managers.User.UID;
 
 
-        Managers.Network.ConnectAndSend(packet.Write(), true);
-    }
+    //    Managers.Network.ConnectAndSend(packet.Write(), true);
+    //}
 
-    public void SendRequestMyPage()
-    {
-        C_Request_Challenge_MyPage packet = new C_Request_Challenge_MyPage();
+    //public void SendRequestMyPage()
+    //{
+    //    C_Request_Challenge_MyPage packet = new C_Request_Challenge_MyPage();
 
-        packet.UId = Managers.User.UID;
+    //    packet.UId = Managers.User.UID;
 
-        Managers.Network.ConnectAndSend(packet.Write(), true);
-    }
+    //    Managers.Network.ConnectAndSend(packet.Write(), true);
+    //}
 
-    public void LoadTop30()
-    {
-        C_Request_Challenge_Top30Rank packet = new C_Request_Challenge_Top30Rank();
+    //public void LoadTop30()
+    //{
+    //    C_Request_Challenge_Top30Rank packet = new C_Request_Challenge_Top30Rank();
 
-        Managers.Network.ConnectAndSend(packet.Write(), true);
-    }
+    //    Managers.Network.ConnectAndSend(packet.Write(), true);
+    //}
 }

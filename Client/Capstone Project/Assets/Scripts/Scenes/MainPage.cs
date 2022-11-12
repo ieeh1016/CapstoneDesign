@@ -10,7 +10,7 @@ public class MainPage : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        PacketEvent.Init();
+        //PacketEvent.Init();
         Managers.Music.SetBackGroundMusic("Casual Game Music 05");
         Managers.Music.MusicPlayer.Play();
 
