@@ -27,7 +27,7 @@ public class MainGui : MonoBehaviour
     void Start()
     {
         // Select the Google Play Games platform as our social platform implementation
-        GooglePlayGames.PlayGamesPlatform.Activate();
+        //GooglePlayGames.PlayGamesPlatform.Activate();
     }
 
     void OnGUI()
@@ -44,60 +44,60 @@ public class MainGui : MonoBehaviour
             buttonRect.y + buttonRect.height * 1.1f,
             buttonRect.width / 2f, buttonRect.width / 2f);
 
-        if (mWaitingForAuth)
-        {
-            return;
-        }
+        //if (mWaitingForAuth)
+        //{
+        //    return;
+        //}
 
-        string buttonLabel;
+        //string buttonLabel;
 
 
-        if (Social.localUser.authenticated)
-        {
-            buttonLabel = "Sign Out";
-            if (Social.localUser.image != null)
-            {
-                GUI.DrawTexture(imageRect, Social.localUser.image,
-                    ScaleMode.ScaleToFit);
-            }
-            else
-            {
-                GUI.Label(imageRect, "No image available");
-            }
+        //if (Social.localUser.authenticated)
+        //{
+        //    buttonLabel = "Sign Out";
+        //    if (Social.localUser.image != null)
+        //    {
+        //        GUI.DrawTexture(imageRect, Social.localUser.image,
+        //            ScaleMode.ScaleToFit);
+        //    }
+        //    else
+        //    {
+        //        GUI.Label(imageRect, "No image available");
+        //    }
 
-            mStatusText = "Ready";
-        }
-        else
-        {
-            buttonLabel = "Authenticate";
-        }
+        //    mStatusText = "Ready";
+        //}
+        //else
+        //{
+        //    buttonLabel = "Authenticate";
+        //}
 
-        if (GUI.Button(buttonRect, buttonLabel))
-        {
-            if (!Social.localUser.authenticated)
-            {
-                // Authenticate
-                mWaitingForAuth = true;
-                mStatusText = "Authenticating...";
-                Social.localUser.Authenticate((bool success) =>
-                {
-                    mWaitingForAuth = false;
-                    if (success)
-                    {
-                        mStatusText = "Welcome " + Social.localUser.userName;
-                    }
-                    else
-                    {
-                        mStatusText = "Authentication failed.";
-                    }
-                });
-            }
-            else
-            {
-                // Sign out!
-                mStatusText = "Signing out.";
-                ((GooglePlayGames.PlayGamesPlatform) Social.Active).SignOut();
-            }
-        }
+        //if (GUI.Button(buttonRect, buttonLabel))
+        //{
+        //    if (!Social.localUser.authenticated)
+        //    {
+        //        // Authenticate
+        //        mWaitingForAuth = true;
+        //        mStatusText = "Authenticating...";
+        //        Social.localUser.Authenticate((bool success) =>
+        //        {
+        //            mWaitingForAuth = false;
+        //            if (success)
+        //            {
+        //                mStatusText = "Welcome " + Social.localUser.userName;
+        //            }
+        //            else
+        //            {
+        //                mStatusText = "Authentication failed.";
+        //            }
+        //        });
+        //    }
+        //    else
+        //    {
+        //        // Sign out!
+        //        mStatusText = "Signing out.";
+        //        ((GooglePlayGames.PlayGamesPlatform) Social.Active).SignOut();
+        //    }
+        //}
     }
 }

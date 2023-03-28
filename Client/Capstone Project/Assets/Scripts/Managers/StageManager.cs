@@ -69,6 +69,15 @@ public class StageManager
             string tempName = Regex.Replace(sceneName, @"\D", "");
             byte challengeNum = byte.Parse(tempName);
 
+            //try
+            //{
+            //    Managers.User.ChallangeStageInfo.Add((ushort)(challengeNum + 1), 0);
+            //}
+            //catch (Exception e)
+            //{
+            //    Debug.Log(e.ToString());
+            //}
+
             byte stars = 0;
 
             if (Managers.User.ChallangeStageInfo.TryGetValue(challengeNum, out stars))
@@ -79,15 +88,15 @@ public class StageManager
                     stars = (byte)currentCount;
                     Managers.User.ChallangeStageInfo.Remove(challengeNum);
                     Managers.User.ChallangeStageInfo.Add(challengeNum, stars);
-                    Managers.User.ChallangeStageInfo.Add((ushort)(challengeNum + 1), 0);
+                    
                     Managers.User.TotalStars += (ushort)currentCount;
 
-                    C_ChallengeUpdateStars pkt = new C_ChallengeUpdateStars();
-                    pkt.UId = Managers.User.UID;
-                    pkt.stageId = challengeNum;
-                    pkt.numberOfStars = stars;
+                    //C_ChallengeUpdateStars pkt = new C_ChallengeUpdateStars();
+                    //pkt.UId = Managers.User.UID;
+                    //pkt.stageId = challengeNum;
+                    //pkt.numberOfStars = stars;
 
-                    Managers.Network.ConnectAndSend(pkt.Write(), false);
+                    //Managers.Network.ConnectAndSend(pkt.Write(), false);
                 }
             }
             else
@@ -136,8 +145,5 @@ public class StageManager
         ConditionAction = null;
         ClearAction = null;
     }
-
-
-
 
 }

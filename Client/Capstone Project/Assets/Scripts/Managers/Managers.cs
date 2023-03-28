@@ -30,9 +30,9 @@ public class Managers : MonoBehaviour
     MusicManager _music = new MusicManager();
     MapObjectManager _mapObject = new MapObjectManager();
     UserManager _user = new UserManager();
-    NetworkManager _netWork = new NetworkManager();
+    //NetworkManager _netWork = new NetworkManager();
     SessionManager _session = new SessionManager();
-    LoginSetting _loginSetting = new LoginSetting();
+    //LoginSetting _loginSetting = new LoginSetting();
     MessageBoxManager _messageBox = new MessageBoxManager();
 
     public static DataManager Data { get { return Instance._data; } }
@@ -51,9 +51,9 @@ public class Managers : MonoBehaviour
     public static MusicManager Music { get { return Instance._music; } }
 
     public static UserManager User { get { return Instance._user; } }
-    public static NetworkManager Network { get { return Instance._netWork; } }
+    //public static NetworkManager Network { get { return Instance._netWork; } }
     public static SessionManager Session { get { return Instance._session; } }
-    public static LoginSetting Login { get { return Instance._loginSetting; } }
+    //public static LoginSetting Login { get { return Instance._loginSetting; } }
     public static MapObjectManager MapObject { get { return Instance._mapObject; } }
     public static MessageBoxManager MessageBox { get { return Instance._messageBox; } }
 
@@ -84,7 +84,7 @@ public class Managers : MonoBehaviour
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<Managers>();
 
-            s_instance._netWork.Init();
+            //s_instance._netWork.Init();
             s_instance._data.Init();
             s_instance._pool.Init();
             s_instance._sound.Init();
