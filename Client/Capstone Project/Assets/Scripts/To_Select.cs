@@ -25,6 +25,7 @@ public class To_Select : MonoBehaviour
 
     public void SecondStudy_Stage_Click()
     {
+        StageManager.Challenge = false;
         StageManager.SecondStudy = true;
     }
 
