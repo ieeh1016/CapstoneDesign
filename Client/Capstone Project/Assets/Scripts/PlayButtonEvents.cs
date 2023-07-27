@@ -14,6 +14,8 @@ public class PlayButtonEvents : MonoBehaviour
     private GameObject _missionButton;
     [SerializeField]
     private GameObject _questionButton;
+    [SerializeField]
+    private GameObject _whenPlayClick;
 
 
     public void PlayEvents()
@@ -26,6 +28,8 @@ public class PlayButtonEvents : MonoBehaviour
             //코딩 영역 저장
             Managers.CodingArea.SaveArea();
 
+            BE2_BlocksStack bE2_BlocksStack = _whenPlayClick.GetComponent<BE2_BlocksStack>();
+            bE2_BlocksStack._isStart = false;
 
             //카메라 전환
             GameObject.Find("QuaterView Camera").GetComponent<CameraController>().ChangeToQuarterView();
